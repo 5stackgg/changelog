@@ -80,7 +80,8 @@ async function github(query, variables) {
   });
   const json = await response.json();
   if (!response.ok || json.errors) {
-    throw new Error(`GitHub GraphQL failed with status ${response.status}`);
+    const messages = (json.errors ?? []).map((error) => error.message).join("; ");
+    throw new Error(`GitHub GraphQL failed with status ${response.status}: ${messages || json.message}`);
   }
   return json.data;
 }
@@ -93,15 +94,14 @@ async function mergedPullRequests(date) {
         ... on PullRequest {
           title
           body
-          baseRefName
           author { __typename login }
           labels(first: 20) { nodes { name } }
-          repository { name defaultBranchRef { name } }
+          repository { name }
         }
       }
     }
   }`;
-  const q = `org:${ORG} is:pr is:merged merged:${date}T00:00:00Z..${date}T23:59:59Z`;
+  const q = `org:${ORG} is:pr is:merged base:main merged:${date}T00:00:00Z..${date}T23:59:59Z`;
 
   const pulls = [];
   let after = null;
@@ -115,9 +115,6 @@ async function mergedPullRequests(date) {
 
 function publishable(pull) {
   if (!AREAS[pull.repository.name]) {
-    return false;
-  }
-  if (pull.baseRefName !== pull.repository.defaultBranchRef?.name) {
     return false;
   }
   if (pull.author?.__typename === "Bot" || pull.author?.login?.endsWith("[bot]")) {

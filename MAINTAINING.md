@@ -6,7 +6,7 @@ To redo a day, run the workflow by hand with a `date`. It overwrites that day's 
 
 ## What keeps private details out
 
-1. Only the repositories in `AREAS` in `scripts/changelog.mjs` are read, and only pull requests merged into their default branch. Bots are skipped, as is any pull request labeled `no-changelog` or `internal`.
+1. Only the repositories in `AREAS` in `scripts/changelog.mjs` are read, and only pull requests merged into main. Bots are skipped, as is any pull request labeled `no-changelog` or `internal`.
 2. Before Claude sees a pull request, `scripts/redact.mjs` strips links, emails, IPs, domains, issue references, code blocks, tables and code names, and redacts the blocklist.
 3. The prompt says what never to write: code names, internal services, customers, and how a security problem worked.
 4. Every output line is checked again. A line with a link, email, IP, domain, reference, handle, code name, token-like string or blocklisted term is deleted. The log shows how many lines were deleted and why, never their text, because the logs of this repository are public.
