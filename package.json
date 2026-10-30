@@ -1,0 +1,12 @@
+{
+  "name": "changelog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "changelog": "node scripts/changelog.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.3.0"
+  }
+}

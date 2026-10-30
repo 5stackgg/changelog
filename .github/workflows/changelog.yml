@@ -1,0 +1,50 @@
+name: Changelog
+
+on:
+  schedule:
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Day to summarize, YYYY-MM-DD in UTC. Defaults to yesterday.
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: changelog
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm test
+
+      - id: changelog
+        run: node scripts/changelog.mjs
+        env:
+          DATE: ${{ inputs.date }}
+          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CHANGELOG_BLOCKLIST: ${{ secrets.CHANGELOG_BLOCKLIST }}
+
+      - if: steps.changelog.outputs.date
+        env:
+          DATE: ${{ steps.changelog.outputs.date }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add entries README.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Changelog for $DATE"
+          git push
