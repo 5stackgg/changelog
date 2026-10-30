@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
-import { conform, writeFeed, writeReadme } from "./feed.mjs";
-import { blocklist, gate, sanitize } from "./redact.mjs";
+import { writeFeed, writeReadme } from "./feed.mjs";
+import { blocklist, finalize, sanitize } from "./redact.mjs";
 
 const ORG = "5stackgg";
 
@@ -182,15 +182,13 @@ async function main() {
     return;
   }
 
-  const gated = gate(summary, blocked);
-  const droppedCount = Object.values(gated.dropped).reduce((sum, count) => sum + count, 0);
-  if (droppedCount > 0) {
-    console.log(`Gate dropped lines: ${JSON.stringify(gated.dropped)}`);
-  }
-
-  const { markdown, dropped: malformed } = conform(gated.markdown);
+  const { markdown, malformed, dropped } = finalize(summary, blocked);
   if (malformed > 0) {
     console.log(`Dropped ${malformed} lines outside the entry format`);
+  }
+  const droppedCount = Object.values(dropped).reduce((sum, count) => sum + count, 0);
+  if (droppedCount > 0) {
+    console.log(`Gate dropped lines: ${JSON.stringify(dropped)}`);
   }
   if (!markdown.includes("\n- ")) {
     console.log("No entries left after the gate");
