@@ -2,6 +2,8 @@
 
 `.github/workflows/changelog.yml` runs at 00:15 UTC. It summarizes the previous UTC day's merged pull requests into `entries/<year>/<date>.md` and rebuilds the README from the latest 14 days. Days with nothing user-facing get no entry.
 
+`feed/` is the same entries as JSON for the web app's changelog page: one file per month (`feed/2026-10.json`, newest day first) and `feed/index.json` listing the months and every area. It is rebuilt from `entries/` on every run, so only the month that changed shows a diff. `npm run feed` rebuilds it by hand.
+
 To redo a day, run the workflow by hand with a `date`. It overwrites that day's entry.
 
 ## What keeps private details out

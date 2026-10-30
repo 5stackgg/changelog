@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "changelog": "node scripts/changelog.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "feed": "node scripts/feed.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "1.3.0"

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
+import { writeFeed } from "./feed.mjs";
 import { blocklist, gate, sanitize } from "./redact.mjs";
 
 const ORG = "5stackgg";
@@ -229,6 +230,7 @@ async function main() {
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, entry);
   writeReadme();
+  writeFeed();
   console.log(`Wrote ${file}`);
 
   if (process.env.GITHUB_OUTPUT) {
