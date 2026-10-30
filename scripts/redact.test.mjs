@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { blocklist, gate, sanitize, violations } from "./redact.mjs";
+import { blocklist, finalize, gate, sanitize, violations } from "./redact.mjs";
 
 test("sanitize strips links, references, code and contact details", () => {
   const body = [
@@ -97,4 +97,24 @@ test("gate drops blocklisted terms", () => {
   const { markdown, dropped } = gate("## Fixed\n- **Matches:** Acme panel reconnects.", ["acme"]);
   assert.equal(markdown, "");
   assert.deepEqual(dropped, { blocklist: 1 });
+});
+
+test("finalize gates the text the format check produced, not the text before it", () => {
+  const { markdown, malformed, dropped } = finalize(
+    [
+      "Token ghp_**abc123** in a summary.",
+      "Name is_**draft** in a summary.",
+      "A clean summary line.",
+      "",
+      "## Fixed",
+      "- **Seasons:** Tournament matches count.",
+    ].join("\n"),
+  );
+
+  assert.equal(
+    markdown,
+    ["A clean summary line.", "", "## Fixed", "- **Seasons:** Tournament matches count."].join("\n"),
+  );
+  assert.equal(malformed, 0);
+  assert.deepEqual(dropped, { identifier: 2, secret: 1 });
 });

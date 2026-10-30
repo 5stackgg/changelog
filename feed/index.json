@@ -1,0 +1,20 @@
+{
+  "months": [
+    {
+      "month": "2026-10",
+      "days": 1,
+      "hash": "b805e6616420dd11"
+    }
+  ],
+  "areas": [
+    "Demos",
+    "Docs",
+    "Leaderboards",
+    "Matches",
+    "Notifications",
+    "Performance",
+    "Seasons",
+    "Self-hosting",
+    "Streams"
+  ]
+}

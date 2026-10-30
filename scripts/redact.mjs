@@ -1,3 +1,5 @@
+import { conform } from "./feed.mjs";
+
 const ALLOWED_DOMAINS = ["5stack.gg"];
 
 const RULES = {
@@ -82,6 +84,14 @@ export function gate(markdown, blocked = []) {
     markdown: dropEmptySections(kept).join("\n").replace(/\n{3,}/g, "\n\n").trim(),
     dropped,
   };
+}
+
+// The format check rewrites lines, so the gate runs after it, on the exact
+// text that gets published.
+export function finalize(markdown, blocked = []) {
+  const conformed = conform(markdown);
+  const gated = gate(conformed.markdown, blocked);
+  return { markdown: gated.markdown, malformed: conformed.dropped, dropped: gated.dropped };
 }
 
 function dropEmptySections(lines) {
