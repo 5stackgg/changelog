@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
-import { writeFeed } from "./feed.mjs";
+import { conform, writeFeed, writeReadme } from "./feed.mjs";
 import { blocklist, gate, sanitize } from "./redact.mjs";
 
 const ORG = "5stackgg";
@@ -22,7 +22,6 @@ const AREAS = {
 const SKIP_LABELS = ["no-changelog", "internal"];
 
 const ENTRIES = "entries";
-const README_ENTRIES = 14;
 const BODY_LIMIT = 2000;
 const NOTHING = "NOTHING_TO_REPORT";
 
@@ -161,33 +160,6 @@ function entryPath(date) {
   return path.join(ENTRIES, date.slice(0, 4), `${date}.md`);
 }
 
-function writeReadme() {
-  const entries = fs
-    .readdirSync(ENTRIES, { recursive: true })
-    .filter((file) => file.endsWith(".md"))
-    .sort()
-    .reverse()
-    .slice(0, README_ENTRIES)
-    .map((file) =>
-      fs
-        .readFileSync(path.join(ENTRIES, file), "utf8")
-        .trim()
-        .replace(/^(#+) /gm, "#$1 "),
-    );
-
-  const readme = [
-    "# 5Stack changelog",
-    "",
-    "What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels. Each entry is written automatically from that day's merged changes (UTC).",
-    "",
-    ...entries.flatMap((entry) => [entry, ""]),
-    `Older days are in [${ENTRIES}](${ENTRIES}).`,
-    "",
-  ].join("\n");
-
-  fs.writeFileSync("README.md", readme);
-}
-
 async function main() {
   const { date, dryRun } = parseArgs(process.argv.slice(2));
   const blocked = blocklist(process.env.CHANGELOG_BLOCKLIST);
@@ -210,10 +182,15 @@ async function main() {
     return;
   }
 
-  const { markdown, dropped } = gate(summary, blocked);
-  const droppedCount = Object.values(dropped).reduce((sum, count) => sum + count, 0);
+  const gated = gate(summary, blocked);
+  const droppedCount = Object.values(gated.dropped).reduce((sum, count) => sum + count, 0);
   if (droppedCount > 0) {
-    console.log(`Gate dropped lines: ${JSON.stringify(dropped)}`);
+    console.log(`Gate dropped lines: ${JSON.stringify(gated.dropped)}`);
+  }
+
+  const { markdown, dropped: malformed } = conform(gated.markdown);
+  if (malformed > 0) {
+    console.log(`Dropped ${malformed} lines outside the entry format`);
   }
   if (!markdown.includes("\n- ")) {
     console.log("No entries left after the gate");

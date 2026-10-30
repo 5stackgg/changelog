@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { buildFeed, parseEntry } from "./feed.mjs";
+import { buildFeed, conform, parseEntry } from "./feed.mjs";
 
 const entry = [
   "# Thursday, October 29, 2026",
@@ -45,24 +45,75 @@ test("parseEntry drops sections it doesn't know and bullets without an area keep
 });
 
 test("buildFeed groups days by month, newest first, and lists every area once", () => {
-  const { index, months } = buildFeed([
+  const output = buildFeed([
     ["2026-10-29", entry],
     ["2026-11-01", "Quiet day.\n\n## Fixed\n- **Matches:** One fix."],
     ["2026-10-30", "Another day.\n\n## Improved\n- **Seasons:** Faster."],
   ]);
+  const index = JSON.parse(output.get("index.json"));
 
-  assert.deepEqual(index, {
-    months: [
+  assert.deepEqual([...output.keys()], ["2026-11.json", "2026-10.json", "index.json"]);
+  assert.deepEqual(
+    index.months.map(({ month, days }) => ({ month, days })),
+    [
       { month: "2026-11", days: 1 },
       { month: "2026-10", days: 2 },
     ],
-    areas: ["Leaderboards", "Matches", "Seasons", "Self-hosting"],
-  });
-  assert.deepEqual(
-    months.map((month) => [month.month, month.days.map((day) => day.date)]),
-    [
-      ["2026-11", ["2026-11-01"]],
-      ["2026-10", ["2026-10-30", "2026-10-29"]],
-    ],
   );
+  assert.deepEqual(index.areas, ["Leaderboards", "Matches", "Seasons", "Self-hosting"]);
+  assert.deepEqual(
+    JSON.parse(output.get("2026-10.json")).days.map((day) => day.date),
+    ["2026-10-30", "2026-10-29"],
+  );
+});
+
+test("buildFeed hashes each month's exact bytes, so only a changed month gets a new hash", () => {
+  const hashOf = (files, month) =>
+    JSON.parse(buildFeed(files).get("index.json")).months.find((m) => m.month === month).hash;
+  const before = [
+    ["2026-10-29", entry],
+    ["2026-11-01", "Quiet day.\n\n## Fixed\n- **Matches:** One fix."],
+  ];
+  const redone = [before[0], ["2026-11-01", "Quiet day.\n\n## Fixed\n- **Matches:** A fix."]];
+
+  assert.match(hashOf(before, "2026-10"), /^[0-9a-f]{16}$/);
+  assert.equal(hashOf(before, "2026-10"), hashOf(redone, "2026-10"));
+  assert.notEqual(hashOf(before, "2026-11"), hashOf(redone, "2026-11"));
+});
+
+test("conform keeps the entry format and drops what the feed couldn't read", () => {
+  const { markdown, dropped } = conform(
+    [
+      "A **big** day.",
+      "",
+      "## New",
+      "- **Demos:** Anyone can upload demos.",
+      "- **Demos**: colon outside the bold.",
+      "- **HUD** text with **bold** inside",
+      "### Extra heading",
+      "",
+      "## Fixes",
+      "- **Matches:** under an unknown heading.",
+      "",
+      "## Improved",
+      "  - an indented bullet with no area",
+      "",
+      "## Fixed",
+      "- **Seasons:** Tournament matches count.",
+    ].join("\n"),
+  );
+
+  assert.equal(
+    markdown,
+    [
+      "A big day.",
+      "",
+      "## New",
+      "- **Demos:** Anyone can upload demos.",
+      "",
+      "## Fixed",
+      "- **Seasons:** Tournament matches count.",
+    ].join("\n"),
+  );
+  assert.equal(dropped, 6);
 });
