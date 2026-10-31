@@ -2,19 +2,27 @@
   "months": [
     {
       "month": "2026-10",
-      "days": 1,
-      "hash": "b805e6616420dd11"
+      "days": 2,
+      "hash": "b13e973c792c6c4f"
     }
   ],
   "areas": [
+    "Changelog",
+    "Coach",
     "Demos",
     "Docs",
+    "Game servers",
+    "Highlights",
     "Leaderboards",
     "Matches",
+    "Moderation",
     "Notifications",
     "Performance",
+    "Radar",
     "Seasons",
     "Self-hosting",
-    "Streams"
+    "Streams",
+    "Teams",
+    "Welcome"
   ]
 }

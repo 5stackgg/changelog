@@ -2,6 +2,134 @@
   "month": "2026-10",
   "days": [
     {
+      "date": "2026-10-30",
+      "summary": "Today brings Rokkan, an AI coach that reviews matches and scouts opponents, along with player and chat reports, team roster history, VAC Off matches and more control over game server nodes.",
+      "sections": {
+        "new": [
+          {
+            "area": "Coach",
+            "text": "A new Coach page lists Rokkan's reviews of your matches, scouting on your next scrim or tournament opponent, and your tendencies. Each review moment opens the 2D replay at that round, and a scheduled match shows a Rokkan briefing in its header."
+          },
+          {
+            "area": "Coach",
+            "text": "One verified player in a match unlocks Rokkan reviews for every signed-in player in it, including imported matches. Players who have friended a 5Stack bot also get their review and scouting briefing as a Steam message, and administrators can ask Rokkan to review any finished match."
+          },
+          {
+            "area": "Moderation",
+            "text": "Players can report someone they played with in the last 30 days from their profile or the scoreboard. Moderators handle each reported player as one case in a new Player Reports tab, and the reporter is told the outcome."
+          },
+          {
+            "area": "Moderation",
+            "text": "Players can report chat messages, and moderators handle them from a new moderation queue. Admins can set blocked words that are masked in chat, and when Rokkan is connected it reviews group chat and removed lines show as \"Message removed by Rokkan\"."
+          },
+          {
+            "area": "Teams",
+            "text": "Player profiles have a Teams tab showing the teams a player joined and left. Team pages show a roster history timeline, and joins, leaves and removals appear in the activity feed."
+          },
+          {
+            "area": "Matches",
+            "text": "Organizers can turn VAC off for a match, and admins can do the same for a dedicated server. The match page asks for a reboot when the running server doesn't match the setting, and VAC-off matches only use servers that allow it."
+          },
+          {
+            "area": "Game servers",
+            "text": "Admins can choose which match types each node hosts, whether it takes practice servers, or make it practice-only. Highlight clips get their own GPU switch, separate from lineup renders."
+          },
+          {
+            "area": "Game servers",
+            "text": "Region pickers for matches, tournament stages, quick queue and practice leave out regions that can't host that match type. The region page shows how many nodes take each type."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Nodes now warn when they need a reboot to finish installing updates, when the NVIDIA driver no longer matches the loaded one, or when automatic security updates are off on Ubuntu. To run these checks, the node connector reads some host system folders read-only, and a GPU node already waiting on a driver reboot needs that reboot before its connector starts again."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Node to-dos now lead the header's update popover, worst first. A node's inspector shows the steps or command to fix each warning."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The System Logs page shows how many times each service and pod restarted. One click opens the run that crashed, which you can also download."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels can opt in to deploying Rokkan, the AI service, with its own separate database. Updates now keep it current on installs where it is set up."
+          },
+          {
+            "area": "Changelog",
+            "text": "A new Changelog page shows the daily changes, with search and filters across the whole history. You can open it from the account menu or the command palette."
+          },
+          {
+            "area": "Welcome",
+            "text": "The welcome page shows Scrim Finder, community servers, leagues and events as preview cards. A new page shows guests what running your own 5Stack looks like."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Performance",
+            "text": "All open tabs now share one live connection, and signed-in pages reload parts like invites, lobbies, teams and notifications only when they change. Both changes make pages respond faster."
+          },
+          {
+            "area": "Leaderboards",
+            "text": "K/D, HS% and rating boards filtered by source or role load much faster. K/D and HS% ranks are back on player panels."
+          },
+          {
+            "area": "Demos",
+            "text": "Parsed demos now record callouts for positions, kills and grenades. Round inventories now reflect the loadout when buy time ends, so late buyers and second flashbangs show up correctly."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Update Now closes the popover and shows progress immediately. Refreshing the page still shows the update running, so it isn't started twice."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The API, web app, demo parser, node connector and browser extension are now under the run-only 5Stack License, and earlier versions keep their previous licenses. The docs' license page lists which parts remain open source."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matches",
+            "text": "A late duplicate status from a game server no longer sends a live map back to warmup or loses a map's final result."
+          },
+          {
+            "area": "Matches",
+            "text": "A live match's header no longer says \"Auto Canceling\" while a map is being played, and during warmup it shows \"Deadline in\"."
+          },
+          {
+            "area": "Matches",
+            "text": "Matches on dedicated servers hosted on a 5Stack node are no longer offered Reboot Server. When such a server drops, the match shows Offline instead of Booting."
+          },
+          {
+            "area": "Streams",
+            "text": "Live streams download every workshop map left in the series, so they no longer stop at a download prompt on map 2 or 3."
+          },
+          {
+            "area": "Highlights",
+            "text": "Rendered highlight clips get their thumbnails again."
+          },
+          {
+            "area": "Radar",
+            "text": "The in-game practice radar places markers accurately and switches to the lower floor on Nuke, Train and Vertigo. Replay radars are recalibrated, and bomb sites are drawn at their real positions."
+          },
+          {
+            "area": "Welcome",
+            "text": "The Community servers and Events previews load instead of showing an empty box. The match page preview no longer captures the mouse wheel."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The panel keeps running when a log view is closed, a server reboots with its logs open, or a download is interrupted. Log zip downloads covering several pods or containers no longer fail."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Node warnings that aren't about the CPU are no longer labelled as CPU problems."
+          },
+          {
+            "area": "Game servers",
+            "text": "The node connector starts again after its latest update. It also keeps running when a game server crashes, a demo can't be read or a network interface disappears."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-10-29",
       "summary": "A big day: AMD GPU support for self-hosted panels, a move to Traefik, wider demo uploads, an event ELO leaderboard, and broad speed-ups.",
       "sections": {
