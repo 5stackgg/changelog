@@ -2,6 +2,138 @@
   "month": "2026-10",
   "days": [
     {
+      "date": "2026-10-31",
+      "summary": "Today brings a redesigned Rokkan coach with team reviews, a reorganized notification bell, Career levels with cosmetics, new self-hosting controls, and broad speed-ups.",
+      "sections": {
+        "new": [
+          {
+            "area": "Coach",
+            "text": "Rokkan reviews open in a full-width replay that starts paused on your first fix, with a menu to view the review as yourself, your team or a teammate. On wide screens the whole review fits one screen, with a list of every moment to jump between, and Space or K plays and pauses from anywhere on the page."
+          },
+          {
+            "area": "Coach",
+            "text": "The match page shows a Rokkan Review band that moves through Queued, Reviewing and Ready, then previews the review's summary. The coach page lists each review as its match, marks unopened reviews as New with a filter for them, and the side menu counts your unopened reviews."
+          },
+          {
+            "area": "Coach",
+            "text": "Teammates can see each other's Rokkan reviews from team matches on the team page's Coach tab and in a team view on the coach page. This view includes roster cards and team habits, with See All for the full list."
+          },
+          {
+            "area": "Coach",
+            "text": "Administrators can open any team's or match's reviews in full. A team they opened but aren't on is marked with an Admin tag."
+          },
+          {
+            "area": "Notifications",
+            "text": "The bell is sorted into Needs you, Live now, New for you and Earlier. Alerts that resolve, such as a resumed map or a node back online, show their end state and move to Earlier."
+          },
+          {
+            "area": "Notifications",
+            "text": "A new \"Clips of you\" reel in the bell marks clips you haven't watched. Review notifications stack together, and content notices show a cover image."
+          },
+          {
+            "area": "Notifications",
+            "text": "On slim notification rows, clicking the dot marks the row read and double-clicking deletes it. The time turns into a menu that holds Delete. Administrators also get a gallery page with a sample of every notification type."
+          },
+          {
+            "area": "Career",
+            "text": "Every rated match now earns Career XP, and each level pays Stacks. Players unlock, buy or are granted cosmetics for their player card: banners, frames, nameplates and titles."
+          },
+          {
+            "area": "Career",
+            "text": "The cosmetics catalog has over 450 items, including an animated tier, and the Career Track now has rewards up to Level 1000. Administrators can grant items and Stacks to players, a team or a tournament's roster."
+          },
+          {
+            "area": "Support 5Stack",
+            "text": "A checklist in the bell asks players to join the 5stack.gg Steam group and wear its clan tag in CS2, with a step-by-step guide in the FAQ. Once an imported match shows you wearing the tag, the card turns into a thank-you and stays that way."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Turning matchmaking or a mode off now takes every lobby queued for it out of the queue. Ready checks already under way are left alone."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels installed with the 5Stack service get an update center where you choose Manual, Scheduled or When idle updates. Update Now runs a preflight check, shows live progress and pauses new matches until live ones finish."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels installed with the 5Stack service can also add game server nodes by code with an approval step. Settings gains Backup & Recovery, with nightly backups and Back Up Now, and a Diagnostics page."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Busy panels can run more than one replica of the API engine, placed on separate nodes where possible."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Performance",
+            "text": "Several pages are faster and lighter when many people view them at once:"
+          },
+          {
+            "area": "Live updates",
+            "text": "Changes to other players' names, avatars and ranks now show up right away in lobbies, matches, invites and drafts. Your profile updates as soon as a gag or mute ends."
+          },
+          {
+            "area": "Matches",
+            "text": "The Connect button on the Play schedule updates when a region switches to or from LAN."
+          },
+          {
+            "area": "Steam",
+            "text": "An imported match's Steam message waits for its Rokkan review and is a single short line with the match link, without a large map preview. Rokkan review messages over Steam now go only to matches played outside 5Stack, and the duplicate in-app \"Match Imported\" notice is gone."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Disabled nodes that are online now get node file updates and Kubernetes maintenance changes, and show a dimmed amber dot while one is waiting. The \"Node changes waiting\" and \"Kubernetes update available\" alerts clear themselves once the work is done."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "System Logs now includes the AI service that runs Rokkan, with its warnings and errors shown correctly."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Notifications",
+            "text": "Invite notifications clear from the bell once the invite is accepted, declined or withdrawn."
+          },
+          {
+            "area": "Notifications",
+            "text": "Staff bells update live as role-wide alerts arrive, are dismissed or are deleted, and show only the alerts meant for them. Tournament registration invites now count toward the badge for a team's roster admins."
+          },
+          {
+            "area": "Accounts",
+            "text": "After your role changes, the site picks up your new permissions right away without a reload."
+          },
+          {
+            "area": "Coach",
+            "text": "An administrator's coach inbox lists only their own reviews. The inbox no longer counts teammates' findings as yours."
+          },
+          {
+            "area": "Coach",
+            "text": "Rokkan notices name maps the same way the site does."
+          },
+          {
+            "area": "Steam",
+            "text": "Steam messages that Steam delays or rate-limits are retried instead of lost, and are never sent twice."
+          },
+          {
+            "area": "Teams",
+            "text": "Team cards show a space before \"vs\" in the Next and Last rows."
+          },
+          {
+            "area": "Game servers",
+            "text": "Server owners can add themselves to a restricted server's player list."
+          },
+          {
+            "area": "Game servers",
+            "text": "A dedicated server keeps loading a plugin after its node auto-updates it."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels updated to the latest version finish starting up again."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-10-30",
       "summary": "Today brings Rokkan, an AI coach that reviews matches and scouts opponents, along with player and chat reports, team roster history, VAC Off matches and more control over game server nodes.",
       "sections": {

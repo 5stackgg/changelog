@@ -2,11 +2,13 @@
   "months": [
     {
       "month": "2026-10",
-      "days": 2,
-      "hash": "b13e973c792c6c4f"
+      "days": 3,
+      "hash": "ef91fa1ae6d87c4e"
     }
   ],
   "areas": [
+    "Accounts",
+    "Career",
     "Changelog",
     "Coach",
     "Demos",
@@ -14,14 +16,18 @@
     "Game servers",
     "Highlights",
     "Leaderboards",
+    "Live updates",
     "Matches",
+    "Matchmaking",
     "Moderation",
     "Notifications",
     "Performance",
     "Radar",
     "Seasons",
     "Self-hosting",
+    "Steam",
     "Streams",
+    "Support 5Stack",
     "Teams",
     "Welcome"
   ]
