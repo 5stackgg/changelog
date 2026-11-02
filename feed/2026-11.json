@@ -1,0 +1,109 @@
+{
+  "month": "2026-11",
+  "days": [
+    {
+      "date": "2026-11-01",
+      "summary": "Today adds career levels and cosmetics, more panel update and Vault controls for self-hosters, faster pages, and a consistent way of counting kills, deaths and assists.",
+      "sections": {
+        "new": [
+          {
+            "area": "Career",
+            "text": "Players now have career levels, Stacks and player card cosmetics, with frames, level badges and nameplates on player rows and the profile card. The new Career page has your level track, the Locker and your Stacks, and looks you apply in the Locker are bought and saved to your profile."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "On panels run by the 5Stack service, removing a node can also uninstall 5Stack from that server. The dialog shows progress even after a reload, removes the node once the uninstall is done, and offers Remove Anyway if it fails."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels that keep secrets in Vault now show a header warning when secrets can't sync, with the reason, how long Vault has been down and a Check Now button. A new Settings page walks through each step, shows why each failing secret can't sync, and lists any secrets an update is missing before it can start."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Managed panels have a new Panel updates page in Settings for choosing when updates install. The header only shows the panel when an update needs your attention, and its status reads as one line, such as \"Panel 2026.11.1.2 is ready\"."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Existing panels installed from a git checkout can now move onto the 5Stack service, keeping their configuration and secrets. The download is signature-checked, and downgrades are refused."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "When the 5Stack service rolls back an update that didn't come up healthy, admins get a notification with the reason, and the header shows the rollback in amber. Automatic and scheduled updates skip a release that failed on your panel, and you can only install it again with Update Now."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Players",
+            "text": "Player search now shows the players you recently played with first, above Friends. You can fold that section, and the browser remembers it."
+          },
+          {
+            "area": "Performance",
+            "text": "Several pages are faster and lighter, including match page clips, player profiles, the /play and public server lists, the scrim board and tournament stats tabs. On a profile, changes made by someone else while you are viewing it now show on your next visit."
+          },
+          {
+            "area": "Coach",
+            "text": "Reviews, scouting reports and habits now have their own links, and older links redirect to them. The browser's Back and Forward buttons step between the list and an open item, and the list keeps its tab and filters after a reload."
+          },
+          {
+            "area": "Notifications",
+            "text": "Pending team, tournament and draft invites in the bell now show as cards with Deny and Accept buttons. A plain team invite also names who invited you."
+          },
+          {
+            "area": "Game servers",
+            "text": "When adding a node, the join code is looked up as soon as you enter the sixth digit. You no longer need to press Find."
+          },
+          {
+            "area": "Game servers",
+            "text": "The CPU governor warning now gives the command to fix it, with a copy button and a link to the CPU Governance guide. Nodes whose governor can't be read no longer show the warning."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "During a panel update, new matches are held only when the update needs it, and the panel no longer changes the enabled setting on your nodes. Matches already running carry on."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The nightly database backup now checks that the storage bucket belongs to the account of your configured S3 keys before uploading. If it doesn't, the backup stops and explains how to fix it."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Stats",
+            "text": "Kills, deaths and assists now count the same way everywhere, including leaderboards, ELO and the standings tiebreaker. Team kills and suicides are no longer counted as kills, and assists on teammates' deaths are no longer counted as assists, while every death counts."
+          },
+          {
+            "area": "Stats",
+            "text": "Lifetime, season and weapon totals are corrected for kills and assists counted the old way. ELO uses the new counting from the next rated match, and running tournaments use the new tiebreaker from their next result."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels with played matches can update again, and leaderboards load normally afterwards."
+          },
+          {
+            "area": "Game servers",
+            "text": "A node added with a join code now starts enabled and can take matches right away."
+          },
+          {
+            "area": "Game servers",
+            "text": "A node removed from the server's command line now also disappears from the panel."
+          },
+          {
+            "area": "Game servers",
+            "text": "On panels installed by the 5Stack service with a Tailscale client set up, game server nodes are now supported and Create node works."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The node selection prompt in the panel scripts now accepts only a number from the list it shows."
+          },
+          {
+            "area": "Notifications",
+            "text": "In slim notification rows, wrapped text now lines up with the row's edge, and a paused match row is the same height as other rows."
+          },
+          {
+            "area": "Notifications",
+            "text": "Award notifications now lead with the award's name and show the badge clear of the text."
+          }
+        ]
+      }
+    }
+  ]
+}

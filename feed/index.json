@@ -1,6 +1,11 @@
 {
   "months": [
     {
+      "month": "2026-11",
+      "days": 1,
+      "hash": "7a5155ff3316b07e"
+    },
+    {
       "month": "2026-10",
       "days": 3,
       "hash": "ef91fa1ae6d87c4e"
@@ -22,9 +27,11 @@
     "Moderation",
     "Notifications",
     "Performance",
+    "Players",
     "Radar",
     "Seasons",
     "Self-hosting",
+    "Stats",
     "Steam",
     "Streams",
     "Support 5Stack",
