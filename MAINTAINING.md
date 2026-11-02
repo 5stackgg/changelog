@@ -18,7 +18,7 @@ To redo a day, run the workflow by hand with a `date`. It overwrites that day's 
 
 ## Secrets
 
-- `GH_READ_TOKEN`: a fine-grained token owned by 5stackgg with read-only Pull requests access to the repositories in `AREAS`.
+- `OPS_APP_KEY` (org secret) and `OPS_APP_CLIENT_ID` (org variable): the 5Stack Ops GitHub App. Each run mints a short-lived token limited to Pull requests: read and passes it to the script as `GH_READ_TOKEN`.
 - `ANTHROPIC_API_KEY`
 - `CHANGELOG_BLOCKLIST` (optional): customer, panel and community names or domains, one per line or comma-separated. It is a secret so the list itself stays private.
 

@@ -30,11 +30,19 @@ jobs:
 
       - run: npm test
 
+      - id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.OPS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OPS_APP_KEY }}
+          owner: 5stackgg
+          permission-pull-requests: read
+
       - id: changelog
         run: node scripts/changelog.mjs
         env:
           DATE: ${{ inputs.date }}
-          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN }}
+          GH_READ_TOKEN: ${{ steps.app.outputs.token }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           CHANGELOG_BLOCKLIST: ${{ secrets.CHANGELOG_BLOCKLIST }}
 
