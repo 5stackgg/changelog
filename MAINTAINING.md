@@ -18,8 +18,8 @@ To redo a day, run the workflow by hand with a `date`. It overwrites that day's 
 
 ## Secrets
 
-- `GH_READ_TOKEN`: a fine-grained token owned by 5stackgg with read-only Pull requests access to the repositories in `AREAS`.
-- `ANTHROPIC_API_KEY`
+- `OPS_APP_KEY` (org secret) and `OPS_APP_CLIENT_ID` (org variable): the 5Stack Ops GitHub App. Each run mints a short-lived token limited to Pull requests: read and passes it to the script as `GH_READ_TOKEN`.
+- No Claude API key. The workflow trades GitHub's OIDC token for a short-lived Claude token through workload identity federation: rule `changelog-main` and service account `5stack-changelog` (5stack workspace) on platform.claude.com. The rule only accepts `schedule` and `workflow_dispatch` runs on `main` of this repository, so pull requests and other branches can't call Claude.
 - `CHANGELOG_BLOCKLIST` (optional): customer, panel and community names or domains, one per line or comma-separated. It is a secret so the list itself stays private.
 
 ## Trying a day locally

@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: changelog
@@ -30,12 +31,30 @@ jobs:
 
       - run: npm test
 
+      - id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.OPS_APP_CLIENT_ID }}
+          private-key: ${{ secrets.OPS_APP_KEY }}
+          owner: 5stackgg
+          permission-pull-requests: read
+
+      - name: Get an identity token for the Claude API
+        run: |
+          curl -sSf -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+            "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://api.anthropic.com" \
+            | jq -r .value > "$RUNNER_TEMP/anthropic-jwt"
+
       - id: changelog
         run: node scripts/changelog.mjs
         env:
           DATE: ${{ inputs.date }}
-          GH_READ_TOKEN: ${{ secrets.GH_READ_TOKEN }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_READ_TOKEN: ${{ steps.app.outputs.token }}
+          ANTHROPIC_FEDERATION_RULE_ID: fdrl_011GAoRcNNa5XKjRjhEkXSja
+          ANTHROPIC_ORGANIZATION_ID: 6f6c11d4-6fc0-41a4-bacc-1b3998c64729
+          ANTHROPIC_SERVICE_ACCOUNT_ID: svac_013TMvkb8iqnvraQvLLhaB99
+          ANTHROPIC_WORKSPACE_ID: wrkspc_01HBxqmUuFNiUxTdi5LtpLLU
+          ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/anthropic-jwt
           CHANGELOG_BLOCKLIST: ${{ secrets.CHANGELOG_BLOCKLIST }}
 
       - if: steps.changelog.outputs.date
