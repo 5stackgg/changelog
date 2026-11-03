@@ -8,13 +8,14 @@
     {
       "month": "2026-10",
       "days": 3,
-      "hash": "3ecceb145b99db78"
+      "hash": "30192703be31e6ed"
     }
   ],
   "areas": [
     "Matchmaking",
     "Matches",
     "Tournaments",
+    "Leagues & Events",
     "Utility",
     "Coach",
     "Demos & Replays",

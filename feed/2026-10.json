@@ -263,80 +263,112 @@
     },
     {
       "date": "2026-10-29",
-      "summary": "A big day: AMD GPU support for self-hosted panels, a move to Traefik, wider demo uploads, an event ELO leaderboard, and broad speed-ups.",
+      "summary": "Today brings AMD GPU support and Traefik routing for self-hosted panels, season ELO that includes tournament matches, demo uploads for every signed-in player, and speed-ups across the site.",
       "sections": {
         "new": [
           {
+            "area": "Matches",
+            "text": "The match scoreboard lists players by ADR in every view, rows glide to their new places when the order changes, and stat numbers roll like an odometer."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "The event leaderboard has an ELO Gained tab that ranks players by how much the event's matches raised or lowered their rating. Voided matches don't count, and the tab follows the game mode the board is filtered to."
+          },
+          {
             "area": "Demos & Replays",
-            "text": "Administrators can choose who may upload demos in demo settings, and every signed-in user can upload by default. Uploads are limited per player, and an upload by a non-administrator only changes the uploader's own rating."
-          },
-          {
-            "area": "Stats & Leaderboards",
-            "text": "The event leaderboard has an ELO Gained tab that ranks players by how much the event's matches raised or lowered their rating."
+            "text": "Who can upload demos is now a setting in demo settings, next to who can watch them. By default every signed-in player can upload a .dem file from their own profile."
           },
           {
             "area": "Self-hosting",
-            "text": "AMD GPU nodes can now run live streams, demo playback and highlight rendering. The setup script labels AMD nodes and asks whether to include integrated GPUs, and the panel reports each AMD node's GPU details."
+            "text": "The panel now routes traffic through Traefik, replacing the previous ingress controller, which is no longer maintained. Updating hands the web ports over automatically, installs behind a reverse proxy keep answering on 443 as before, and the ports guide has moved under the install guides."
           },
           {
             "area": "Self-hosting",
-            "text": "The panel now routes traffic through Traefik using the Kubernetes Gateway API. Existing installs switch over during the update, reverse-proxy setups keep working on port 443, and plugins can ship their own Gateway API routes."
+            "text": "AMD GPU nodes are supported for live streams, demo playback, highlights and utility lineups. Support is full on Strix Halo and experimental on other Radeon GPUs, with one GPU vendor per cluster. The setup script labels AMD nodes and asks whether to include integrated GPUs, and the GPU guides walk through it."
           },
           {
             "area": "Self-hosting",
-            "text": "New and updated self-hosting guides cover adding AMD GPU nodes, the new ports page for Traefik, plugin Gateway API routes, fixed steps for moving off the lowlatency kernel, and the smallest recommended panel size, which now covers up to 1,000 people online."
+            "text": "Plugins can ship Traefik routes alongside their existing install. On Traefik panels these routes are used, and a plugin's old routes are removed only once the new ones are working."
           }
         ],
         "improved": [
           {
-            "area": "Matches",
-            "text": "The match scoreboard keeps players in ADR order in every view, rows glide to their new places when the order changes, and stat numbers roll like an odometer."
+            "area": "Demos & Replays",
+            "text": "Demo uploads are limited per player, and an upload you start can always be cancelled. Uploads from players who aren't administrators change only the uploader's own Premier rating and are processed after other imports."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Tournament matches now count toward the season they're played in, so a player's season ELO includes their events. Exclude Tournaments on the season leaderboard leaves out tournament results, and affected seasons are re-rated automatically a few minutes after updating."
           },
           {
             "area": "Self-hosting",
-            "text": "A running Kubernetes update shows the version it is updating to with its progress beside the title. It can no longer be stopped part way, which would leave nodes on different versions."
+            "text": "A running Kubernetes update shows a progress bar, the version it is updating to and how many nodes are done. It can no longer be stopped part way, which would leave nodes on different versions."
           },
           {
             "area": "Self-hosting",
-            "text": "After you press Update Now, the popover shows that services are updating, then closes, and the header icon spins until the update finishes."
+            "text": "Pressing Update Now in the header's update popover shows Updating and closes the popover, and the header icon spins until the services finish."
           },
           {
             "area": "Self-hosting",
-            "text": "When adding a game server node fails, the error now explains why, including when the cause is your network plan or billing."
+            "text": "Adding a game server node now explains why it failed when the node's network setup is refused, and says when the cause is your network plan or billing."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The requirements guide now says the smallest recommended panel size of 4 cores and 8 GB handles up to 1,000 people online."
           },
           {
             "area": "General",
-            "text": "The notification bell, friends list, \"my matches\" banner, matches list, Play page server list, live match count, lobby and draft status, and profile and team highlights all load faster and put less strain on busy panels. The bell, friends list and your matches also appear right away when a page opens, without waiting about a second."
+            "text": "The notification bell, friends list, \"my matches\" banner, live match lists, tournaments and the rest of what every signed-in page shows now appear right away instead of after about a second."
+          },
+          {
+            "area": "General",
+            "text": "Many parts of the site are faster, especially on busy panels: the notification bell, the friends list, the \"my matches\" banner, the nav's live match count, profile and team highlights, the matches list, the Play page's server list, practice sessions and tournament rosters."
           }
         ],
         "fixed": [
           {
-            "area": "Streams & Highlights",
-            "text": "Streams, demo playback and highlights on workshop maps no longer stop at CS2's workshop download prompt. The startup progress now shows the map download in the right order."
+            "area": "Demos & Replays",
+            "text": "If the demo upload setting holds an invalid value, uploads stay available to administrators, and their profile shows the upload option instead of hiding it from everyone."
           },
           {
             "area": "Streams & Highlights",
-            "text": "The HUD shows each team under its own name for the whole map, so map winners and series scores go to the right team."
+            "text": "The stream HUD shows each team's name on the side that team actually plays. The map-end banner and series score now go to the right team."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Live streams, demo playback and highlight clips on workshop maps no longer get stuck on CS2's workshop download prompt. The map now downloads before the game starts, and the startup steps show that download in the right order."
           },
           {
             "area": "Stats & Leaderboards",
-            "text": "Tournament matches now count toward the season they're played in, so a player's season ELO includes their events. Affected seasons are recalculated shortly after updating, and recalculating ratings no longer drops tied matches."
+            "text": "Rebuilding ratings no longer drops tied matches."
           },
           {
-            "area": "Notifications",
-            "text": "The notification bell, highlights and \"my matches\" banner no longer show outdated information after a quick change."
-          },
-          {
-            "area": "Self-hosting",
-            "text": "Panels and game nodes on Ubuntu 26.04 start correctly again, and ending a match or dedicated server stops its CS2 server."
+            "area": "Game servers",
+            "text": "On Ubuntu 26.04 game nodes, ending a match or a dedicated server stops its CS2 server again."
           },
           {
             "area": "Self-hosting",
-            "text": "The Kubernetes update no longer counts offline nodes it will skip, and no longer offers an update when only offline nodes are behind."
+            "text": "Panels on Ubuntu 26.04 start correctly again, including the database and core services."
           },
           {
             "area": "Self-hosting",
-            "text": "A GPU node preparation step that failed now keeps showing its error instead of disappearing, and the node's startup progress shows its percentage in brackets."
+            "text": "The Kubernetes update no longer counts offline nodes it will skip, and doesn't offer an update when only offline nodes are behind."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A GPU node's failed shader preparation stays marked as failed instead of disappearing a few seconds later."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The GPU node state shows the boot step's progress with a space before it, as in \"Processing Vulkan shaders (1%)\"."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The guide for moving off the lowlatency kernel now removes the other lowlatency kernels first, so the node reboots into the generic kernel. It also warns about GPU nodes whose NVIDIA driver would be affected."
+          },
+          {
+            "area": "General",
+            "text": "The notification bell, highlights and the \"my matches\" banner no longer keep showing outdated information when something changes while they are loading."
           }
         ]
       }
