@@ -22,7 +22,7 @@ Summary sentence.
 - **Fixed:** what changed.
 ```
 
-To add a section, add it to `scripts/areas.mjs` with what it covers. To rename one, also rename its headings in `entries/`, because a heading that isn't on the list is dropped along with its entries. The web app picks an icon for each section by name and shows a plain heading for a name it doesn't know yet.
+To add a section, add it to `scripts/areas.mjs` with what it covers. To rename one, also rename its headings in `entries/`, because a heading that isn't on the list is dropped along with its entries.
 
 ## What keeps private details out
 

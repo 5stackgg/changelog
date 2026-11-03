@@ -1,8 +1,7 @@
 // The sections of 5Stack an entry is filed under, in the order entries, the
-// README and the web app's changelog page show them. The web app gives each
-// name its icon, so a rename there falls back to a plain heading until the web
-// app learns it. Renaming one here also means renaming its headings in
-// entries/, because a heading that isn't on this list is dropped.
+// README and the web app's changelog page show them. Renaming one also means
+// renaming its headings in entries/, because a heading that isn't on this list
+// is dropped.
 export const AREAS = [
   { name: "Matchmaking", covers: "queues, lobbies, ready checks, the Play page and Scrim Finder" },
   {
