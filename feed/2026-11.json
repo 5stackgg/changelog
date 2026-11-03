@@ -7,24 +7,24 @@
       "sections": {
         "new": [
           {
-            "area": "Leaderboards",
+            "area": "Utility",
+            "text": "The Utility tab shows every throw on a map radar against the common lineups three or more players throw. It marks each throw as on the spot, missed or off-book, and Watch opens the 2D replay at the throw."
+          },
+          {
+            "area": "Coach",
+            "text": "Rokkan now knows when each team could hear an enemy running or shooting. Utility moments it points out are ringed on the spot in the replay."
+          },
+          {
+            "area": "Stats & Leaderboards",
             "text": "The Public Servers page has one leaderboard across every public server you can open, with game mode filters for each period. Community boards add points, community seasons, weapon boards and sortable columns for K/D, headshot %, assists, MVPs, accuracy, streaks, utility, kill types and objectives."
           },
           {
-            "area": "Profiles",
+            "area": "Players & Teams",
             "text": "The Community tab gets a game mode filter, K/D, headshot %, assists and MVPs, and tables of the modes and maps a player has played. On servers with the updated game server plugin, it also shows points, accuracy, best streak, hitgroups, kill types and a per-weapon table."
           },
           {
             "area": "Career",
             "text": "Players can wear one of 100 backgrounds behind their whole profile, 48 of them animated, with cards turning to frosted glass on top. The Locker has a Backgrounds tab, previews the background across the whole page, and lets you take off any worn item."
-          },
-          {
-            "area": "Matches",
-            "text": "The Utility tab shows every throw on a map radar against the common lineups three or more players throw. It marks each throw as on the spot, missed or off-book, and Watch opens the 2D replay at the throw."
-          },
-          {
-            "area": "Match reviews",
-            "text": "Rokkan now knows when each team could hear an enemy running or shooting. Utility moments it points out are ringed on the spot in the replay."
           },
           {
             "area": "Notifications",
@@ -49,28 +49,24 @@
         ],
         "improved": [
           {
-            "area": "Notifications",
-            "text": "Read notifications stay in place and dim, and the bulk actions are now one button in the panel heading. One click on an unread notification's dot marks it read, and one click on a read one deletes it."
+            "area": "Matches",
+            "text": "Multi-kill tiles that open a round breakdown now show a dotted underline."
           },
           {
-            "area": "Highlights",
+            "area": "Streams & Highlights",
             "text": "Clip actions are the same icons everywhere, and a clip's owner and staff get Public and Delete buttons. A deleted clip disappears from every list and playlist without a reload."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Wide leaderboards show fades and buttons on the edges that have more columns to scroll to."
           },
           {
             "area": "Career",
             "text": "Hovering a Locker tile or background no longer changes your card or the page; clicking previews it. The one-time welcome banner is gone, and profile match rows and Locker panels sit on frosted glass over a background, with long names fitting the card."
           },
           {
-            "area": "Leaderboards",
-            "text": "Wide leaderboards show fades and buttons on the edges that have more columns to scroll to."
-          },
-          {
-            "area": "Matches",
-            "text": "Multi-kill tiles that open a round breakdown now show a dotted underline."
-          },
-          {
-            "area": "Performance",
-            "text": "Joining matchmaking and the Play button's waiting count stay fast as the queue grows. Profiles and the Locker scroll more smoothly with animated backgrounds and glass cards."
+            "area": "Notifications",
+            "text": "Read notifications stay in place and dim, and the bulk actions are now one button in the panel heading. One click on an unread notification's dot marks it read, and one click on a read one deletes it."
           },
           {
             "area": "Self-hosting",
@@ -79,9 +75,25 @@
           {
             "area": "Self-hosting",
             "text": "A wrong AMD streaming memory setting is now reported when the panel starts, instead of when a demo or highlight job runs."
+          },
+          {
+            "area": "General",
+            "text": "Joining matchmaking and the Play button's waiting count stay fast as the queue grows. Profiles and the Locker scroll more smoothly with animated backgrounds and glass cards."
           }
         ],
         "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "Turning a queue off now keeps every lobby out of it, and affected players get a message saying why."
+          },
+          {
+            "area": "Matches",
+            "text": "Add New Map shows its Name field again, a Workshop map saves without pressing Refresh, and a failed Steam lookup shows an error. Deleted maps no longer appear in the practice, utility and drift pickers."
+          },
+          {
+            "area": "Matches",
+            "text": "Restoring a round backup no longer counts the stats of the round in progress twice, or removes rounds a restore can still go back to."
+          },
           {
             "area": "Tournaments",
             "text": "Tournament cards, Quick Look and the next-up strip no longer offer Register on invite-only tournaments or to players already in, and show a joined chip. Free-agent-only tournaments say \"Join as a free agent\"."
@@ -91,31 +103,19 @@
             "text": "Revoke no longer shows on calculated tournament awards, and removing a category from a tournament works again."
           },
           {
-            "area": "Maps",
-            "text": "Add New Map shows its Name field again, a Workshop map saves without pressing Refresh, and a failed Steam lookup shows an error. Deleted maps no longer appear in the practice, utility and drift pickers."
-          },
-          {
-            "area": "Practice",
+            "area": "Utility",
             "text": "Saves and results are no longer lost on a temporary error, and a retry no longer creates a duplicate lineup or counts a result twice toward streaks and mastery. A save thrown on a different map than the session is refused instead of being filed under the wrong map."
           },
           {
-            "area": "Practice",
+            "area": "Utility",
             "text": "A practice server on a different level than its booked session now switches to the booked map so saves work. The practice HUD comes back after a reconnect."
           },
           {
-            "area": "Matches",
-            "text": "Restoring a round backup no longer counts the stats of the round in progress twice, or removes rounds a restore can still go back to."
-          },
-          {
-            "area": "Matchmaking",
-            "text": "Turning a queue off now keeps every lobby out of it, and affected players get a message saying why."
-          },
-          {
-            "area": "Demos",
+            "area": "Utility",
             "text": "On a map split across two demos, Save and Watch on the Utility tab use the demo the throw came from."
           },
           {
-            "area": "Match reviews",
+            "area": "Coach",
             "text": "Rokkan no longer reports a player moving between callouts while they stand on the edge of an area. An admin's re-review reparses older demos to pick up these fixes."
           },
           {
@@ -135,16 +135,16 @@
             "text": "A group of notifications marked read no longer shows its delete button right away, so a quick second click can't delete it."
           },
           {
-            "area": "Site",
-            "text": "Pages load again when refreshed in Safari."
-          },
-          {
             "area": "Self-hosting",
             "text": "The update center no longer shows a settings change or a run started from the terminal as a panel update or a failed update."
           },
           {
             "area": "Self-hosting",
             "text": "Node tuning checks and old kernel cleanup now run correctly."
+          },
+          {
+            "area": "General",
+            "text": "Pages load again when refreshed in Safari."
           }
         ]
       }
@@ -177,20 +177,16 @@
         ],
         "improved": [
           {
-            "area": "Performance",
-            "text": "Match pages, player profiles, the play and public server lists, and the scrim board load faster and put less strain on the panel. A change someone else makes to a profile while you are viewing it, or a clip's view count or title edit, now shows on your next visit."
+            "area": "Coach",
+            "text": "Reviews, scouting reports and habits now have their own page addresses, and older links still open them. The list's tab, map and player filters are kept when you reload."
           },
           {
-            "area": "Players",
+            "area": "Players & Teams",
             "text": "Player search now lists \"Played with recently\" above Friends. You can fold that section, and it stays folded in your browser."
           },
           {
             "area": "Notifications",
             "text": "Pending team, tournament and draft invites in the bell now appear as cards with Deny and Accept buttons, and team invites name who invited you."
-          },
-          {
-            "area": "Coach",
-            "text": "Reviews, scouting reports and habits now have their own page addresses, and older links still open them. The list's tab, map and player filters are kept when you reload."
           },
           {
             "area": "Game servers",
@@ -211,16 +207,24 @@
           {
             "area": "Self-hosting",
             "text": "The nightly database backup now checks that the storage bucket belongs to your storage account before uploading. If it doesn't, the backup stops and explains how to fix it."
+          },
+          {
+            "area": "General",
+            "text": "Match pages, player profiles, the play and public server lists, and the scrim board load faster and put less strain on the panel. A change someone else makes to a profile while you are viewing it, or a clip's view count or title edit, now shows on your next visit."
           }
         ],
         "fixed": [
           {
-            "area": "Stats",
+            "area": "Coach",
+            "text": "Browser Back and Forward now step between the coach list and the review, scouting report or habits you opened."
+          },
+          {
+            "area": "Stats & Leaderboards",
             "text": "Kills, deaths and assists now count the same way everywhere. Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists. Stored career and season totals have been corrected, ELO uses the new rule from the next rated match, and tournament stats tabs now match the tournament leaderboard."
           },
           {
-            "area": "Self-hosting",
-            "text": "Panels with played matches can update again, and the leaderboard no longer errors after an update."
+            "area": "Notifications",
+            "text": "Wrapped text in slim notification rows now lines up with the row's edge, and paused match rows are the same height as other rows. The award notification's badge no longer covers its title, and the card now leads with the award's name."
           },
           {
             "area": "Game servers",
@@ -236,15 +240,11 @@
           },
           {
             "area": "Self-hosting",
+            "text": "Panels with played matches can update again, and the leaderboard no longer errors after an update."
+          },
+          {
+            "area": "Self-hosting",
             "text": "The node picker in the setup scripts now accepts only a number from its list and asks again otherwise."
-          },
-          {
-            "area": "Notifications",
-            "text": "Wrapped text in slim notification rows now lines up with the row's edge, and paused match rows are the same height as other rows. The award notification's badge no longer covers its title, and the card now leads with the award's name."
-          },
-          {
-            "area": "Coach",
-            "text": "Browser Back and Forward now step between the coach list and the review, scouting report or habits you opened."
           }
         ]
       }

@@ -3,45 +3,29 @@
     {
       "month": "2026-11",
       "days": 2,
-      "hash": "3d07adfc3858fdbb"
+      "hash": "28d4bc1e6fdbf1ed"
     },
     {
       "month": "2026-10",
       "days": 3,
-      "hash": "ef91fa1ae6d87c4e"
+      "hash": "3ecceb145b99db78"
     }
   ],
   "areas": [
-    "Accounts",
-    "Career",
-    "Changelog",
-    "Coach",
-    "Demos",
-    "Docs",
-    "Game servers",
-    "Highlights",
-    "Leaderboards",
-    "Live updates",
-    "Maps",
-    "Match reviews",
-    "Matches",
     "Matchmaking",
-    "Moderation",
-    "Notifications",
-    "Performance",
-    "Players",
-    "Practice",
-    "Profiles",
-    "Radar",
-    "Seasons",
-    "Self-hosting",
-    "Site",
-    "Stats",
-    "Steam",
-    "Streams",
-    "Support 5Stack",
-    "Teams",
+    "Matches",
     "Tournaments",
-    "Welcome"
+    "Utility",
+    "Coach",
+    "Demos & Replays",
+    "Streams & Highlights",
+    "Stats & Leaderboards",
+    "Players & Teams",
+    "Career",
+    "Notifications",
+    "Moderation",
+    "Game servers",
+    "Self-hosting",
+    "General"
   ]
 }
