@@ -135,128 +135,156 @@
     },
     {
       "date": "2026-10-30",
-      "summary": "Today brings Rokkan, an AI coach that reviews matches and scouts opponents, along with player and chat reports, team roster history, VAC Off matches and more control over game server nodes.",
+      "summary": "Today brings Rokkan, the AI coach, plus player and chat reports, team roster history, VAC Off matches and more control over what each game server node hosts.",
       "sections": {
         "new": [
           {
             "area": "Matches",
-            "text": "Organizers can turn VAC off for a match, and admins can do the same for a dedicated server. The match page asks for a reboot when the running server doesn't match the setting, and VAC-off matches only use servers that allow it."
+            "text": "Organizers can turn VAC off for a match from a new Server Launch card in Match Options. When the running server doesn't match the setting, the match page asks for a server reboot, and the VAC Off badge shows what the server is actually running."
           },
           {
             "area": "Coach",
-            "text": "A new Coach page lists Rokkan's reviews of your matches, scouting on your next scrim or tournament opponent, and your tendencies. Each review moment opens the 2D replay at that round, and a scheduled match shows a Rokkan briefing in its header."
+            "text": "Rokkan, 5Stack's AI coach, reviews your finished matches and scouts your next scrim or tournament opponent. A new Coach page lists your reviews, scouting and tendencies, each review moment opens the 2D replay at that round, and scheduled matches show a Rokkan briefing in their header."
           },
           {
             "area": "Coach",
-            "text": "One verified player in a match unlocks Rokkan reviews for every signed-in player in it, including imported matches. Players who have friended a 5Stack bot also get their review and scouting briefing as a Steam message, and administrators can ask Rokkan to review any finished match."
+            "text": "Rokkan also reviews imported matches, and one verified player in a match unlocks reviews for every signed-in player in it. Reviews and scouting briefings also arrive as Steam messages for players who added a 5Stack bot as a friend."
+          },
+          {
+            "area": "Coach",
+            "text": "Administrators can ask Rokkan to review any finished match from the match's actions menu."
           },
           {
             "area": "Players & Teams",
-            "text": "Player profiles have a Teams tab showing the teams a player joined and left. Team pages show a roster history timeline, and joins, leaves and removals appear in the activity feed."
+            "text": "Player profiles have a Teams tab showing the teams a player joined and left over time. Team pages show a roster history, and join and leave rows now appear in the team's activity feed."
           },
           {
             "area": "Moderation",
-            "text": "Players can report someone they played with in the last 30 days from their profile or the scoreboard. Moderators handle each reported player as one case in a new Player Reports tab, and the reporter is told the outcome."
+            "text": "Players can report someone they played with in the last 30 days from their profile or the scoreboard. Moderators handle each reported player as one case in a new Player Reports tab, and the reporter hears the outcome in the notification bell."
           },
           {
             "area": "Moderation",
-            "text": "Players can report chat messages, and moderators handle them from a new moderation queue. Admins can set blocked words that are masked in chat, and when Rokkan is connected it reviews group chat and removed lines show as \"Message removed by Rokkan\"."
+            "text": "Players can report chat messages, and moderators handle them from a new moderation queue. Admins can set blocked words, which are masked in chat, and can turn on Rokkan chat moderation, which shows removed lines as \"Message removed by Rokkan\"."
           },
           {
             "area": "Game servers",
-            "text": "Admins can choose which match types each node hosts, whether it takes practice servers, or make it practice-only. Highlight clips get their own GPU switch, separate from lineup renders."
+            "text": "Each game server node can choose which match types it hosts and whether it takes practice servers, including nodes that host practice servers only. Highlight clips get their own GPU switch, separate from lineup renders."
           },
           {
             "area": "Game servers",
-            "text": "Region pickers for matches, tournament stages, quick queue and practice leave out regions that can't host that match type. The region page shows how many nodes take each type."
+            "text": "Administrators can mark dedicated servers VAC Off. VAC-off matches only use on-demand servers or VAC-off dedicated servers, and other matches are never placed on VAC-off servers."
+          },
+          {
+            "area": "Game servers",
+            "text": "Nodes warn when they need a reboot to finish installing updates, including an NVIDIA driver that no longer matches the one loaded. Ubuntu nodes also warn when automatic security updates are off and show the command to turn them on."
           },
           {
             "area": "Self-hosting",
-            "text": "Nodes now warn when they need a reboot to finish installing updates, when the NVIDIA driver no longer matches the loaded one, or when automatic security updates are off on Ubuntu. To run these checks, the node connector reads some host system folders read-only, and a GPU node already waiting on a driver reboot needs that reboot before its connector starts again."
+            "text": "The System Logs page shows how many times each service and pod has restarted. One click opens the run that crashed, with its exit reason, and you can download that run."
           },
           {
             "area": "Self-hosting",
-            "text": "Node to-dos now lead the header's update popover, worst first. A node's inspector shows the steps or command to fix each warning."
+            "text": "The header's update menu opens with a Needs attention list of node warnings, worst first. A node's inspector shows the fix for each warning, with a copy button for commands."
           },
           {
             "area": "Self-hosting",
-            "text": "The System Logs page shows how many times each service and pod restarted. One click opens the run that crashed, which you can also download."
-          },
-          {
-            "area": "Self-hosting",
-            "text": "Panels can opt in to deploying Rokkan, the AI service, with its own separate database. Updates now keep it current on installs where it is set up."
+            "text": "Self-hosted panels can opt in to deploying Rokkan, the AI service."
           },
           {
             "area": "General",
-            "text": "A new Changelog page shows the daily changes, with search and filters across the whole history. You can open it from the account menu or the command palette."
+            "text": "A changelog page at /changelog lists these daily summaries, with search and filters by kind and area across the whole history. It's linked from the user menu and the command menu."
           },
           {
             "area": "General",
-            "text": "The welcome page shows Scrim Finder, community servers, leagues and events as preview cards. A new page shows guests what running your own 5Stack looks like."
+            "text": "The welcome page shows Scrim Finder, community servers, leagues and events as preview cards under Play and Compete. A new Run your own page shows what running your own 5Stack looks like."
           }
         ],
         "improved": [
           {
+            "area": "Utility",
+            "text": "The practice server radar places markers with Valve's own map calibration. On Nuke, Train and Vertigo it switches to the lower-floor image while you stand on that floor."
+          },
+          {
             "area": "Demos & Replays",
-            "text": "Parsed demos now record callouts for positions, kills and grenades. Round inventories now reflect the loadout when buy time ends, so late buyers and second flashbangs show up correctly."
+            "text": "Demo parsing records callouts for positions, kills and grenades. Round loadouts now show what players held when buy time ended, so late buyers no longer appear empty-handed, and a second flashbang is counted."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Radars are recalibrated for every map, and bomb-site markings follow each site's actual bounds."
           },
           {
             "area": "Stats & Leaderboards",
-            "text": "K/D, HS% and rating boards filtered by source or role load much faster. K/D and HS% ranks are back on player panels."
+            "text": "Leaderboards filtered by source or role load much faster, and the player panel shows K/D and HS% ranks again."
+          },
+          {
+            "area": "Game servers",
+            "text": "Region pickers in match options, tournament stages, quick queue and practice only offer regions that can host that match type. A LAN match can't be saved when no LAN region hosts its type."
           },
           {
             "area": "Self-hosting",
-            "text": "Update Now closes the popover and shows progress immediately. Refreshing the page still shows the update running, so it isn't started twice."
-          },
-          {
-            "area": "Self-hosting",
-            "text": "The API, web app, demo parser, node connector and browser extension are now under the run-only 5Stack License, and earlier versions keep their previous licenses. The docs' license page lists which parts remain open source."
+            "text": "Pressing Update Now closes the update menu and starts the spinner straight away. A page refresh still shows the update running, so it isn't started twice."
           },
           {
             "area": "General",
-            "text": "All open tabs now share one live connection, and signed-in pages reload parts like invites, lobbies, teams and notifications only when they change. Both changes make pages respond faster."
+            "text": "Signed-in pages put much less load on the site. All your open tabs share one live connection, and the parts of every page that follow you, such as invites, lobby, teams, notifications and your matches, are fetched again only when they change."
+          },
+          {
+            "area": "General",
+            "text": "The web app, API, demo parser, node connector, game streamer and browser extension move to the run-only 5Stack License. 5Stack stays free to self-host, and earlier versions keep their previous licenses."
           }
         ],
         "fixed": [
           {
             "area": "Matches",
-            "text": "A late duplicate status from a game server no longer sends a live map back to warmup or loses a map's final result."
+            "text": "A map being played no longer drops back to warmup when an older status arrives late. A map's result is no longer lost when the end of the map arrives out of order."
           },
           {
             "area": "Matches",
-            "text": "A live match's header no longer says \"Auto Canceling\" while a map is being played, and during warmup it shows \"Deadline in\"."
+            "text": "A live match's header no longer says \"Auto Canceling\" while a map is being played. During warmup and between maps it shows a deadline instead."
           },
           {
             "area": "Matches",
-            "text": "Matches on dedicated servers hosted on a 5Stack node are no longer offered Reboot Server. When such a server drops, the match shows Offline instead of Booting."
+            "text": "Matches on a dedicated server hosted on a 5Stack node no longer offer Reboot Server, and they show Offline rather than Booting when the server drops. The server picker now shows the server instead of a region."
           },
           {
-            "area": "Demos & Replays",
-            "text": "The in-game practice radar places markers accurately and switches to the lower floor on Nuke, Train and Vertigo. Replay radars are recalibrated, and bomb sites are drawn at their real positions."
-          },
-          {
-            "area": "Streams & Highlights",
-            "text": "Live streams download every workshop map left in the series, so they no longer stop at a download prompt on map 2 or 3."
+            "area": "Coach",
+            "text": "When you link your match history, the newest match reliably gets its review, and older matches from the backlog are no longer reviewed."
           },
           {
             "area": "Streams & Highlights",
-            "text": "Rendered highlight clips get their thumbnails again."
+            "text": "Live streams of a series with workshop maps no longer stall on CS2's download prompt when the match moves to map 2 or 3."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Rendered highlight clips get their thumbnail again."
           },
           {
             "area": "Game servers",
-            "text": "The node connector starts again after its latest update. It also keeps running when a game server crashes, a demo can't be read or a network interface disappears."
+            "text": "The node connector keeps running when a game server drops its connection, a demo can't be read or a network interface disappears."
           },
           {
-            "area": "Self-hosting",
-            "text": "The panel keeps running when a log view is closed, a server reboots with its logs open, or a download is interrupted. Log zip downloads covering several pods or containers no longer fail."
-          },
-          {
-            "area": "Self-hosting",
+            "area": "Game servers",
             "text": "Node warnings that aren't about the CPU are no longer labelled as CPU problems."
           },
           {
+            "area": "Self-hosting",
+            "text": "Update checks now include the AI service on installs that have it set up, so it stays up to date."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "System Logs downloads of a pod with several containers, or of several pods, work again. A download whose log drops partway now fails instead of hanging."
+          },
+          {
             "area": "General",
-            "text": "The Community servers and Events previews load instead of showing an empty box. The match page preview no longer captures the mouse wheel."
+            "text": "The site stays up when an unexpected error happens, including when someone closes a log view or leaves partway through downloading an avatar, clip or image."
+          },
+          {
+            "area": "General",
+            "text": "Chat rooms now share only the name, avatar and status that chat shows for each member."
+          },
+          {
+            "area": "General",
+            "text": "The match page preview on the welcome page no longer captures the mouse wheel."
           }
         ]
       }

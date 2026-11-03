@@ -160,56 +160,65 @@ Today brings a redesigned Rokkan coach with team reviews, a reorganized notifica
 
 ## Friday, October 30, 2026
 
-Today brings Rokkan, an AI coach that reviews matches and scouts opponents, along with player and chat reports, team roster history, VAC Off matches and more control over game server nodes.
+Today brings Rokkan, the AI coach, plus player and chat reports, team roster history, VAC Off matches and more control over what each game server node hosts.
 
 ### Matches
-- **New:** Organizers can turn VAC off for a match, and admins can do the same for a dedicated server. The match page asks for a reboot when the running server doesn't match the setting, and VAC-off matches only use servers that allow it.
-- **Fixed:** A late duplicate status from a game server no longer sends a live map back to warmup or loses a map's final result.
-- **Fixed:** A live match's header no longer says "Auto Canceling" while a map is being played, and during warmup it shows "Deadline in".
-- **Fixed:** Matches on dedicated servers hosted on a 5Stack node are no longer offered Reboot Server. When such a server drops, the match shows Offline instead of Booting.
+- **New:** Organizers can turn VAC off for a match from a new Server Launch card in Match Options. When the running server doesn't match the setting, the match page asks for a server reboot, and the VAC Off badge shows what the server is actually running.
+- **Fixed:** A map being played no longer drops back to warmup when an older status arrives late. A map's result is no longer lost when the end of the map arrives out of order.
+- **Fixed:** A live match's header no longer says "Auto Canceling" while a map is being played. During warmup and between maps it shows a deadline instead.
+- **Fixed:** Matches on a dedicated server hosted on a 5Stack node no longer offer Reboot Server, and they show Offline rather than Booting when the server drops. The server picker now shows the server instead of a region.
+
+### Utility
+- **Improved:** The practice server radar places markers with Valve's own map calibration. On Nuke, Train and Vertigo it switches to the lower-floor image while you stand on that floor.
 
 ### Coach
-- **New:** A new Coach page lists Rokkan's reviews of your matches, scouting on your next scrim or tournament opponent, and your tendencies. Each review moment opens the 2D replay at that round, and a scheduled match shows a Rokkan briefing in its header.
-- **New:** One verified player in a match unlocks Rokkan reviews for every signed-in player in it, including imported matches. Players who have friended a 5Stack bot also get their review and scouting briefing as a Steam message, and administrators can ask Rokkan to review any finished match.
+- **New:** Rokkan, 5Stack's AI coach, reviews your finished matches and scouts your next scrim or tournament opponent. A new Coach page lists your reviews, scouting and tendencies, each review moment opens the 2D replay at that round, and scheduled matches show a Rokkan briefing in their header.
+- **New:** Rokkan also reviews imported matches, and one verified player in a match unlocks reviews for every signed-in player in it. Reviews and scouting briefings also arrive as Steam messages for players who added a 5Stack bot as a friend.
+- **New:** Administrators can ask Rokkan to review any finished match from the match's actions menu.
+- **Fixed:** When you link your match history, the newest match reliably gets its review, and older matches from the backlog are no longer reviewed.
 
 ### Demos & Replays
-- **Improved:** Parsed demos now record callouts for positions, kills and grenades. Round inventories now reflect the loadout when buy time ends, so late buyers and second flashbangs show up correctly.
-- **Fixed:** The in-game practice radar places markers accurately and switches to the lower floor on Nuke, Train and Vertigo. Replay radars are recalibrated, and bomb sites are drawn at their real positions.
+- **Improved:** Demo parsing records callouts for positions, kills and grenades. Round loadouts now show what players held when buy time ended, so late buyers no longer appear empty-handed, and a second flashbang is counted.
+- **Improved:** Radars are recalibrated for every map, and bomb-site markings follow each site's actual bounds.
 
 ### Streams & Highlights
-- **Fixed:** Live streams download every workshop map left in the series, so they no longer stop at a download prompt on map 2 or 3.
-- **Fixed:** Rendered highlight clips get their thumbnails again.
+- **Fixed:** Live streams of a series with workshop maps no longer stall on CS2's download prompt when the match moves to map 2 or 3.
+- **Fixed:** Rendered highlight clips get their thumbnail again.
 
 ### Stats & Leaderboards
-- **Improved:** K/D, HS% and rating boards filtered by source or role load much faster. K/D and HS% ranks are back on player panels.
+- **Improved:** Leaderboards filtered by source or role load much faster, and the player panel shows K/D and HS% ranks again.
 
 ### Players & Teams
-- **New:** Player profiles have a Teams tab showing the teams a player joined and left. Team pages show a roster history timeline, and joins, leaves and removals appear in the activity feed.
+- **New:** Player profiles have a Teams tab showing the teams a player joined and left over time. Team pages show a roster history, and join and leave rows now appear in the team's activity feed.
 
 ### Moderation
-- **New:** Players can report someone they played with in the last 30 days from their profile or the scoreboard. Moderators handle each reported player as one case in a new Player Reports tab, and the reporter is told the outcome.
-- **New:** Players can report chat messages, and moderators handle them from a new moderation queue. Admins can set blocked words that are masked in chat, and when Rokkan is connected it reviews group chat and removed lines show as "Message removed by Rokkan".
+- **New:** Players can report someone they played with in the last 30 days from their profile or the scoreboard. Moderators handle each reported player as one case in a new Player Reports tab, and the reporter hears the outcome in the notification bell.
+- **New:** Players can report chat messages, and moderators handle them from a new moderation queue. Admins can set blocked words, which are masked in chat, and can turn on Rokkan chat moderation, which shows removed lines as "Message removed by Rokkan".
 
 ### Game servers
-- **New:** Admins can choose which match types each node hosts, whether it takes practice servers, or make it practice-only. Highlight clips get their own GPU switch, separate from lineup renders.
-- **New:** Region pickers for matches, tournament stages, quick queue and practice leave out regions that can't host that match type. The region page shows how many nodes take each type.
-- **Fixed:** The node connector starts again after its latest update. It also keeps running when a game server crashes, a demo can't be read or a network interface disappears.
-
-### Self-hosting
-- **New:** Nodes now warn when they need a reboot to finish installing updates, when the NVIDIA driver no longer matches the loaded one, or when automatic security updates are off on Ubuntu. To run these checks, the node connector reads some host system folders read-only, and a GPU node already waiting on a driver reboot needs that reboot before its connector starts again.
-- **New:** Node to-dos now lead the header's update popover, worst first. A node's inspector shows the steps or command to fix each warning.
-- **New:** The System Logs page shows how many times each service and pod restarted. One click opens the run that crashed, which you can also download.
-- **New:** Panels can opt in to deploying Rokkan, the AI service, with its own separate database. Updates now keep it current on installs where it is set up.
-- **Improved:** Update Now closes the popover and shows progress immediately. Refreshing the page still shows the update running, so it isn't started twice.
-- **Improved:** The API, web app, demo parser, node connector and browser extension are now under the run-only 5Stack License, and earlier versions keep their previous licenses. The docs' license page lists which parts remain open source.
-- **Fixed:** The panel keeps running when a log view is closed, a server reboots with its logs open, or a download is interrupted. Log zip downloads covering several pods or containers no longer fail.
+- **New:** Each game server node can choose which match types it hosts and whether it takes practice servers, including nodes that host practice servers only. Highlight clips get their own GPU switch, separate from lineup renders.
+- **New:** Administrators can mark dedicated servers VAC Off. VAC-off matches only use on-demand servers or VAC-off dedicated servers, and other matches are never placed on VAC-off servers.
+- **New:** Nodes warn when they need a reboot to finish installing updates, including an NVIDIA driver that no longer matches the one loaded. Ubuntu nodes also warn when automatic security updates are off and show the command to turn them on.
+- **Improved:** Region pickers in match options, tournament stages, quick queue and practice only offer regions that can host that match type. A LAN match can't be saved when no LAN region hosts its type.
+- **Fixed:** The node connector keeps running when a game server drops its connection, a demo can't be read or a network interface disappears.
 - **Fixed:** Node warnings that aren't about the CPU are no longer labelled as CPU problems.
 
+### Self-hosting
+- **New:** The System Logs page shows how many times each service and pod has restarted. One click opens the run that crashed, with its exit reason, and you can download that run.
+- **New:** The header's update menu opens with a Needs attention list of node warnings, worst first. A node's inspector shows the fix for each warning, with a copy button for commands.
+- **New:** Self-hosted panels can opt in to deploying Rokkan, the AI service.
+- **Improved:** Pressing Update Now closes the update menu and starts the spinner straight away. A page refresh still shows the update running, so it isn't started twice.
+- **Fixed:** Update checks now include the AI service on installs that have it set up, so it stays up to date.
+- **Fixed:** System Logs downloads of a pod with several containers, or of several pods, work again. A download whose log drops partway now fails instead of hanging.
+
 ### General
-- **New:** A new Changelog page shows the daily changes, with search and filters across the whole history. You can open it from the account menu or the command palette.
-- **New:** The welcome page shows Scrim Finder, community servers, leagues and events as preview cards. A new page shows guests what running your own 5Stack looks like.
-- **Improved:** All open tabs now share one live connection, and signed-in pages reload parts like invites, lobbies, teams and notifications only when they change. Both changes make pages respond faster.
-- **Fixed:** The Community servers and Events previews load instead of showing an empty box. The match page preview no longer captures the mouse wheel.
+- **New:** A changelog page at /changelog lists these daily summaries, with search and filters by kind and area across the whole history. It's linked from the user menu and the command menu.
+- **New:** The welcome page shows Scrim Finder, community servers, leagues and events as preview cards under Play and Compete. A new Run your own page shows what running your own 5Stack looks like.
+- **Improved:** Signed-in pages put much less load on the site. All your open tabs share one live connection, and the parts of every page that follow you, such as invites, lobby, teams, notifications and your matches, are fetched again only when they change.
+- **Improved:** The web app, API, demo parser, node connector, game streamer and browser extension move to the run-only 5Stack License. 5Stack stays free to self-host, and earlier versions keep their previous licenses.
+- **Fixed:** The site stays up when an unexpected error happens, including when someone closes a log view or leaves partway through downloading an avatar, clip or image.
+- **Fixed:** Chat rooms now share only the name, avatar and status that chat shows for each member.
+- **Fixed:** The match page preview on the welcome page no longer captures the mouse wheel.
 
 ## Thursday, October 29, 2026
 
