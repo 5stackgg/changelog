@@ -2,8 +2,8 @@
   "months": [
     {
       "month": "2026-11",
-      "days": 1,
-      "hash": "ee3d02ba00efd6a5"
+      "days": 2,
+      "hash": "3d07adfc3858fdbb"
     },
     {
       "month": "2026-10",
@@ -22,20 +22,26 @@
     "Highlights",
     "Leaderboards",
     "Live updates",
+    "Maps",
+    "Match reviews",
     "Matches",
     "Matchmaking",
     "Moderation",
     "Notifications",
     "Performance",
     "Players",
+    "Practice",
+    "Profiles",
     "Radar",
     "Seasons",
     "Self-hosting",
+    "Site",
     "Stats",
     "Steam",
     "Streams",
     "Support 5Stack",
     "Teams",
+    "Tournaments",
     "Welcome"
   ]
 }
