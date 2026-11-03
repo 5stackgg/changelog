@@ -1,6 +1,7 @@
 {
   "name": "changelog",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "scripts": {
     "changelog": "node scripts/changelog.mjs",
