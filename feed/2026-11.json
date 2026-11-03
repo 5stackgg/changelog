@@ -151,100 +151,112 @@
     },
     {
       "date": "2026-11-01",
-      "summary": "Today adds career levels with the Locker, node uninstall from the panel and a Panel updates settings page, and fixes how kills and assists are counted.",
+      "summary": "Career levels and the Locker arrive, stats count team kills and suicides the same way everywhere, and self-hosted panels get clearer update controls and easier node removal.",
       "sections": {
         "new": [
           {
             "area": "Career",
-            "text": "Players now earn career levels and Stacks, and can spend Stacks in the Locker on frames, banners, nameplates and level badges. Their look shows on player rows, profile cards and the new Career page, and admins can grant looks."
+            "text": "Career levels arrive, with frames, level badges and nameplates on player rows and profile cards, a Career page with your track, the Locker and Stacks, match rewards and a one-time welcome banner. Applying a look in the Locker buys and wears it on your account, and banners and frames come with a pattern you can reroll for Stacks."
           },
           {
             "area": "Game servers",
-            "text": "Removing a node can now also uninstall 5Stack from its server, and the dialog follows the uninstall until it finishes. If the uninstall fails, the dialog shows the error and offers Remove Anyway."
+            "text": "On agent-managed panels, removing a node can also uninstall 5Stack from its server, and this option is on by default. The dialog keeps showing progress after a reload and offers Remove Anyway if the uninstall fails."
           },
           {
             "area": "Self-hosting",
-            "text": "A new Panel updates settings page lets you choose when the 5Stack service installs updates, and it shows your current release and channel. On managed panels the header button now appears only when an update needs your attention."
+            "text": "Managed panels have a Settings > Panel updates page for choosing when updates install. The header now shows the panel only when an update is waiting on you."
           },
           {
             "area": "Self-hosting",
-            "text": "Panels that keep their secrets in an external store now show in the header when those secrets can't sync, with the reason, how long the problem has lasted and a Check Now button. A new settings page shows which step is failing and how to fix it, and an update that is missing secrets lists them before it starts."
+            "text": "Managed panels that keep secrets in an external secret store now warn in the header when secrets can't sync, with a settings page that lists each failing secret, why it fails and how to fix it. Check Now asks for a resync, and an update that is missing secrets lists them before it starts."
           },
           {
             "area": "Self-hosting",
-            "text": "Panels installed from a git checkout can move onto the 5Stack service with one command, keeping their configuration and secrets."
+            "text": "When a panel update rolls back, admins get a notification with the reason and the header shows it in amber. Automatic and scheduled updates skip a release that failed on your panel, and you can still install it with Update Now."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Existing panels installed from a git checkout can move onto the 5Stack service and keep their configuration and secrets."
           }
         ],
         "improved": [
           {
             "area": "Coach",
-            "text": "Reviews, scouting reports and habits now have their own page addresses, and older links still open them. The list's tab, map and player filters are kept when you reload."
+            "text": "Coach reviews, scouting reports and habits now have their own page addresses, and older review and scouting links still open the right page."
           },
           {
             "area": "Players & Teams",
-            "text": "Player search now lists \"Played with recently\" above Friends. You can fold that section, and it stays folded in your browser."
+            "text": "Player search shows Played with recently above Friends, and you can fold the section shut. It stays folded in that browser."
           },
           {
             "area": "Notifications",
-            "text": "Pending team, tournament and draft invites in the bell now appear as cards with Deny and Accept buttons, and team invites name who invited you."
+            "text": "Pending team, tournament and draft invites in the bell now show as cards with Deny and Accept under the headline, and a plain team invite names who invited you and to which team."
           },
           {
             "area": "Game servers",
-            "text": "Adding a node looks up the join code as soon as you enter the sixth digit."
+            "text": "Adding a node with a join code looks the code up as soon as the sixth digit is entered, so there is no Find button to press."
           },
           {
             "area": "Game servers",
-            "text": "The slow CPU governor warning now links its guide and gives the command to run with a copy button. Nodes whose governor can't be read no longer show the warning."
+            "text": "The slow CPU governor warning gives the command to fix it, with a copy button, and links to the CPU Governance docs. Nodes whose governor can't be read no longer show the warning."
           },
           {
             "area": "Self-hosting",
-            "text": "During a panel update, new matches are held only when the update needs it, and your own node on/off settings are left alone. Waiting matches start when the update finishes, and an update stuck for an hour releases the hold."
+            "text": "The header's panel row now reads as one line, such as \"Panel 2026.11.1.2 is ready\"."
           },
           {
             "area": "Self-hosting",
-            "text": "An update that rolls back now sends its own notification with the reason and shows in amber in the header. Automatic and scheduled updates skip a release that failed on your panel, though you can still install it with Update Now."
+            "text": "New matches are held during a panel update only when the update needs it, and matches already running carry on. Your own node on/off settings are no longer changed, and held matches start once the update finishes."
           },
           {
             "area": "Self-hosting",
-            "text": "The nightly database backup now checks that the storage bucket belongs to your storage account before uploading. If it doesn't, the backup stops and explains how to fix it."
+            "text": "The nightly database backup checks that the storage bucket belongs to your S3 account before uploading, and the backup job shows as failed if it doesn't."
           },
           {
             "area": "General",
-            "text": "Match pages, player profiles, the play and public server lists, and the scrim board load faster and put less strain on the panel. A change someone else makes to a profile while you are viewing it, or a clip's view count or title edit, now shows on your next visit."
+            "text": "Several pages put less load on the site while open and stay faster under heavy traffic: match page highlight clips, player profiles, the Play page and public server lists, and the Scrim Finder board."
           }
         ],
         "fixed": [
           {
             "area": "Coach",
-            "text": "Browser Back and Forward now step between the coach list and the review, scouting report or habits you opened."
+            "text": "Opening a review, scouting report or habits on the coach page now adds a browser history step, so Back returns to the list. The list's tab, map and player filters survive a reload."
           },
           {
             "area": "Stats & Leaderboards",
-            "text": "Kills, deaths and assists now count the same way everywhere. Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists. Stored career and season totals have been corrected, ELO uses the new rule from the next rated match, and tournament stats tabs now match the tournament leaderboard."
+            "text": "Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists, and stored lifetime and season totals have been corrected. Tournament and event stats tabs now match the tournament leaderboard, and ELO and stage tiebreakers use the same rule from the next match on."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Played with recently in player search now lists the players you recently played with instead of staying empty."
           },
           {
             "area": "Notifications",
-            "text": "Wrapped text in slim notification rows now lines up with the row's edge, and paused match rows are the same height as other rows. The award notification's badge no longer covers its title, and the card now leads with the award's name."
+            "text": "In slim notification rows, wrapped lines now start at the row's edge, and a paused match row is the same height as other rows."
+          },
+          {
+            "area": "Notifications",
+            "text": "The award notification now leads with the award's name and shows its badge on the right, so the badge no longer covers the title."
           },
           {
             "area": "Game servers",
-            "text": "A node removed from its own server's command line now also disappears from the panel."
+            "text": "A node added with a join code now starts enabled and takes matches right away."
           },
           {
             "area": "Game servers",
-            "text": "Nodes added with a join code now come online enabled instead of waiting for an admin to turn them on."
+            "text": "A node removed from its own server with the 5Stack command line now also disappears from the panel."
           },
           {
             "area": "Game servers",
-            "text": "Panels installed by the 5Stack service no longer show game server nodes as unsupported when node networking is set up."
+            "text": "On panels installed by the 5Stack service, game server nodes are no longer shown as unsupported when node networking is already set up."
           },
           {
             "area": "Self-hosting",
-            "text": "Panels with played matches can update again, and the leaderboard no longer errors after an update."
+            "text": "Panels with played matches can update again, and the leaderboard no longer fails after an update."
           },
           {
             "area": "Self-hosting",
-            "text": "The node picker in the setup scripts now accepts only a number from its list and asks again otherwise."
+            "text": "The setup scripts' node prompt only accepts a number from its list and asks again otherwise."
           }
         ]
       }

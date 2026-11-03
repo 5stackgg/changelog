@@ -66,45 +66,48 @@ Today brings community leaderboards with detailed stats, profile backgrounds, a 
 
 ## Sunday, November 1, 2026
 
-Today adds career levels with the Locker, node uninstall from the panel and a Panel updates settings page, and fixes how kills and assists are counted.
+Career levels and the Locker arrive, stats count team kills and suicides the same way everywhere, and self-hosted panels get clearer update controls and easier node removal.
 
 ### Coach
-- **Improved:** Reviews, scouting reports and habits now have their own page addresses, and older links still open them. The list's tab, map and player filters are kept when you reload.
-- **Fixed:** Browser Back and Forward now step between the coach list and the review, scouting report or habits you opened.
+- **Improved:** Coach reviews, scouting reports and habits now have their own page addresses, and older review and scouting links still open the right page.
+- **Fixed:** Opening a review, scouting report or habits on the coach page now adds a browser history step, so Back returns to the list. The list's tab, map and player filters survive a reload.
 
 ### Stats & Leaderboards
-- **Fixed:** Kills, deaths and assists now count the same way everywhere. Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists. Stored career and season totals have been corrected, ELO uses the new rule from the next rated match, and tournament stats tabs now match the tournament leaderboard.
+- **Fixed:** Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists, and stored lifetime and season totals have been corrected. Tournament and event stats tabs now match the tournament leaderboard, and ELO and stage tiebreakers use the same rule from the next match on.
 
 ### Players & Teams
-- **Improved:** Player search now lists "Played with recently" above Friends. You can fold that section, and it stays folded in your browser.
+- **Improved:** Player search shows Played with recently above Friends, and you can fold the section shut. It stays folded in that browser.
+- **Fixed:** Played with recently in player search now lists the players you recently played with instead of staying empty.
 
 ### Career
-- **New:** Players now earn career levels and Stacks, and can spend Stacks in the Locker on frames, banners, nameplates and level badges. Their look shows on player rows, profile cards and the new Career page, and admins can grant looks.
+- **New:** Career levels arrive, with frames, level badges and nameplates on player rows and profile cards, a Career page with your track, the Locker and Stacks, match rewards and a one-time welcome banner. Applying a look in the Locker buys and wears it on your account, and banners and frames come with a pattern you can reroll for Stacks.
 
 ### Notifications
-- **Improved:** Pending team, tournament and draft invites in the bell now appear as cards with Deny and Accept buttons, and team invites name who invited you.
-- **Fixed:** Wrapped text in slim notification rows now lines up with the row's edge, and paused match rows are the same height as other rows. The award notification's badge no longer covers its title, and the card now leads with the award's name.
+- **Improved:** Pending team, tournament and draft invites in the bell now show as cards with Deny and Accept under the headline, and a plain team invite names who invited you and to which team.
+- **Fixed:** In slim notification rows, wrapped lines now start at the row's edge, and a paused match row is the same height as other rows.
+- **Fixed:** The award notification now leads with the award's name and shows its badge on the right, so the badge no longer covers the title.
 
 ### Game servers
-- **New:** Removing a node can now also uninstall 5Stack from its server, and the dialog follows the uninstall until it finishes. If the uninstall fails, the dialog shows the error and offers Remove Anyway.
-- **Improved:** Adding a node looks up the join code as soon as you enter the sixth digit.
-- **Improved:** The slow CPU governor warning now links its guide and gives the command to run with a copy button. Nodes whose governor can't be read no longer show the warning.
-- **Fixed:** A node removed from its own server's command line now also disappears from the panel.
-- **Fixed:** Nodes added with a join code now come online enabled instead of waiting for an admin to turn them on.
-- **Fixed:** Panels installed by the 5Stack service no longer show game server nodes as unsupported when node networking is set up.
+- **New:** On agent-managed panels, removing a node can also uninstall 5Stack from its server, and this option is on by default. The dialog keeps showing progress after a reload and offers Remove Anyway if the uninstall fails.
+- **Improved:** Adding a node with a join code looks the code up as soon as the sixth digit is entered, so there is no Find button to press.
+- **Improved:** The slow CPU governor warning gives the command to fix it, with a copy button, and links to the CPU Governance docs. Nodes whose governor can't be read no longer show the warning.
+- **Fixed:** A node added with a join code now starts enabled and takes matches right away.
+- **Fixed:** A node removed from its own server with the 5Stack command line now also disappears from the panel.
+- **Fixed:** On panels installed by the 5Stack service, game server nodes are no longer shown as unsupported when node networking is already set up.
 
 ### Self-hosting
-- **New:** A new Panel updates settings page lets you choose when the 5Stack service installs updates, and it shows your current release and channel. On managed panels the header button now appears only when an update needs your attention.
-- **New:** Panels that keep their secrets in an external store now show in the header when those secrets can't sync, with the reason, how long the problem has lasted and a Check Now button. A new settings page shows which step is failing and how to fix it, and an update that is missing secrets lists them before it starts.
-- **New:** Panels installed from a git checkout can move onto the 5Stack service with one command, keeping their configuration and secrets.
-- **Improved:** During a panel update, new matches are held only when the update needs it, and your own node on/off settings are left alone. Waiting matches start when the update finishes, and an update stuck for an hour releases the hold.
-- **Improved:** An update that rolls back now sends its own notification with the reason and shows in amber in the header. Automatic and scheduled updates skip a release that failed on your panel, though you can still install it with Update Now.
-- **Improved:** The nightly database backup now checks that the storage bucket belongs to your storage account before uploading. If it doesn't, the backup stops and explains how to fix it.
-- **Fixed:** Panels with played matches can update again, and the leaderboard no longer errors after an update.
-- **Fixed:** The node picker in the setup scripts now accepts only a number from its list and asks again otherwise.
+- **New:** Managed panels have a Settings > Panel updates page for choosing when updates install. The header now shows the panel only when an update is waiting on you.
+- **New:** Managed panels that keep secrets in an external secret store now warn in the header when secrets can't sync, with a settings page that lists each failing secret, why it fails and how to fix it. Check Now asks for a resync, and an update that is missing secrets lists them before it starts.
+- **New:** When a panel update rolls back, admins get a notification with the reason and the header shows it in amber. Automatic and scheduled updates skip a release that failed on your panel, and you can still install it with Update Now.
+- **New:** Existing panels installed from a git checkout can move onto the 5Stack service and keep their configuration and secrets.
+- **Improved:** The header's panel row now reads as one line, such as "Panel 2026.11.1.2 is ready".
+- **Improved:** New matches are held during a panel update only when the update needs it, and matches already running carry on. Your own node on/off settings are no longer changed, and held matches start once the update finishes.
+- **Improved:** The nightly database backup checks that the storage bucket belongs to your S3 account before uploading, and the backup job shows as failed if it doesn't.
+- **Fixed:** Panels with played matches can update again, and the leaderboard no longer fails after an update.
+- **Fixed:** The setup scripts' node prompt only accepts a number from its list and asks again otherwise.
 
 ### General
-- **Improved:** Match pages, player profiles, the play and public server lists, and the scrim board load faster and put less strain on the panel. A change someone else makes to a profile while you are viewing it, or a clip's view count or title edit, now shows on your next visit.
+- **Improved:** Several pages put less load on the site while open and stay faster under heavy traffic: match page highlight clips, player profiles, the Play page and public server lists, and the Scrim Finder board.
 
 ## Saturday, October 31, 2026
 
