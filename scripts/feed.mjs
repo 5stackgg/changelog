@@ -1,34 +1,49 @@
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { AREAS } from "./areas.mjs";
 
 const ENTRIES = "entries";
 const FEED = "feed";
 const README_ENTRIES = 14;
 
-const SECTIONS = { New: "new", Improved: "improved", Fixed: "fixed" };
+// The kind of change each bullet starts with, as written and as the feed
+// names it. The feed's "sections" are these, so panels on an older web app
+// keep reading the same shape.
+const TYPES = { New: "new", Improved: "improved", Fixed: "fixed" };
+const LABELS = new Map(Object.keys(TYPES).map((label) => [label.toLowerCase(), label]));
+const NAMES = new Map(AREAS.map(({ name }) => [name.toLowerCase(), name]));
 const BULLET = /^- \*\*([^*]+):\*\* ([^*]+)$/;
 
-// Keeps an entry to the one shape the feed parses: summary lines, the three
-// known headings, and "- **Area:** text" bullets. A heading it doesn't know
-// takes its bullets with it, so nothing lands under the wrong section.
+function areaOf(heading) {
+  return NAMES.get(heading.trim().toLowerCase()) ?? null;
+}
+
+function labelOf(label) {
+  return LABELS.get(label.trim().toLowerCase()) ?? null;
+}
+
+// Keeps an entry to the one shape the feed parses: summary lines, then a
+// "## Area" heading from AREAS for each section with "- **New:** text",
+// "- **Improved:** text" or "- **Fixed:** text" bullets. Sections come out in
+// AREAS order with a repeated heading merged into the first, and bullets in
+// New, Improved, Fixed order. A heading it doesn't know takes its bullets with
+// it, so nothing lands under the wrong section.
 export function conform(markdown) {
-  const kept = [];
+  const summary = [];
+  const sections = new Map();
   let dropped = 0;
-  let section;
+  let area;
 
   for (const line of markdown.split("\n")) {
     const trimmed = line.trim();
     if (trimmed === "") {
-      kept.push("");
       continue;
     }
 
     if (trimmed.startsWith("## ")) {
-      section = SECTIONS[trimmed.slice(3)] ? trimmed : null;
-      if (section) {
-        kept.push(section);
-      } else {
+      area = areaOf(trimmed.slice(3));
+      if (!area) {
         dropped++;
       }
       continue;
@@ -39,28 +54,34 @@ export function conform(markdown) {
       continue;
     }
 
-    if (section === undefined) {
-      kept.push(trimmed.replaceAll("*", ""));
+    if (area === undefined) {
+      summary.push(trimmed.replaceAll("*", ""));
       continue;
     }
 
-    if (section && BULLET.test(trimmed)) {
-      kept.push(trimmed);
-    } else {
+    const bullet = trimmed.match(BULLET);
+    const label = bullet && labelOf(bullet[1]);
+    if (!area || !label) {
       dropped++;
+      continue;
     }
+    if (!sections.has(area)) {
+      sections.set(area, []);
+    }
+    sections.get(area).push({ label, text: bullet[2] });
   }
 
-  const filled = kept.filter((line, index) => {
-    if (!line.startsWith("## ")) {
-      return true;
-    }
-    const next = kept.slice(index + 1).find((after) => after !== "");
-    return next !== undefined && !next.startsWith("## ");
-  });
+  const order = Object.keys(TYPES);
+  const body = AREAS.filter(({ name }) => sections.has(name)).map(({ name }) => [
+    `## ${name}`,
+    ...sections
+      .get(name)
+      .sort((a, b) => order.indexOf(a.label) - order.indexOf(b.label))
+      .map(({ label, text }) => `- **${label}:** ${text}`),
+  ].join("\n"));
 
   return {
-    markdown: filled.join("\n").replace(/\n{3,}/g, "\n\n").trim(),
+    markdown: [summary.join("\n"), ...body].filter(Boolean).join("\n\n"),
     dropped,
   };
 }
@@ -68,7 +89,7 @@ export function conform(markdown) {
 export function parseEntry(markdown) {
   const summary = [];
   const sections = { new: [], improved: [], fixed: [] };
-  let section;
+  let area;
   let item = null;
 
   for (const raw of markdown.split("\n")) {
@@ -78,21 +99,22 @@ export function parseEntry(markdown) {
     }
 
     if (line.startsWith("## ")) {
-      section = SECTIONS[line.slice(3).trim()] ?? null;
+      area = areaOf(line.slice(3));
       item = null;
       continue;
     }
 
-    if (section === undefined) {
+    if (area === undefined) {
       summary.push(line);
       continue;
     }
 
-    const bullet = line.match(/^- (?:\*\*(.+?):\*\*\s*)?(.*)$/);
-    if (bullet) {
-      item = section ? { area: bullet[1] ?? "", text: bullet[2] } : null;
+    if (line.startsWith("- ")) {
+      const bullet = line.match(/^- \*\*(.+?):\*\*\s*(.*)$/);
+      const label = bullet && labelOf(bullet[1]);
+      item = area && label ? { area, text: bullet[2] } : null;
       if (item) {
-        sections[section].push(item);
+        sections[TYPES[label]].push(item);
       }
       continue;
     }
@@ -128,10 +150,11 @@ export function buildFeed(files) {
     months.get(month).push(day);
   }
 
-  areas.delete("");
-
   const output = new Map();
-  const index = { months: [], areas: [...areas].sort() };
+  const index = {
+    months: [],
+    areas: AREAS.map(({ name }) => name).filter((name) => areas.has(name)),
+  };
   for (const [month, days] of months) {
     const body = json({ month, days });
     output.set(`${month}.json`, body);
@@ -179,7 +202,7 @@ export function writeReadme() {
   const readme = [
     "# 5Stack changelog",
     "",
-    "What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels. Each entry is written automatically from that day's merged changes (UTC).",
+    "What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).",
     "",
     ...entries.flatMap((entry) => [entry, ""]),
     `Older days are in [${ENTRIES}](${ENTRIES}).`,

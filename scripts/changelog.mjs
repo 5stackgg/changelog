@@ -1,12 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
+import { AREAS } from "./areas.mjs";
 import { writeFeed, writeReadme } from "./feed.mjs";
 import { blocklist, finalize, sanitize } from "./redact.mjs";
 
 const ORG = "5stackgg";
 
-const AREAS = {
+const REPOSITORIES = {
   api: "the 5Stack web app (server side)",
   web: "the 5Stack web app",
   "5stack-panel": "self-hosting: installing, updating and running a panel",
@@ -27,31 +28,32 @@ const NOTHING = "NOTHING_TO_REPORT";
 
 const SYSTEM = `You write the public daily changelog for 5Stack, a platform for running Counter-Strike 2 matches, tournaments and leagues. People use it on 5stack.gg and on panels they host themselves.
 
-You get one day's merged pull requests as JSON. Each has an "area" (the part of the product its repository covers), a "title" and a "body". Titles usually start with a type: feature, bug or fix, perf, ux, docs, chore, test, ci, refactor.
+You get one day's merged pull requests as JSON. Each has a "component" (the part of 5Stack its repository holds), a "title" and a "body". Titles usually start with a type: feature, bug or fix, perf, ux, docs, chore, test, ci, refactor.
 
 Write for players, organizers and people who host their own panel. Tell them what changed for them, not how it was built.
 
 Include:
 - Features, fixes and improvements people would notice. Fold related pull requests into one entry, such as a server and a web change for the same feature, or several speed-ups of the same kind.
-- Many performance changes on one day become one entry that names the places that got faster.
-- Self-hosting changes (installer, node setup, updates, GPU support) under the Self-hosting area.
-- Docs changes only when they add or change a guide people follow.
+- Speed-ups, filed under what got faster. When one day speeds up many parts of the site, write one General entry that names them.
+- Docs changes only when they add or change a guide people follow, filed under the section the guide is about.
 
 Leave out tests, CI, refactors, dependency bumps, internal tooling, load-testing, and anything with no visible effect.
 
 Never write any of the following. A line containing one is deleted before publishing:
 - Pull request, issue or commit numbers, repository names, links, or people's names or handles.
 - Code: function, table, column, view, file, script, environment variable, job or setting key names, SQL, or query plans. Name what people see ("the friends list"), not what runs behind it.
-- Internal services and infrastructure (Hasura, Postgres, Redis, BullMQ, queues, pods, indexes, vacuuming, polling). Self-hosters manage their nodes, GPUs, Kubernetes updates and Traefik, so those may be named in Self-hosting entries.
+- Internal services and infrastructure (Hasura, Postgres, Redis, BullMQ, queues, pods, indexes, vacuuming, polling). Self-hosters manage their nodes, GPUs, Kubernetes updates and Traefik, so those may be named in Self-hosting and Game servers entries.
 - Names of customers, panels or communities, domains other than 5stack.gg, IP addresses, hostnames, emails, or when an incident happened.
 - How a security or abuse problem worked. Say what is better now ("Demo uploads are limited per player"), never what could be done before or how.
 When unsure whether something is sensitive, leave it out.
 
 Format:
 - Markdown. Open with one short sentence summing up the day, without a heading.
-- Then up to three sections, in this order and only when they have entries: "## New", "## Improved", "## Fixed".
-- One bullet per entry: "- **Area:** what changed." Areas are short product words people know, such as Matches, Tournaments, Seasons, Leaderboards, Demos, Highlights, Streams, Lobbies, Friends, Notifications, Game servers, Self-hosting or Docs.
-- Present tense, one or two plain sentences per entry, no hype, no emoji.
+- Then a "## " heading for each section of 5Stack that changed, named exactly as below, in this order, and only when it has entries. A heading not on this list is deleted with its entries.
+${AREAS.map(({ name, covers }) => `  - ${name}: ${covers}`).join("\n")}
+- File each entry under the one section people would look in first, even when the change touches others. Never repeat a heading.
+- One bullet per entry, starting with its kind: "- **New:** what changed.", "- **Improved:** what changed." or "- **Fixed:** what changed." Within a section, put New first, then Improved, then Fixed.
+- Present tense, one or two plain sentences per entry, no hype, no emoji, no nested lists.
 - If nothing is worth telling users, reply with exactly ${NOTHING}.`;
 
 function previousDay() {
@@ -114,7 +116,7 @@ async function mergedPullRequests(date) {
 }
 
 function publishable(pull) {
-  if (!AREAS[pull.repository.name]) {
+  if (!REPOSITORIES[pull.repository.name]) {
     return false;
   }
   if (pull.author?.__typename === "Bot" || pull.author?.login?.endsWith("[bot]")) {
@@ -166,7 +168,7 @@ async function main() {
 
   const merged = await mergedPullRequests(date);
   const pulls = merged.filter(publishable).map((pull) => ({
-    area: AREAS[pull.repository.name],
+    component: REPOSITORIES[pull.repository.name],
     title: sanitize(pull.title, blocked),
     body: sanitize(pull.body, blocked).slice(0, BODY_LIMIT),
   }));

@@ -42,14 +42,14 @@ test("sanitize redacts blocklisted terms in any case", () => {
 
 test("violations flags each kind of leak", () => {
   const cases = {
-    url: "- **Matches:** see https://5stack.gg/matches",
-    email: "- **Matches:** contact ops@example.net",
-    ip: "- **Game servers:** nodes on 192.168.1.20 reconnect",
-    reference: "- **Seasons:** fixed after #853",
-    handle: "- **Docs:** thanks to @someone",
-    identifier: "- **Drafts:** is_draft_game_player_organizer is faster",
-    secret: "- **Self-hosting:** token ghp_abcdefghijklmnopqrstuvwxyz0123456789",
-    domain: "- **Self-hosting:** panels like play.example.net update",
+    url: "- **Fixed:** see https://5stack.gg/matches",
+    email: "- **Fixed:** contact ops@example.net",
+    ip: "- **Fixed:** nodes on 192.168.1.20 reconnect",
+    reference: "- **Fixed:** fixed after #853",
+    handle: "- **New:** thanks to @someone",
+    identifier: "- **Improved:** is_draft_game_player_organizer is faster",
+    secret: "- **New:** token ghp_abcdefghijklmnopqrstuvwxyz0123456789",
+    domain: "- **Fixed:** panels like play.example.net update",
   };
 
   for (const [rule, line] of Object.entries(cases)) {
@@ -60,11 +60,11 @@ test("violations flags each kind of leak", () => {
 test("violations passes plain user-facing entries", () => {
   const lines = [
     "Tournament matches now count toward seasons, and self-hosted panels can use AMD GPUs.",
-    "- **Leaderboards:** Event leaderboards have an ELO Gained tab that ranks players by how much the event moved their rating.",
-    "- **Self-hosting:** Panels route traffic through Traefik and the Gateway API instead of ingress-nginx.",
-    "- **Demos:** Admins choose which role can upload demos; every signed-in player can by default.",
-    "- **Game servers:** On Ubuntu 26.04 nodes, ending a match stops its CS2 server again.",
-    "- **Matches:** Visit 5stack.gg to see the new scoreboard.",
+    "- **New:** Event leaderboards have an ELO Gained tab that ranks players by how much the event moved their rating.",
+    "- **Improved:** Panels route traffic through Traefik and the Gateway API instead of ingress-nginx.",
+    "- **New:** Admins choose which role can upload demos; every signed-in player can by default.",
+    "- **Fixed:** On Ubuntu 26.04 nodes, ending a match stops its CS2 server again.",
+    "- **Improved:** Visit 5stack.gg to see the new scoreboard.",
   ];
 
   for (const line of lines) {
@@ -76,25 +76,25 @@ test("gate drops offending lines and sections left empty", () => {
   const summary = [
     "A day of fixes.",
     "",
-    "## New",
-    "- **Friends:** v_my_friends reads once per poll.",
+    "## Players & Teams",
+    "- **Improved:** v_my_friends reads once per poll.",
     "",
-    "## Fixed",
-    "- **Seasons:** Tournament matches count toward the season.",
-    "- **Matches:** Fixed after api#853.",
+    "## Stats & Leaderboards",
+    "- **Fixed:** Tournament matches count toward the season.",
+    "- **Fixed:** Fixed after api#853.",
   ].join("\n");
 
   const { markdown, dropped } = gate(summary);
 
   assert.equal(
     markdown,
-    ["A day of fixes.", "", "## Fixed", "- **Seasons:** Tournament matches count toward the season."].join("\n"),
+    ["A day of fixes.", "", "## Stats & Leaderboards", "- **Fixed:** Tournament matches count toward the season."].join("\n"),
   );
   assert.deepEqual(dropped, { identifier: 1, reference: 1 });
 });
 
 test("gate drops blocklisted terms", () => {
-  const { markdown, dropped } = gate("## Fixed\n- **Matches:** Acme panel reconnects.", ["acme"]);
+  const { markdown, dropped } = gate("## Matches\n- **Fixed:** Acme panel reconnects.", ["acme"]);
   assert.equal(markdown, "");
   assert.deepEqual(dropped, { blocklist: 1 });
 });
@@ -106,14 +106,14 @@ test("finalize gates the text the format check produced, not the text before it"
       "Name is_**draft** in a summary.",
       "A clean summary line.",
       "",
-      "## Fixed",
-      "- **Seasons:** Tournament matches count.",
+      "## Stats & Leaderboards",
+      "- **Fixed:** Tournament matches count.",
     ].join("\n"),
   );
 
   assert.equal(
     markdown,
-    ["A clean summary line.", "", "## Fixed", "- **Seasons:** Tournament matches count."].join("\n"),
+    ["A clean summary line.", "", "## Stats & Leaderboards", "- **Fixed:** Tournament matches count."].join("\n"),
   );
   assert.equal(malformed, 0);
   assert.deepEqual(dropped, { identifier: 2, secret: 1 });
