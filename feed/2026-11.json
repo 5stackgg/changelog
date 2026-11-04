@@ -2,6 +2,378 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-03",
+      "summary": "A large day: community polls, a reworked coach review and Utility map, Stacks rewards for awards and the 5stack.gg tag, confirmations before tournament teardowns, and new health warnings for game server nodes.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matchmaking",
+            "text": "Each mode tile on the Play page has an info icon that shows the mode's current map pool when you hover or tap it, without selecting the mode. Premier and FACEIT show the Competitive pool."
+          },
+          {
+            "area": "Matches",
+            "text": "Organizers and staff can reset a captains' draft back to its first pick from the draft room's admin dock, after a confirm. Captains and players are kept, and the pick clock restarts."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Players placed into a tournament's medals or MVP get one notification when the tournament finishes."
+          },
+          {
+            "area": "Utility",
+            "text": "The Utility tab's throw map shows each side of the match on its own map, or one map with a CT / T toggle on narrow screens. It adds zoom, panning and a legend, and clicking a throw focuses on it with Watch and See the Meta Spot."
+          },
+          {
+            "area": "Utility",
+            "text": "Bots standing when you save a lineup are saved with it, and the drop key stands them back up. Dropping weapons is turned off on practice servers to make room for this."
+          },
+          {
+            "area": "Utility",
+            "text": "The utility map shows a lineup's bots with their own icon, and lineups with bots carry a badge."
+          },
+          {
+            "area": "Utility",
+            "text": "Players left idle on a practice server get two warnings and are then kicked. Admins set the time under Settings › Application › Utility; it is 15 minutes by default, and 0 turns it off."
+          },
+          {
+            "area": "Coach",
+            "text": "The coach review shows the player's K/A/D, ADR, KAST, HLTV rating and lineup accuracy. It also has tabs for Overview, Worked, To fix and Utility, which together show everything Rokkan wrote."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The Awards leaderboard has a Special column and a fourth podium dot, so players with only Special awards now appear on it."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Teams can set a country in their settings, shown as a flag beside the team name on the team page, in the match header and in tournament team lists."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "A name change request asks the player why, and staff can reply with a comment the player receives. A player can only have one request open at a time."
+          },
+          {
+            "area": "Career",
+            "text": "Awards can give Locker items and Stacks to every holder. Tournament organizers can also set rewards per placement, and admins per season placement. Adding a reward pays existing holders and tells them."
+          },
+          {
+            "area": "Career",
+            "text": "40 looks for your profile stat print the number straight on your banner, and the stat now shows on your player page too. The Locker shows the 250 Stacks it costs to clear a pinned stat."
+          },
+          {
+            "area": "Career",
+            "text": "Wearing the 5stack.gg clan tag in imported Steam or FACEIT matches pays 100 Stacks per match, plus a one-time 2,000 bonus. The Support card and FAQ explain it, and the thank-you notifications stack in the bell."
+          },
+          {
+            "area": "Game servers",
+            "text": "Nodes warn when CS2, the game streamer or k3s keep their files on a spinning hard drive."
+          },
+          {
+            "area": "Game servers",
+            "text": "Nodes warn when their CPU is split across too many sockets, and advise setting the VM to one socket."
+          },
+          {
+            "area": "Game servers",
+            "text": "GPU nodes warn when Secure Boot or something else keeps the NVIDIA driver from loading, or when kernel modesetting is off. A node whose NVIDIA driver didn't load still shows in the panel."
+          },
+          {
+            "area": "Game servers",
+            "text": "Administrators can acknowledge a node warning so it stops being flagged. Acknowledged warnings stay listed under Hardware with Restore, and a changed warning is flagged again."
+          },
+          {
+            "area": "Game servers",
+            "text": "The in-game scoreboard's Server Website button opens 5stack.gg on servers running the SwiftlyS2 version of the plugin."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "When both a 5Stack service update and a panel release are available, the update center offers a single Update that runs them in order. Opening the update center also checks for updates."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A Storage guide explains which paths need an SSD or NVMe disk and how to move game files onto one."
+          },
+          {
+            "area": "General",
+            "text": "The changelog groups each day by section of 5Stack and tags each change New, Improved or Fixed. Wide screens also get a Sections list for showing just one section."
+          },
+          {
+            "area": "General",
+            "text": "Match organizers and above see a dot on the profile menu when the changelog has new days."
+          },
+          {
+            "area": "General",
+            "text": "Community polls appear at the top of News, and the bell tells you when one opens. Any signed-in player can vote once and sees results as the poll allows, and anyone who can post news can run polls."
+          },
+          {
+            "area": "General",
+            "text": "Upload, crop, replace or remove your avatar under Settings → My Account. Removing it goes back to your Steam avatar."
+          },
+          {
+            "area": "General",
+            "text": "Click a GIF in chat to see it larger."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matches",
+            "text": "Check-in now appears in the match header's VS box instead of a card on the Overview, with the same camera gate and red last ten seconds as the draft room. On phones, the teams stack beside it."
+          },
+          {
+            "area": "Matches",
+            "text": "Call for Support in the match menu now asks before paging the organizers."
+          },
+          {
+            "area": "Matches",
+            "text": "Deleting a map shows which pools it leaves. A matchmaking pool's last map can no longer be deleted or removed from the pool."
+          },
+          {
+            "area": "Matches",
+            "text": "Opening a finished match no longer rolls in every number at once. Stats show their value straight away and only animate when they change."
+          },
+          {
+            "area": "Tournaments",
+            "text": "With several tournaments live, the Tournaments page gives each one an equal tab above the live feature."
+          },
+          {
+            "area": "Tournaments",
+            "text": "The Teams tab shows a card grid in seed order with Expand all and Collapse all, and your own team shows full width with its roster open. The check-in panel now shows how many teams have checked in instead of listing them all."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Deleting, cancelling or resetting a tournament now asks first. If matches have been played, it lists the ones that would be deleted along with their demos and clips, and you must tick a box to confirm. Matches still in progress block it until they end."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Leave pool on the Free Agents tab asks first and explains what leaving costs you."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "The event overview shows every match in play or getting ready, plus a tab for each live tournament with its full bracket. The header's Watch live opens a match that is actually being played."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Deleting a league season or resetting it to setup lists the played matches it would delete and needs them confirmed."
+          },
+          {
+            "area": "Coach",
+            "text": "In theater mode, the review's side column grows wider when there's room, so tabs and utility rows no longer get cut off."
+          },
+          {
+            "area": "Coach",
+            "text": "The top bar shows the path to the open review, scouting report or habits page."
+          },
+          {
+            "area": "Coach",
+            "text": "Rokkan can now tell one lineup thrown twice apart from two different lineups."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "A demo replay in a tab that stays hidden for 5 minutes stops and offers Watch again. A page opened in the background doesn't start a replay until you look at it."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "The stream address now only serves playback and snapshots."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Stats table headers are quieter. Only the sorted column shows an arrow, and a Stats Guide button sits beside the controls."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The top-bar profile menu opens on a mini version of your profile card. It shows your banner, frame, level, title, flag, ELO and pinned stat."
+          },
+          {
+            "area": "Notifications",
+            "text": "The new-tournament notification shows the tournament's banner, name and start time in your own time zone, and the push says when it starts."
+          },
+          {
+            "area": "Notifications",
+            "text": "Looking at any 5Stack tab clears the flashing title and badge in all your other 5Stack tabs."
+          },
+          {
+            "area": "Moderation",
+            "text": "Staff can see removed sanctions and abandons, dimmed, with who removed them and when. Match organizers can see each abandon's ladder step and cooldown, and a removed abandon no longer counts against the player."
+          },
+          {
+            "area": "Moderation",
+            "text": "A banned player's notice says how long the ban lasts, or that it is permanent."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Traefik now binds the host's ports itself, so the panel sees players' real addresses when k3s runs on a VPN or private node address."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The update popover shows an update starting as soon as you press Update. After a minute without progress, it says so and offers Try Again. Updates now finish as soon as the run ends, and new matches resume right away."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A panel that uses external storage no longer runs the built-in storage service."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The NVIDIA GPU guide adds a step to turn on kernel modesetting, which clip capture needs. The AMD guide covers a kernel option that stops the driver from loading, and notes that a bad memory setting now stops the panel at startup, with the log naming the problem."
+          },
+          {
+            "area": "General",
+            "text": "Past times an hour or more old show the exact time instead of \"3 days ago\". Presence, live ages and countdowns still count."
+          },
+          {
+            "area": "General",
+            "text": "Chat videos recorded by OBS, ShadowPlay or phones are optimized after upload, so they start and seek faster."
+          },
+          {
+            "area": "General",
+            "text": "Player and match pages draw each section once in its final place, so nothing jumps around while they load."
+          },
+          {
+            "area": "General",
+            "text": "Dropdowns are lighter, especially on tournament stage forms. The friends list, matchmaking and the Play page's live queue count do less work, and players going offline no longer slows the rest of the site."
+          },
+          {
+            "area": "General",
+            "text": "The browser extension's FACEIT import, when it needs to, opens the match room in a background tab and closes it when done."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matches",
+            "text": "The scoreboard's HLTV column shows the rating again."
+          },
+          {
+            "area": "Matches",
+            "text": "Lineup names stay on every player's in-game scoreboard for the whole match, not only the first seconds after going live."
+          },
+          {
+            "area": "Matches",
+            "text": "Restoring a round no longer records false stats or loses a real round. A restarted server can no longer play over rounds that were already recorded."
+          },
+          {
+            "area": "Matches",
+            "text": "A map's label is kept when maps are refreshed, and editing it updates the map in every mode."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Free agent sign-up times show the day once a sign-up is from an earlier day."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Rebuilding a cancelled tournament keeps leftover matches that still have demos or clips. Deleting a stage that has matches no longer fails."
+          },
+          {
+            "area": "Utility",
+            "text": "The throw map's hints make sense on touch screens, and zooming while dragging no longer resets when you let go."
+          },
+          {
+            "area": "Utility",
+            "text": "The flash card counts a player as blinded for 1s+ based on the seconds it shows, so a 3.0s flash no longer reads \"0 of 1\"."
+          },
+          {
+            "area": "Utility",
+            "text": "A lineup you save in a practice server now shows on the Public tab and the map while you are in that server."
+          },
+          {
+            "area": "Utility",
+            "text": "Practice saves that couldn't reach 5Stack are retried automatically and are never saved twice. A refused save now tells you instead of blocking later saves."
+          },
+          {
+            "area": "Coach",
+            "text": "Watch in the coach review no longer gets stuck after jumping past a throw. Phrases like \"R8 bomb 0:31\" now read as a round, not the Revolver."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Closing the demo viewer while a clip is rendering no longer stops you from making new clips."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "The 2D and 3D replay buttons only appear once the map is confirmed to have a replay."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "When a live stream switches matches, the HUD no longer shows the new match's teams over the old match's end screen."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Highlight renders take a free GPU in the order they were queued, and a freed GPU is picked up sooner."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "On NVIDIA nodes, streams and highlights always render on the NVIDIA GPU instead of another device on the node."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Damage with the M4A1-S, USP-S, CZ75-Auto, R8 Revolver and MP5-SD is now recorded under the right gun. Older matches are corrected where possible, so Arsenal no longer shows 0 ADR for them."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "On profiles with a background, tabs, cards, tables and empty states sit on frosted glass, so the background no longer runs through the text."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The player page's All / 5Stack / External filter bar no longer wraps."
+          },
+          {
+            "area": "Career",
+            "text": "Avatar frames look the same on the profile card as on their Locker tile."
+          },
+          {
+            "area": "Career",
+            "text": "The Locker's tabs show as icons, with the selected tab named and hover names on the rest, so all seven fit on any screen."
+          },
+          {
+            "area": "Notifications",
+            "text": "Award notifications open the award they are for."
+          },
+          {
+            "area": "Game servers",
+            "text": "File manager uploads of up to 100 MB now work on panels behind Cloudflare's proxy."
+          },
+          {
+            "area": "Game servers",
+            "text": "The dedicated servers list shows the plugin version for community servers."
+          },
+          {
+            "area": "Game servers",
+            "text": "Enabling, disabling or restarting a dedicated server in quick succession no longer leaves it in the wrong state."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Fresh installs on k3s 1.37 or later no longer fail, because the Gateway API resources are left to k3s."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Long steps in the header update popover wrap instead of being cut off."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Deleting demos and clips now removes their files from versioned storage buckets. If a file can't be removed, its demo or clip is kept so the delete can be retried."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "When Detect can't reach a plugin, the settings page says why instead of \"Failed to fetch\"."
+          },
+          {
+            "area": "General",
+            "text": "Links to 5Stack show their previews in Discord, Slack and Steam again, and search engines see the welcome page instead of an error."
+          },
+          {
+            "area": "General",
+            "text": "My Account no longer blocks saving your country and language with \"Invalid input\"."
+          },
+          {
+            "area": "General",
+            "text": "Signing in, signing out or switching accounts in one tab now updates your other open tabs, chat included."
+          },
+          {
+            "area": "General",
+            "text": "When your role changes, the open page adjusts to it without a reload."
+          },
+          {
+            "area": "General",
+            "text": "Country flags show properly on Windows in all text styles."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-02",
       "summary": "Today brings community leaderboards with far more stats, profile backgrounds in the Locker, a reworked Utility tab and many fixes across practice, tournaments and notifications.",
       "sections": {

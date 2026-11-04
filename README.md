@@ -2,6 +2,132 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Tuesday, November 3, 2026
+
+A large day: community polls, a reworked coach review and Utility map, Stacks rewards for awards and the 5stack.gg tag, confirmations before tournament teardowns, and new health warnings for game server nodes.
+
+### Matchmaking
+- **New:** Each mode tile on the Play page has an info icon that shows the mode's current map pool when you hover or tap it, without selecting the mode. Premier and FACEIT show the Competitive pool.
+
+### Matches
+- **New:** Organizers and staff can reset a captains' draft back to its first pick from the draft room's admin dock, after a confirm. Captains and players are kept, and the pick clock restarts.
+- **Improved:** Check-in now appears in the match header's VS box instead of a card on the Overview, with the same camera gate and red last ten seconds as the draft room. On phones, the teams stack beside it.
+- **Improved:** Call for Support in the match menu now asks before paging the organizers.
+- **Improved:** Deleting a map shows which pools it leaves. A matchmaking pool's last map can no longer be deleted or removed from the pool.
+- **Improved:** Opening a finished match no longer rolls in every number at once. Stats show their value straight away and only animate when they change.
+- **Fixed:** The scoreboard's HLTV column shows the rating again.
+- **Fixed:** Lineup names stay on every player's in-game scoreboard for the whole match, not only the first seconds after going live.
+- **Fixed:** Restoring a round no longer records false stats or loses a real round. A restarted server can no longer play over rounds that were already recorded.
+- **Fixed:** A map's label is kept when maps are refreshed, and editing it updates the map in every mode.
+
+### Tournaments
+- **New:** Players placed into a tournament's medals or MVP get one notification when the tournament finishes.
+- **Improved:** With several tournaments live, the Tournaments page gives each one an equal tab above the live feature.
+- **Improved:** The Teams tab shows a card grid in seed order with Expand all and Collapse all, and your own team shows full width with its roster open. The check-in panel now shows how many teams have checked in instead of listing them all.
+- **Improved:** Deleting, cancelling or resetting a tournament now asks first. If matches have been played, it lists the ones that would be deleted along with their demos and clips, and you must tick a box to confirm. Matches still in progress block it until they end.
+- **Improved:** Leave pool on the Free Agents tab asks first and explains what leaving costs you.
+- **Fixed:** Free agent sign-up times show the day once a sign-up is from an earlier day.
+- **Fixed:** Rebuilding a cancelled tournament keeps leftover matches that still have demos or clips. Deleting a stage that has matches no longer fails.
+
+### Leagues & Events
+- **Improved:** The event overview shows every match in play or getting ready, plus a tab for each live tournament with its full bracket. The header's Watch live opens a match that is actually being played.
+- **Improved:** Deleting a league season or resetting it to setup lists the played matches it would delete and needs them confirmed.
+
+### Utility
+- **New:** The Utility tab's throw map shows each side of the match on its own map, or one map with a CT / T toggle on narrow screens. It adds zoom, panning and a legend, and clicking a throw focuses on it with Watch and See the Meta Spot.
+- **New:** Bots standing when you save a lineup are saved with it, and the drop key stands them back up. Dropping weapons is turned off on practice servers to make room for this.
+- **New:** The utility map shows a lineup's bots with their own icon, and lineups with bots carry a badge.
+- **New:** Players left idle on a practice server get two warnings and are then kicked. Admins set the time under Settings › Application › Utility; it is 15 minutes by default, and 0 turns it off.
+- **Fixed:** The throw map's hints make sense on touch screens, and zooming while dragging no longer resets when you let go.
+- **Fixed:** The flash card counts a player as blinded for 1s+ based on the seconds it shows, so a 3.0s flash no longer reads "0 of 1".
+- **Fixed:** A lineup you save in a practice server now shows on the Public tab and the map while you are in that server.
+- **Fixed:** Practice saves that couldn't reach 5Stack are retried automatically and are never saved twice. A refused save now tells you instead of blocking later saves.
+
+### Coach
+- **New:** The coach review shows the player's K/A/D, ADR, KAST, HLTV rating and lineup accuracy. It also has tabs for Overview, Worked, To fix and Utility, which together show everything Rokkan wrote.
+- **Improved:** In theater mode, the review's side column grows wider when there's room, so tabs and utility rows no longer get cut off.
+- **Improved:** The top bar shows the path to the open review, scouting report or habits page.
+- **Improved:** Rokkan can now tell one lineup thrown twice apart from two different lineups.
+- **Fixed:** Watch in the coach review no longer gets stuck after jumping past a throw. Phrases like "R8 bomb 0:31" now read as a round, not the Revolver.
+
+### Demos & Replays
+- **Improved:** A demo replay in a tab that stays hidden for 5 minutes stops and offers Watch again. A page opened in the background doesn't start a replay until you look at it.
+- **Fixed:** Closing the demo viewer while a clip is rendering no longer stops you from making new clips.
+- **Fixed:** The 2D and 3D replay buttons only appear once the map is confirmed to have a replay.
+
+### Streams & Highlights
+- **Improved:** The stream address now only serves playback and snapshots.
+- **Fixed:** When a live stream switches matches, the HUD no longer shows the new match's teams over the old match's end screen.
+- **Fixed:** Highlight renders take a free GPU in the order they were queued, and a freed GPU is picked up sooner.
+- **Fixed:** On NVIDIA nodes, streams and highlights always render on the NVIDIA GPU instead of another device on the node.
+
+### Stats & Leaderboards
+- **New:** The Awards leaderboard has a Special column and a fourth podium dot, so players with only Special awards now appear on it.
+- **Improved:** Stats table headers are quieter. Only the sorted column shows an arrow, and a Stats Guide button sits beside the controls.
+- **Fixed:** Damage with the M4A1-S, USP-S, CZ75-Auto, R8 Revolver and MP5-SD is now recorded under the right gun. Older matches are corrected where possible, so Arsenal no longer shows 0 ADR for them.
+
+### Players & Teams
+- **New:** Teams can set a country in their settings, shown as a flag beside the team name on the team page, in the match header and in tournament team lists.
+- **New:** A name change request asks the player why, and staff can reply with a comment the player receives. A player can only have one request open at a time.
+- **Improved:** The top-bar profile menu opens on a mini version of your profile card. It shows your banner, frame, level, title, flag, ELO and pinned stat.
+- **Fixed:** On profiles with a background, tabs, cards, tables and empty states sit on frosted glass, so the background no longer runs through the text.
+- **Fixed:** The player page's All / 5Stack / External filter bar no longer wraps.
+
+### Career
+- **New:** Awards can give Locker items and Stacks to every holder. Tournament organizers can also set rewards per placement, and admins per season placement. Adding a reward pays existing holders and tells them.
+- **New:** 40 looks for your profile stat print the number straight on your banner, and the stat now shows on your player page too. The Locker shows the 250 Stacks it costs to clear a pinned stat.
+- **New:** Wearing the 5stack.gg clan tag in imported Steam or FACEIT matches pays 100 Stacks per match, plus a one-time 2,000 bonus. The Support card and FAQ explain it, and the thank-you notifications stack in the bell.
+- **Fixed:** Avatar frames look the same on the profile card as on their Locker tile.
+- **Fixed:** The Locker's tabs show as icons, with the selected tab named and hover names on the rest, so all seven fit on any screen.
+
+### Notifications
+- **Improved:** The new-tournament notification shows the tournament's banner, name and start time in your own time zone, and the push says when it starts.
+- **Improved:** Looking at any 5Stack tab clears the flashing title and badge in all your other 5Stack tabs.
+- **Fixed:** Award notifications open the award they are for.
+
+### Moderation
+- **Improved:** Staff can see removed sanctions and abandons, dimmed, with who removed them and when. Match organizers can see each abandon's ladder step and cooldown, and a removed abandon no longer counts against the player.
+- **Improved:** A banned player's notice says how long the ban lasts, or that it is permanent.
+
+### Game servers
+- **New:** Nodes warn when CS2, the game streamer or k3s keep their files on a spinning hard drive.
+- **New:** Nodes warn when their CPU is split across too many sockets, and advise setting the VM to one socket.
+- **New:** GPU nodes warn when Secure Boot or something else keeps the NVIDIA driver from loading, or when kernel modesetting is off. A node whose NVIDIA driver didn't load still shows in the panel.
+- **New:** Administrators can acknowledge a node warning so it stops being flagged. Acknowledged warnings stay listed under Hardware with Restore, and a changed warning is flagged again.
+- **New:** The in-game scoreboard's Server Website button opens 5stack.gg on servers running the SwiftlyS2 version of the plugin.
+- **Fixed:** File manager uploads of up to 100 MB now work on panels behind Cloudflare's proxy.
+- **Fixed:** The dedicated servers list shows the plugin version for community servers.
+- **Fixed:** Enabling, disabling or restarting a dedicated server in quick succession no longer leaves it in the wrong state.
+
+### Self-hosting
+- **New:** When both a 5Stack service update and a panel release are available, the update center offers a single Update that runs them in order. Opening the update center also checks for updates.
+- **New:** A Storage guide explains which paths need an SSD or NVMe disk and how to move game files onto one.
+- **Improved:** Traefik now binds the host's ports itself, so the panel sees players' real addresses when k3s runs on a VPN or private node address.
+- **Improved:** The update popover shows an update starting as soon as you press Update. After a minute without progress, it says so and offers Try Again. Updates now finish as soon as the run ends, and new matches resume right away.
+- **Improved:** A panel that uses external storage no longer runs the built-in storage service.
+- **Improved:** The NVIDIA GPU guide adds a step to turn on kernel modesetting, which clip capture needs. The AMD guide covers a kernel option that stops the driver from loading, and notes that a bad memory setting now stops the panel at startup, with the log naming the problem.
+- **Fixed:** Fresh installs on k3s 1.37 or later no longer fail, because the Gateway API resources are left to k3s.
+- **Fixed:** Long steps in the header update popover wrap instead of being cut off.
+- **Fixed:** Deleting demos and clips now removes their files from versioned storage buckets. If a file can't be removed, its demo or clip is kept so the delete can be retried.
+- **Fixed:** When Detect can't reach a plugin, the settings page says why instead of "Failed to fetch".
+
+### General
+- **New:** The changelog groups each day by section of 5Stack and tags each change New, Improved or Fixed. Wide screens also get a Sections list for showing just one section.
+- **New:** Match organizers and above see a dot on the profile menu when the changelog has new days.
+- **New:** Community polls appear at the top of News, and the bell tells you when one opens. Any signed-in player can vote once and sees results as the poll allows, and anyone who can post news can run polls.
+- **New:** Upload, crop, replace or remove your avatar under Settings → My Account. Removing it goes back to your Steam avatar.
+- **New:** Click a GIF in chat to see it larger.
+- **Improved:** Past times an hour or more old show the exact time instead of "3 days ago". Presence, live ages and countdowns still count.
+- **Improved:** Chat videos recorded by OBS, ShadowPlay or phones are optimized after upload, so they start and seek faster.
+- **Improved:** Player and match pages draw each section once in its final place, so nothing jumps around while they load.
+- **Improved:** Dropdowns are lighter, especially on tournament stage forms. The friends list, matchmaking and the Play page's live queue count do less work, and players going offline no longer slows the rest of the site.
+- **Improved:** The browser extension's FACEIT import, when it needs to, opens the match room in a background tab and closes it when done.
+- **Fixed:** Links to 5Stack show their previews in Discord, Slack and Steam again, and search engines see the welcome page instead of an error.
+- **Fixed:** My Account no longer blocks saving your country and language with "Invalid input".
+- **Fixed:** Signing in, signing out or switching accounts in one tab now updates your other open tabs, chat included.
+- **Fixed:** When your role changes, the open page adjusts to it without a reload.
+- **Fixed:** Country flags show properly on Windows in all text styles.
+
 ## Monday, November 2, 2026
 
 Today brings community leaderboards with far more stats, profile backgrounds in the Locker, a reworked Utility tab and many fixes across practice, tournaments and notifications.
