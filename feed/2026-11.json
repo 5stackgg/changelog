@@ -2,6 +2,74 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-06",
+      "summary": "Today brings panel update and Cloudflare worker improvements for self-hosters, a gentler match-found alert, and keep-your-files node removal.",
+      "sections": {
+        "new": [
+          {
+            "area": "Demos & Replays",
+            "text": "Demo upload alerts appear as \"Demo uploads\" under Operator alerts in Settings › Notifications, with a sample in the alert gallery. Failing uploads show in red under Live now."
+          },
+          {
+            "area": "Game servers",
+            "text": "Removing a game node lists the 5Stack folders it holds on the server, with their sizes. All are kept unless you untick them, so a reinstall keeps the CS2 install, and the node uninstall guide describes the choice. Nodes running an older version show no list and have all their 5Stack files deleted as before."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Settings › System › Panel updates has a Check Now button and shows when the 5Stack service last checked for updates. A waiting release shows with its Update Now."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The header's Updates list shows an out-of-date Cloudflare worker until it is redeployed. Panels run by the 5Stack service get an Open Console button that opens the console on Integrations, and other panels are told what to run."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Demos & Replays",
+            "text": "While demo uploads are failing, they are checked again every hour until they work. The alert then resolves on its own."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panels run by the 5Stack service restart the site, the API, the demo parser, the AI coach and the game node connectors automatically after a release installs. New releases show in the header within seconds."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The Cloudflare worker's version is checked right after each Re-deploy and after the panel restarts. Its row in the header shows \"Re-deployed. Checking the worker…\" in the meantime."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "On panels run by the 5Stack service, the Cloudflare worker warning on the Demos settings page and the \"Cloudflare Worker Needs Update\" alert now point to Re-deploy in the 5Stack Console."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "When a panel script, settings change, database restore or panel move fails, the header's Updates list says why and offers Show Details for the log."
+          },
+          {
+            "area": "General",
+            "text": "The site and the panel's API send stronger browser security headers. Brackets can still be embedded in OBS and on other sites."
+          },
+          {
+            "area": "General",
+            "text": "The welcome and run-your-own pages read more plainly."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "The match-found sound for a ready check, check-in or veto turn now plays once across all your open tabs, instead of again in each new tab."
+          },
+          {
+            "area": "Tournaments",
+            "text": "The tournament page no longer jitters while loading. The header doesn't slide in twice, and the check-in panel no longer pushes the content down."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Re-deploying the Cloudflare worker no longer stops on a panel server without Node. The worker scripts download a verified copy of Node 22 when needed."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-05",
       "summary": "Today brings a reorganized left navigation, unrated tournaments, a redesigned offline match tool, opening a panel's console from 5stack.gg, and many fixes.",
       "sections": {
