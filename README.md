@@ -2,6 +2,20 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Saturday, November 7, 2026
+
+Today brings a tidier site menu, a tournament organizer fix and more reliable self-hosted panels.
+
+### Tournaments
+- **Fixed:** Linking a team as a tournament organizer no longer lists the tournament's admin twice in the organizer row, and existing duplicates are removed.
+
+### Self-hosting
+- **Improved:** You can now set extra allowed sign-in origins, such as a dev tunnel or a sibling domain, through the panel's config command without forcing it. The value also stays in place after updates.
+- **Fixed:** The demo parser and nightly backups now always run on the panel node and never on game nodes, so a broken game node can no longer stall demo reparsing or backups. Updating an existing install sets this up automatically.
+
+### General
+- **Improved:** Signed-in players now find Help & FAQ, the stats guide, the changelog, Terms, Privacy and Licenses in the corner menu under My Settings. Teams moves into Compete, Highlights leaves the left menu since Watch already leads there, and staff get a folding Admin › Moderation section.
+
 ## Friday, November 6, 2026
 
 Today brings panel update and Cloudflare worker improvements for self-hosters, a gentler match-found alert, and keep-your-files node removal.
