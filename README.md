@@ -2,6 +2,32 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Sunday, November 8, 2026
+
+Finished Rokkan reviews can now be read and shared by anyone, the Locker gets a loadout view and a phone layout, and notifications are less noisy.
+
+### Leagues & Events
+- **Improved:** Event media and banners now have one 100MB limit for every file type (PNG, JPEG, WebP, GIF, MP4 and MP3), replacing the separate limits per type. The upload hints and the events guide reflect the new limit.
+
+### Coach
+- **New:** Anyone can read a finished match's Rokkan review, signed in or not. The match page shows "Rokkan reviewed this match" with Read Review and a copy-link button (the share sheet on phones), and the review page lets you switch between each team's and map's review.
+- **New:** A tournament match's Rokkan review stays private to its team until the tournament ends, so the next opponent can't read it first. Its share link appears once the tournament is over.
+
+### Career
+- **New:** The Locker's outfit list is now a loadout of six slot tiles that show what you're wearing, what you're trying on and its price. You can put items back or take them off, and picking a slot switches the grid.
+- **Improved:** On phones, the Locker replaces its left column with a bottom dock of slot icons and Apply Look, and shows the battle pass as one row of milestones with arrows.
+
+### Notifications
+- **New:** Wearing the 5stack.gg clan tag now keeps one notification with your running Stacks total, which updates quietly after each paid match. If a match shows you without the tag, the notification returns as an unread reminder to wear it again.
+- **Improved:** New-article notifications now lead with the article's title and show its full teaser underneath. Other pushes are shortened at a whole word instead of mid-word.
+- **Improved:** The bell and the push badge count a played match once, even when it leaves stats, a Rokkan review, an import notice, tag thanks and unwatched highlights. Live and urgent match alerts still count on their own.
+- **Improved:** Opening your section of a coach review marks that review's notification as read in the bell.
+
+### General
+- **New:** A newly created API key is hidden until you press the eye button to reveal it. Copy still copies the full key.
+- **Improved:** The player navigation is a simpler list with full-width rows and a marker that follows the current page. The Updates count now matches unread news notices.
+- **Fixed:** The newest post's card and the post page header show the cover at full height beside the text, without blurred bars.
+
 ## Saturday, November 7, 2026
 
 Today brings a tidier site menu, a tournament organizer fix and more reliable self-hosted panels.
