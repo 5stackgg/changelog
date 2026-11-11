@@ -26,6 +26,17 @@ const ENTRIES = "entries";
 const BODY_LIMIT = 2000;
 const NOTHING = "NOTHING_TO_REPORT";
 
+// Unannounced work to keep out of the changelog, as plain text from a secret,
+// because this repository is public and naming it here would announce it.
+const EMBARGO = (process.env.CHANGELOG_EMBARGO ?? "").trim();
+const UNANNOUNCED = EMBARGO
+  ? `
+The following is unannounced and must stay a surprise:
+${EMBARGO}
+Leave out every pull request about it, including groundwork built for it, and do not hint at it in the opening sentence or anywhere else. When a pull request mixes it with other changes, write up only the other changes. If nothing else is left, reply with exactly ${NOTHING}.
+`
+  : "";
+
 const SYSTEM = `You write the public daily changelog for 5Stack, a platform for running Counter-Strike 2 matches, tournaments and leagues. People use it on 5stack.gg and on panels they host themselves.
 
 You get one day's merged pull requests as JSON. Each has a "component" (the part of 5Stack its repository holds), a "title" and a "body". Titles usually start with a type: feature, bug or fix, perf, ux, docs, chore, test, ci, refactor.
@@ -38,7 +49,7 @@ Include:
 - Docs changes only when they add or change a guide people follow, filed under the section the guide is about.
 
 Leave out tests, CI, refactors, dependency bumps, internal tooling, load-testing, and anything with no visible effect.
-
+${UNANNOUNCED}
 Never write any of the following. A line containing one is deleted before publishing:
 - Pull request, issue or commit numbers, repository names, links, or people's names or handles.
 - Code: function, table, column, view, file, script, environment variable, job or setting key names, SQL, or query plans. Name what people see ("the friends list"), not what runs behind it.

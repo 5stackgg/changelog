@@ -28,7 +28,7 @@ To add a section, add it to `scripts/areas.mjs` with what it covers. To rename o
 
 1. Only the repositories in `REPOSITORIES` in `scripts/changelog.mjs` are read, and only pull requests merged into main. Bots are skipped, as is any pull request labeled `no-changelog` or `internal`.
 2. Before Claude sees a pull request, `scripts/redact.mjs` strips links, emails, IPs, domains, issue references, code blocks, tables and code names, and redacts the blocklist.
-3. The prompt says what never to write: code names, internal services, customers, and how a security problem worked.
+3. The prompt says what never to write: code names, internal services, customers, and how a security problem worked. It also leaves out whatever `CHANGELOG_EMBARGO` describes.
 4. Every output line is checked again. A line with a link, email, IP, domain, reference, handle, code name, token-like string or blocklisted term is deleted. The log shows how many lines were deleted and why, never their text, because the logs of this repository are public.
 5. Lines outside the entry format (section headings from `scripts/areas.mjs` and `- **New:**`, `- **Improved:**` or `- **Fixed:**` bullets) are deleted too, so the README and the feed always show the same entries.
 
@@ -37,6 +37,7 @@ To add a section, add it to `scripts/areas.mjs` with what it covers. To rename o
 - `OPS_APP_KEY` (org secret) and `OPS_APP_CLIENT_ID` (org variable): the 5Stack Ops GitHub App. Each run mints a short-lived token limited to Pull requests: read and passes it to the script as `GH_READ_TOKEN`.
 - No Claude API key. The workflow trades GitHub's OIDC token for a short-lived Claude token through workload identity federation: rule `changelog-main` and service account `5stack-changelog` (5stack workspace) on platform.claude.com. The rule only accepts `schedule` and `workflow_dispatch` runs on `main` of this repository, so pull requests and other branches can't call Claude.
 - `CHANGELOG_BLOCKLIST` (optional): customer, panel and community names or domains, one per line or comma-separated. It is a secret so the list itself stays private.
+- `CHANGELOG_EMBARGO` (optional): unannounced work to leave out of the changelog, described in plain words. The prompt tells Claude to skip every pull request about it. It is a secret because this repository is public. Delete the secret once the work is announced, then redo any days that should now mention it.
 
 ## Trying a day locally
 

@@ -56,6 +56,7 @@ jobs:
           ANTHROPIC_WORKSPACE_ID: wrkspc_01HBxqmUuFNiUxTdi5LtpLLU
           ANTHROPIC_IDENTITY_TOKEN_FILE: ${{ runner.temp }}/anthropic-jwt
           CHANGELOG_BLOCKLIST: ${{ secrets.CHANGELOG_BLOCKLIST }}
+          CHANGELOG_EMBARGO: ${{ secrets.CHANGELOG_EMBARGO }}
 
       - if: steps.changelog.outputs.date
         env:
