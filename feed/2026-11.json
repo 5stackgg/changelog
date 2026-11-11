@@ -2,6 +2,210 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-10",
+      "summary": "Rokkan now sends weekly progress reports, answers questions about your matches and builds team playbooks, leaderboards split by side, and short tournament teams can recruit players.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matchmaking",
+            "text": "Draft rooms have their own page in the left nav, between Queue and Watch, and the Play page is now called Queue. On a wide screen, a side pane shows Host a room until you pick a room, then that room's players and settings."
+          },
+          {
+            "area": "Matches",
+            "text": "The match Roles card shows each player's role on the T side and the CT side, with a short reason when you tap it and a marker where Rokkan chose the role. A player's Preferred roles on their profile are also split by side."
+          },
+          {
+            "area": "Tournaments",
+            "text": "In tournaments open to both teams and free agents, a team with an open seat can turn on Looking For Players, and players can ask to join it from a new section above the free agent pool. Recruiters accept or decline from My Team or the notification bell, and the player is told when they are accepted."
+          },
+          {
+            "area": "Coach",
+            "text": "Rokkan writes a weekly progress report every Monday for players with at least two reviewed matches that week, and sends a \"Your Week With Rokkan\" notification. Reports appear in the Coach inbox and show which habits got better, which are still happening, and what to practise."
+          },
+          {
+            "area": "Coach",
+            "text": "Ask Rokkan lets you ask questions about a match Rokkan reviewed for you, with suggested questions and a daily limit shown. Times in its answers jump the replay to that moment. On your own panel, Ask Rokkan and the weekly report now run whenever the match coach is on, with no separate settings."
+          },
+          {
+            "area": "Coach",
+            "text": "Your section of a review opens the To Fix tab with \"From Your Last Reviews\", which shows what is fixed, better or back since your earlier reviews. You can mark each item as Helpful, Mostly or Not Right, with a reason and an optional note."
+          },
+          {
+            "area": "Coach",
+            "text": "The team's Coach tab has a Playbook for the current roster. It lists the plays the team ran on each map over its last eight matches there and how they turned out. Picking a play shows its rounds in the 2D replay, alongside the lineups the team threw in it."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The Rating, ADR, KPR, KAST and UDR leaderboards can count only T side or CT side rounds. You can filter them by side roles such as Entry, Lurker, Anchor, Rotator and AWP. Exclude Tournaments has moved into a Filters menu."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The team page has a new header that shows the next match and the team's open scrim hours. The Overview tab lists the team's matches, activity moves to its own filterable tab, and the veto simulator plays out step by step on active-pool maps."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "You can choose which team your profile banner shows by pinning it from the Teams tab on your profile."
+          },
+          {
+            "area": "Notifications",
+            "text": "Alerts now have levels. Critical alerts get their own section at the top of the bell, and staff can choose which levels send a push and whether critical alerts ring during quiet hours. Administrators can choose which levels are posted to the Discord support channel."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The Internet exposure page lists only servers that expose something and shows each server's firewall (ufw) state. It also offers Turn On Firewall for servers where the firewall is off, with live progress for each server. The header to-dos flag servers with ports to close, and a note explains what results mean for servers behind a router."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "An Audit Log page shows which administrator changed settings, regions, nodes, dedicated servers, map pools, game modes, plugins, sanctions and roles. Changes the panel makes on its own appear as System, and entries are kept for a year."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A panel behind your own reverse proxy can list the proxy's addresses during install, so Traefik keeps the real visitor address it passes on. Existing installs are unchanged."
+          },
+          {
+            "area": "General",
+            "text": "Numbers across the site, including scores, stats, counts and leaderboards, roll to their new value instead of snapping when they change."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matches",
+            "text": "The Trades table now has four columns: Trades Made, In Trade Range, Traded and Net Trade. When a map is selected, a match row's expanded panel shows only that map's stats."
+          },
+          {
+            "area": "Matches",
+            "text": "The Economy tab's buy matchups show kills per round for each player. Each value is coloured against what that player usually does."
+          },
+          {
+            "area": "Matches",
+            "text": "The match organizer role runs matches that are not part of a tournament. On tournament matches it has moderator access, and the tournament's organizers, tournament organizers and administrators run the match."
+          },
+          {
+            "area": "Matches",
+            "text": "Lineup captains can only set their lineup to a team they manage. They can no longer change the team once the match is live, or on tournament matches."
+          },
+          {
+            "area": "Utility",
+            "text": "The Practice Servers page is now for match organizers and above. A practice session is run and seen only by its host and administrators."
+          },
+          {
+            "area": "Coach",
+            "text": "Each habit on the Habits page shows which recent matches it was seen in. It also says whether a problem is Stuck, Improving, Gone or New, and whether a strength is Steady or Improving."
+          },
+          {
+            "area": "Coach",
+            "text": "Administrators can have Rokkan review a finished match again. The current review stays available until the new one is ready, and players are not notified."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Season stat tiles on the leaderboard no longer show a Built-in label."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The Teams tab on a profile marks each join and leave with the team's emblem and opens with a row of team cards, current teams first."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Your Steam status is shown to another player only once you have accepted their friend request."
+          },
+          {
+            "area": "Career",
+            "text": "The Career button in the header now shows only your level badge and Stacks, so it takes less room."
+          },
+          {
+            "area": "Notifications",
+            "text": "Panel updates are grouped into one bell row that shows the release the panel left, the one it runs now, and how many updates that was."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Application settings open on Panel Updates and start with a My Panel group for health, security and server settings. Game modes now sit under Match setup, Panel plugins and the Plugin Directory share one Plugins page, and Diagnostics is part of Telemetry."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Starting a panel or 5Stack service update no longer shows a duplicate \"started\" toast."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Editing a saved panel plugin fills in its address, so Detect works in one click."
+          },
+          {
+            "area": "General",
+            "text": "Pages showing animated cosmetics, match pages with many numbers, match clutches and the season standings are faster."
+          },
+          {
+            "area": "General",
+            "text": "Opening the changelog marks it as read without a button."
+          },
+          {
+            "area": "General",
+            "text": "The welcome page now calls the Inventory app by its new name, Loadout."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "The empty Draft Rooms page no longer shows a tall intro beside a much shorter Host a room panel."
+          },
+          {
+            "area": "Matches",
+            "text": "Practice sessions no longer appear in live and upcoming match lists on the welcome page, the Watch page and the broadcast deck, or in live match counts."
+          },
+          {
+            "area": "Utility",
+            "text": "The utility plugin on dedicated practice servers can now connect to the panel."
+          },
+          {
+            "area": "Utility",
+            "text": "The re-render preview only appears on lineups that can actually be rendered."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Grenades a player still held when they died are counted correctly. A grenade thrown just before death is no longer missed, and a grenade picked up after a throw is no longer cancelled out."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Multi-kill clips with a player chip and no outro no longer freeze after the first kill."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Older clips play in full again instead of being cut short by an assumed three-second outro."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Per-side stats now count every round a player was in, not only rounds with a kill or death."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Changing a competitive season's dates or deleting a season now rates the affected matches again correctly."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "On phones, the profile banner gives the team its own full-width bar so its name is no longer squeezed."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The player page no longer flashes a \"no match history\" message while match history is still loading."
+          },
+          {
+            "area": "Game servers",
+            "text": "Offline matches now use ports from the node's game port range, so players can reach them when the firewall is on."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panel updates and maintenance reuse one banner each instead of filling the Alerts page with old entries. Banners left behind by earlier runs are removed."
+          },
+          {
+            "area": "General",
+            "text": "An alert you dismissed shows again when it is put back up later."
+          },
+          {
+            "area": "General",
+            "text": "Uploaded logos show whole on the landing page header, footer and nav banner, and the landing page name fits cleanly on phones."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-09",
       "summary": "Today brings an Internet exposure page and simpler updates for self-hosted panels, a new player profile, off-season leaderboards, more accurate stats, and a smoother event Media tab and highlights on phones.",
       "sections": {
