@@ -2,6 +2,59 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Wednesday, November 11, 2026
+
+Today adds team roster photos in game, teams in search and new Rokkan tools for administrators, along with a round of fixes across the site.
+
+### Matchmaking
+- **Fixed:** Every member of a party must now meet the queue's minimum role before the party can queue.
+
+### Matches
+- **New:** When every player in a lineup plays for the same team, the match takes on that team's name, logo and history. Players then show their team roster photo in game, on the match page, on the stream HUD and on cameras.
+- **New:** Draft lineups without a team are named "Team" plus their captain's name, and the name follows a replacement captain. A name set on the match page is never overwritten.
+- **Fixed:** The in-game scoreboard shows the real rating at stake instead of -5000.
+- **Fixed:** Players in a live match no longer get an error when they open other pages, such as Highlights.
+
+### Coach
+- **New:** A team's Coach tab and playbook now include matches the team played off the platform, such as Valve Premier and FACEIT. These matches still stay out of the team's public record.
+- **New:** Administrators can have Rokkan review a finished match again from the match's admin menu. Players keep the current review until the new one is ready, and the match page shows when a re-review is in progress or has failed.
+- **New:** Admin Overview has an AI Spend section with daily charts and totals. You can filter it by feature, match source and model, and each match review's cost is now recorded.
+- **New:** Administrators get an alert when Rokkan's match reviews keep failing. A review Rokkan could not start now says so instead of showing a generic error.
+- **Fixed:** A team's Coach tab lists the team's reviews again.
+- **Fixed:** The team playbook counts bomb plants in imported matches instead of showing zero.
+
+### Demos & Replays
+- **Fixed:** Once the bomb is planted, the replay clock shows the red C4 icon and turns red, matching the HUD.
+
+### Streams & Highlights
+- **Fixed:** Creating player highlights while a batch is still rendering no longer throws that work away. You now see a message instead.
+
+### Stats & Leaderboards
+- **Improved:** The stats source toggle, match rows and the draft room's rank source show your panel's own name instead of "5Stack".
+- **Fixed:** The ELO hover card closes as soon as the pointer leaves the number and no longer blocks clicks on the rows beneath it.
+
+### Players & Teams
+- **New:** The Ctrl+K search finds teams by name or tag and lists them above players.
+- **New:** The profile banner shows your pinned team's logo. Roster members and owners can pin a team from its page with Show on Your Profile.
+- **Improved:** Captains are marked with a C badge across rosters, match lineups and drafts. The Friend status is now a quieter grey.
+- **Fixed:** The owner picker in Edit Team shows the chosen owner as a proper player row.
+
+### Game servers
+- **Improved:** With CPU pinning on and no value saved, each game server now gets 1 CPU instead of 2. The CPU pinning guide is updated to match.
+- **Improved:** The dedicated servers list opens sorted by name, so servers no longer jump around when switched on or off.
+
+### Self-hosting
+- **New:** A Supported GPUs guide lists CS2 frame rates at 1080p for NVIDIA and AMD cards and recommends High or Medium settings for each.
+- **Fixed:** Updating a panel no longer overwrites passwords and other secrets it has already stored.
+
+### General
+- **New:** Staff can mark players as verified, and every minimum-role setting gains a "Verified players only" option. Players who could take part before still can.
+- **Improved:** On phones, tabs are a single swipeable row that sticks under the top bar and centres the active tab.
+- **Improved:** The welcome page globe and panel count include every panel that has ever reported.
+- **Fixed:** Link preview cards show an uploaded logo whole instead of cropping it.
+- **Fixed:** Settings pages scroll all the way to the bottom while a system alert banner is showing.
+- **Fixed:** On phones, the slide-out menu now starts below the status bar.
+
 ## Tuesday, November 10, 2026
 
 Rokkan now sends weekly progress reports, answers questions about your matches and builds team playbooks, leaderboards split by side, and short tournament teams can recruit players.
