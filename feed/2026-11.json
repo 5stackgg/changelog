@@ -2,6 +2,254 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-12",
+      "summary": "Today adds a Team app with team calls and party seats, a redesigned Coach playbook with Rokkan briefs, and a long list of tournament fixes.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matchmaking",
+            "text": "Parties now have seats: five by default, and the leader can open up to 10. A team can call itself into a Team party that its players join without an invite, and a full call keeps you in line until a seat opens."
+          },
+          {
+            "area": "Matches",
+            "text": "A match with the same team on both lineups is tagged Intrasquad, with sides named A and B. It doesn't count as a win or loss on the team's record."
+          },
+          {
+            "area": "Coach",
+            "text": "Coach is now an app in the right hub, where you can read your brief and reviews in place and switch between your own and your team's."
+          },
+          {
+            "area": "Coach",
+            "text": "The Coach hub's brief is now one card with Rokkan's note, what's working and what's costing you, a plan for your next match, and your utility over your last 10 reviewed matches. Rokkan writes a new brief once per newly reviewed match."
+          },
+          {
+            "area": "Coach",
+            "text": "A team's Coach tab shows a card for each problem habit, with how often it happened, who it was found on, where it happened, and what to do instead. Each card adds Rokkan's team-level why, fix and practice tip, and Watch it opens the review at that round."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The leaderboard says how many placement matches it takes to be ranked."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "A Team app at the top of the right hub shows your team's roster with live status, team chat and a party you can call the team into. Teammates use the same rows as the friends list, and unread team messages badge the Team icon."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Players can choose whether the site shows their avatar or their roster image, in Settings › My Account and in Edit Player. Players who already uploaded a roster image keep seeing it."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A system alert can now turn on Maintenance mode. While it is on, everyone except administrators sees a maintenance page with the alert's title and message. The panel opens again by itself when the alert ends or the switch is turned off."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The branding page adds a page title, meta description and share image, used for the browser tab and link previews."
+          },
+          {
+            "area": "General",
+            "text": "A Support app in the right hub lets anyone open a ticket and talk with staff, and staff answer tickets from a queue. Each player can open up to three tickets per 24 hours."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matchmaking",
+            "text": "Who can join a party or draft room is now one list: Invite only, one of your teams, Friends, Open, and Private for draft rooms. The top bar lists party members like the friends list, with a crown after the leader's name."
+          },
+          {
+            "area": "Matches",
+            "text": "Matches you are importing show their progress in the right hub's Matches app (Finding match, Demo found, Parsing demo), with a count on its icon. This replaces the badge in the left menu corner."
+          },
+          {
+            "area": "Matches",
+            "text": "A lineup shows the roster photos of the team its full lineup plays for, even when no team was picked."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Reset to Setup now asks first and names the tournament. When a free agent draft made teams, the dialog says how many will be taken apart and that their players go back to the free agent list."
+          },
+          {
+            "area": "Coach",
+            "text": "The team playbook is redesigned. It reads the last 10, 20 or 50 matches on a map, lists recurring plays first by win rate, and shows each play's utility as a numbered timeline pinned where it lands."
+          },
+          {
+            "area": "Coach",
+            "text": "The playbook opens from a map rail beside the habit cards, and it now has its own address, so links open straight onto a map and Back closes it. Night versions of a map count with the map."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Switching match or round in the 2D replay no longer freezes the page, and players fade across instead of popping. In the playbook, switching to another match on the same map keeps the replay loaded, and going back to one of the last two matches is instant."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "On replays in the playbook, coach reviews and scouting, scrolling or swiping up and down over the whole map now scrolls the page. When zoomed in, scrolling down zooms back out first, and pinching still zooms."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "The stream HUD now recognizes workshop maps to set each team's side. In a grand final, its series score includes the winner-bracket team's map advantage."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The leaderboard's Season Awards are marked Projected and say when the awards will be given out."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Community points for This Week now show what the week gained or lost, starting from 0. All Time still shows the total."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Sortable stat headers can now be reached with Tab and sorted with Enter or Space, and screen readers announce the sorted column. The Stats Guide also reads better with screen readers."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The team page roster is now a team photo with a side column of Roster, League and Roster History tabs beside the last 20 matches. The banner shows the team's league, and match rows show the faces of pickup opponents."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Roster History uses the same player display as the starting lineup, grouped into Starters, Substitutes, Bench, Coaches and Former. The roster now lists members alphabetically."
+          },
+          {
+            "area": "Game servers",
+            "text": "Connect and RCON passwords for node-hosted servers may only use letters, digits and a few safe symbols, so the server always gets exactly the password you set. Existing passwords keep working until they are changed."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Player-facing text now uses your panel's brand name, and leaderboard empty states say \"registered account\"."
+          },
+          {
+            "area": "General",
+            "text": "Linking Discord now checks your Steam connection on Discord and marks your account verified when they match. The Discord card in Settings shows your link and Steam check status."
+          },
+          {
+            "area": "General",
+            "text": "Loading placeholders appear only when a load takes a moment, so quick loads no longer flash them."
+          },
+          {
+            "area": "General",
+            "text": "The welcome page's globe now counts every panel on the 5Stack network, and the page title reads \"Find Your Five\"."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matches",
+            "text": "When a restarted server replays its map, the earlier rounds and kills no longer stay counted."
+          },
+          {
+            "area": "Matches",
+            "text": "The Round Restart Delay set in a match's options now takes effect."
+          },
+          {
+            "area": "Matches",
+            "text": "Players left dead in warmup after a team change are now respawned."
+          },
+          {
+            "area": "Matches",
+            "text": "A restore refused for a missing backup now names the round the restore would start, as the match page does."
+          },
+          {
+            "area": "Matches",
+            "text": "Coaches no longer receive spectator or GOTV access for matches they coach, the same as the match's players."
+          },
+          {
+            "area": "Tournaments",
+            "text": "A grand final now plays at the stage's grand final best-of, with the winner bracket's map advantage, even when fewer teams registered. The bracket card and the league season playoffs label it correctly."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Setting a map winner in a grand final now counts the winner-bracket team's map advantage."
+          },
+          {
+            "area": "Tournaments",
+            "text": "A single-elimination third-place decider now plays at the stage's decider best-of instead of the final's. The \"3rd Place Decider\" label also shows when fewer teams registered."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Lineups of matches placed by a tournament bracket can no longer be swapped."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Opening registration on an invite-only tournament no longer sends a signup notice to every player."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Saving tournament options is now all or nothing, so a refused save no longer leaves partial changes or an unused custom map pool behind. Turning on Auto Start now starts matches under the new rules."
+          },
+          {
+            "area": "Tournaments",
+            "text": "After a tournament starts, the Teams tab label counts the teams the tab actually lists."
+          },
+          {
+            "area": "Tournaments",
+            "text": "The tournament page no longer scrolls sideways on phones. This also fixes the date and time picker used when creating matches and tournaments."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "The Up next event card now says \"starts tomorrow\" instead of just \"tomorrow\"."
+          },
+          {
+            "area": "Utility",
+            "text": "On phones, More ways to play on the Play page and in draft rooms no longer offers to start a practice server unless one is already running."
+          },
+          {
+            "area": "Coach",
+            "text": "Coach review and scouting panes now fit on screen when a system alert banner is showing."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "The replay no longer flickers when a panel above it opens or closes."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Shots now record the ammo in the magazine before the shot, including a magazine's last bullet, so ammo stats no longer come up one short per reload. Demos parsed earlier keep their old values until they are reparsed."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Renders and streams no longer hang at launch after Steam's latest client update."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Leaving a match now always costs at least as much ELO as losing it."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Season Gold, Silver and Bronze, and their projected standings, now rank Competitive ratings only."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Shortening a season now removes matches past its new end from that season's stats, so they aren't counted in two seasons."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "On community stats, rounds, MVPs and bomb defuses now count only when another human player is on the other side."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Your pinned team now comes first under Your Teams."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The Team Editor's save bar stays inside the drawer, so Save is no longer cut off."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "On phones, the Edit Player sheet no longer scrolls sideways, and long country names are shortened instead of widening the form."
+          },
+          {
+            "area": "Game servers",
+            "text": "The node inspector's Region, CS2 version and Plugin pickers are now visible and usable on phones."
+          },
+          {
+            "area": "Game servers",
+            "text": "Settings › Plugins no longer flips back to the previous tab after you pick another one."
+          },
+          {
+            "area": "General",
+            "text": "News posts that fail to reach Discord are now retried."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-11",
       "summary": "Today adds team roster photos in game, teams in search and new Rokkan tools for administrators, along with a round of fixes across the site.",
       "sections": {

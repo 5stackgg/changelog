@@ -2,6 +2,95 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Thursday, November 12, 2026
+
+Today adds a Team app with team calls and party seats, a redesigned Coach playbook with Rokkan briefs, and a long list of tournament fixes.
+
+### Matchmaking
+- **New:** Parties now have seats: five by default, and the leader can open up to 10. A team can call itself into a Team party that its players join without an invite, and a full call keeps you in line until a seat opens.
+- **Improved:** Who can join a party or draft room is now one list: Invite only, one of your teams, Friends, Open, and Private for draft rooms. The top bar lists party members like the friends list, with a crown after the leader's name.
+
+### Matches
+- **New:** A match with the same team on both lineups is tagged Intrasquad, with sides named A and B. It doesn't count as a win or loss on the team's record.
+- **Improved:** Matches you are importing show their progress in the right hub's Matches app (Finding match, Demo found, Parsing demo), with a count on its icon. This replaces the badge in the left menu corner.
+- **Improved:** A lineup shows the roster photos of the team its full lineup plays for, even when no team was picked.
+- **Fixed:** When a restarted server replays its map, the earlier rounds and kills no longer stay counted.
+- **Fixed:** The Round Restart Delay set in a match's options now takes effect.
+- **Fixed:** Players left dead in warmup after a team change are now respawned.
+- **Fixed:** A restore refused for a missing backup now names the round the restore would start, as the match page does.
+- **Fixed:** Coaches no longer receive spectator or GOTV access for matches they coach, the same as the match's players.
+
+### Tournaments
+- **Improved:** Reset to Setup now asks first and names the tournament. When a free agent draft made teams, the dialog says how many will be taken apart and that their players go back to the free agent list.
+- **Fixed:** A grand final now plays at the stage's grand final best-of, with the winner bracket's map advantage, even when fewer teams registered. The bracket card and the league season playoffs label it correctly.
+- **Fixed:** Setting a map winner in a grand final now counts the winner-bracket team's map advantage.
+- **Fixed:** A single-elimination third-place decider now plays at the stage's decider best-of instead of the final's. The "3rd Place Decider" label also shows when fewer teams registered.
+- **Fixed:** Lineups of matches placed by a tournament bracket can no longer be swapped.
+- **Fixed:** Opening registration on an invite-only tournament no longer sends a signup notice to every player.
+- **Fixed:** Saving tournament options is now all or nothing, so a refused save no longer leaves partial changes or an unused custom map pool behind. Turning on Auto Start now starts matches under the new rules.
+- **Fixed:** After a tournament starts, the Teams tab label counts the teams the tab actually lists.
+- **Fixed:** The tournament page no longer scrolls sideways on phones. This also fixes the date and time picker used when creating matches and tournaments.
+
+### Leagues & Events
+- **Fixed:** The Up next event card now says "starts tomorrow" instead of just "tomorrow".
+
+### Utility
+- **Fixed:** On phones, More ways to play on the Play page and in draft rooms no longer offers to start a practice server unless one is already running.
+
+### Coach
+- **New:** Coach is now an app in the right hub, where you can read your brief and reviews in place and switch between your own and your team's.
+- **New:** The Coach hub's brief is now one card with Rokkan's note, what's working and what's costing you, a plan for your next match, and your utility over your last 10 reviewed matches. Rokkan writes a new brief once per newly reviewed match.
+- **New:** A team's Coach tab shows a card for each problem habit, with how often it happened, who it was found on, where it happened, and what to do instead. Each card adds Rokkan's team-level why, fix and practice tip, and Watch it opens the review at that round.
+- **Improved:** The team playbook is redesigned. It reads the last 10, 20 or 50 matches on a map, lists recurring plays first by win rate, and shows each play's utility as a numbered timeline pinned where it lands.
+- **Improved:** The playbook opens from a map rail beside the habit cards, and it now has its own address, so links open straight onto a map and Back closes it. Night versions of a map count with the map.
+- **Fixed:** Coach review and scouting panes now fit on screen when a system alert banner is showing.
+
+### Demos & Replays
+- **Improved:** Switching match or round in the 2D replay no longer freezes the page, and players fade across instead of popping. In the playbook, switching to another match on the same map keeps the replay loaded, and going back to one of the last two matches is instant.
+- **Improved:** On replays in the playbook, coach reviews and scouting, scrolling or swiping up and down over the whole map now scrolls the page. When zoomed in, scrolling down zooms back out first, and pinching still zooms.
+- **Fixed:** The replay no longer flickers when a panel above it opens or closes.
+- **Fixed:** Shots now record the ammo in the magazine before the shot, including a magazine's last bullet, so ammo stats no longer come up one short per reload. Demos parsed earlier keep their old values until they are reparsed.
+
+### Streams & Highlights
+- **Improved:** The stream HUD now recognizes workshop maps to set each team's side. In a grand final, its series score includes the winner-bracket team's map advantage.
+- **Fixed:** Renders and streams no longer hang at launch after Steam's latest client update.
+
+### Stats & Leaderboards
+- **New:** The leaderboard says how many placement matches it takes to be ranked.
+- **Improved:** The leaderboard's Season Awards are marked Projected and say when the awards will be given out.
+- **Improved:** Community points for This Week now show what the week gained or lost, starting from 0. All Time still shows the total.
+- **Improved:** Sortable stat headers can now be reached with Tab and sorted with Enter or Space, and screen readers announce the sorted column. The Stats Guide also reads better with screen readers.
+- **Fixed:** Leaving a match now always costs at least as much ELO as losing it.
+- **Fixed:** Season Gold, Silver and Bronze, and their projected standings, now rank Competitive ratings only.
+- **Fixed:** Shortening a season now removes matches past its new end from that season's stats, so they aren't counted in two seasons.
+- **Fixed:** On community stats, rounds, MVPs and bomb defuses now count only when another human player is on the other side.
+
+### Players & Teams
+- **New:** A Team app at the top of the right hub shows your team's roster with live status, team chat and a party you can call the team into. Teammates use the same rows as the friends list, and unread team messages badge the Team icon.
+- **New:** Players can choose whether the site shows their avatar or their roster image, in Settings › My Account and in Edit Player. Players who already uploaded a roster image keep seeing it.
+- **Improved:** The team page roster is now a team photo with a side column of Roster, League and Roster History tabs beside the last 20 matches. The banner shows the team's league, and match rows show the faces of pickup opponents.
+- **Improved:** Roster History uses the same player display as the starting lineup, grouped into Starters, Substitutes, Bench, Coaches and Former. The roster now lists members alphabetically.
+- **Fixed:** Your pinned team now comes first under Your Teams.
+- **Fixed:** The Team Editor's save bar stays inside the drawer, so Save is no longer cut off.
+- **Fixed:** On phones, the Edit Player sheet no longer scrolls sideways, and long country names are shortened instead of widening the form.
+
+### Game servers
+- **Improved:** Connect and RCON passwords for node-hosted servers may only use letters, digits and a few safe symbols, so the server always gets exactly the password you set. Existing passwords keep working until they are changed.
+- **Fixed:** The node inspector's Region, CS2 version and Plugin pickers are now visible and usable on phones.
+- **Fixed:** Settings › Plugins no longer flips back to the previous tab after you pick another one.
+
+### Self-hosting
+- **New:** A system alert can now turn on Maintenance mode. While it is on, everyone except administrators sees a maintenance page with the alert's title and message. The panel opens again by itself when the alert ends or the switch is turned off.
+- **New:** The branding page adds a page title, meta description and share image, used for the browser tab and link previews.
+- **Improved:** Player-facing text now uses your panel's brand name, and leaderboard empty states say "registered account".
+
+### General
+- **New:** A Support app in the right hub lets anyone open a ticket and talk with staff, and staff answer tickets from a queue. Each player can open up to three tickets per 24 hours.
+- **Improved:** Linking Discord now checks your Steam connection on Discord and marks your account verified when they match. The Discord card in Settings shows your link and Steam check status.
+- **Improved:** Loading placeholders appear only when a load takes a moment, so quick loads no longer flash them.
+- **Improved:** The welcome page's globe now counts every panel on the 5Stack network, and the page title reads "Find Your Five".
+- **Fixed:** News posts that fail to reach Discord are now retried.
+
 ## Wednesday, November 11, 2026
 
 Today adds team roster photos in game, teams in search and new Rokkan tools for administrators, along with a round of fixes across the site.
@@ -780,50 +869,5 @@ Today brings Rokkan, the AI coach, plus player and chat reports, team roster his
 - **Fixed:** The site stays up when an unexpected error happens, including when someone closes a log view or leaves partway through downloading an avatar, clip or image.
 - **Fixed:** Chat rooms now share only the name, avatar and status that chat shows for each member.
 - **Fixed:** The match page preview on the welcome page no longer captures the mouse wheel.
-
-## Thursday, October 29, 2026
-
-Today brings AMD GPU support and Traefik routing for self-hosted panels, season ELO that includes tournament matches, demo uploads for every signed-in player, and speed-ups across the site.
-
-### Matches
-- **New:** The match scoreboard lists players by ADR in every view, rows glide to their new places when the order changes, and stat numbers roll like an odometer.
-
-### Leagues & Events
-- **New:** The event leaderboard has an ELO Gained tab that ranks players by how much the event's matches raised or lowered their rating. Voided matches don't count, and the tab follows the game mode the board is filtered to.
-
-### Demos & Replays
-- **New:** Who can upload demos is now a setting in demo settings, next to who can watch them. By default every signed-in player can upload a .dem file from their own profile.
-- **Improved:** Demo uploads are limited per player, and an upload you start can always be cancelled. Uploads from players who aren't administrators change only the uploader's own Premier rating and are processed after other imports.
-- **Fixed:** If the demo upload setting holds an invalid value, uploads stay available to administrators, and their profile shows the upload option instead of hiding it from everyone.
-
-### Streams & Highlights
-- **Fixed:** The stream HUD shows each team's name on the side that team actually plays. The map-end banner and series score now go to the right team.
-- **Fixed:** Live streams, demo playback and highlight clips on workshop maps no longer get stuck on CS2's workshop download prompt. The map now downloads before the game starts, and the startup steps show that download in the right order.
-
-### Stats & Leaderboards
-- **Improved:** Tournament matches now count toward the season they're played in, so a player's season ELO includes their events. Exclude Tournaments on the season leaderboard leaves out tournament results, and affected seasons are re-rated automatically a few minutes after updating.
-- **Fixed:** Rebuilding ratings no longer drops tied matches.
-
-### Game servers
-- **Fixed:** On Ubuntu 26.04 game nodes, ending a match or a dedicated server stops its CS2 server again.
-
-### Self-hosting
-- **New:** The panel now routes traffic through Traefik, replacing the previous ingress controller, which is no longer maintained. Updating hands the web ports over automatically, installs behind a reverse proxy keep answering on 443 as before, and the ports guide has moved under the install guides.
-- **New:** AMD GPU nodes are supported for live streams, demo playback, highlights and utility lineups. Support is full on Strix Halo and experimental on other Radeon GPUs, with one GPU vendor per cluster. The setup script labels AMD nodes and asks whether to include integrated GPUs, and the GPU guides walk through it.
-- **New:** Plugins can ship Traefik routes alongside their existing install. On Traefik panels these routes are used, and a plugin's old routes are removed only once the new ones are working.
-- **Improved:** A running Kubernetes update shows a progress bar, the version it is updating to and how many nodes are done. It can no longer be stopped part way, which would leave nodes on different versions.
-- **Improved:** Pressing Update Now in the header's update popover shows Updating and closes the popover, and the header icon spins until the services finish.
-- **Improved:** Adding a game server node now explains why it failed when the node's network setup is refused, and says when the cause is your network plan or billing.
-- **Improved:** The requirements guide now says the smallest recommended panel size of 4 cores and 8 GB handles up to 1,000 people online.
-- **Fixed:** Panels on Ubuntu 26.04 start correctly again, including the database and core services.
-- **Fixed:** The Kubernetes update no longer counts offline nodes it will skip, and doesn't offer an update when only offline nodes are behind.
-- **Fixed:** A GPU node's failed shader preparation stays marked as failed instead of disappearing a few seconds later.
-- **Fixed:** The GPU node state shows the boot step's progress with a space before it, as in "Processing Vulkan shaders (1%)".
-- **Fixed:** The guide for moving off the lowlatency kernel now removes the other lowlatency kernels first, so the node reboots into the generic kernel. It also warns about GPU nodes whose NVIDIA driver would be affected.
-
-### General
-- **Improved:** The notification bell, friends list, "my matches" banner, live match lists, tournaments and the rest of what every signed-in page shows now appear right away instead of after about a second.
-- **Improved:** Many parts of the site are faster, especially on busy panels: the notification bell, the friends list, the "my matches" banner, the nav's live match count, profile and team highlights, the matches list, the Play page's server list, practice sessions and tournament rosters.
-- **Fixed:** The notification bell, highlights and the "my matches" banner no longer keep showing outdated information when something changes while they are loading.
 
 Older days are in [entries](entries).
