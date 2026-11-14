@@ -2,6 +2,298 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-13",
+      "summary": "Today brings fairer handling of dropped players, pauses and surrenders, Wingman and Duel season podiums, limits on repeat-opponent ELO, and many fixes across draft rooms, events and stats.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matchmaking",
+            "text": "Draft Rooms in the left menu shows how many rooms are open. The count includes public rooms and the friends, team and invite rooms you can see."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "When every player in a draft is on the same LAN and it has a free server, the draft's match is played there. A venue's match LAN is preferred over a nearby practice-only one."
+          },
+          {
+            "area": "Matches",
+            "text": "In online matches, a player who drops costs their team a technical timeout, and each team has two. When both teams are short they take turns paying, and the match plays on short-handed once a team's timeouts are spent."
+          },
+          {
+            "area": "Matches",
+            "text": "In LAN and offline matches, a dropped player's pause stays until someone resumes it. The pause reminder counts down the timeout in every language."
+          },
+          {
+            "area": "Matches",
+            "text": "A cancelled match is tagged Cancelled on the match page, in match lists and in chat, with a note explaining what that means. It no longer counts toward stats, leaderboards, ELO, awards, Career XP or the profile's Maps totals, and it counts again if it is un-cancelled."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Event highlights have their own tab, and the Overview shows the event's top plays. Tournaments taking sign-ups appear as a slim row with Register."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Events in the left menu shows how many events are live now. The Events link stays visible to everyone while Events is switched on."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "The match page shows which highlights are still being made, how many are ready and where yours is in line."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Each season now awards Wingman and Duel podiums alongside Competitive. The leaderboard shows the podium for the selected match type, and these medals name their mode on profiles."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "When the same players meet four or more times in a week, the winners keep 75%, then 50%, then 25% of their ELO gain. The ELO popup explains the reduction, and admins can change these settings in Settings › Players."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Administrators can revoke a calculated season medal by giving a reason, and the revoke holds through recalculation. A Revoked list on the award page lets them restore it."
+          },
+          {
+            "area": "Notifications",
+            "text": "The bell has a Setup section for getting started steps and an Updates section that folds update notices into one line."
+          },
+          {
+            "area": "Game servers",
+            "text": "Practice servers have their own switch in a node's options and work with matchmaking off."
+          },
+          {
+            "area": "General",
+            "text": "A Share button on match, tournament, team, event, league season and player profile pages opens your phone's share sheet or copies the link."
+          },
+          {
+            "area": "General",
+            "text": "Administrators can send match voice channels to another Discord server from Settings › Application › Discord, and send it back at any time."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matches",
+            "text": "A pickup seat is now taken only by linking Discord on 5stack.gg. Until then, the player waits in spectator and is told how to claim their seat."
+          },
+          {
+            "area": "Matches",
+            "text": "Only lineup players can ready up, and each lineup readies on its own. The not-ready list also names seats nobody has taken yet."
+          },
+          {
+            "area": "Matches",
+            "text": "LAN and offline matches no longer call surrender votes or record abandons. A cancelled LAN match outside a tournament records no no-shows."
+          },
+          {
+            "area": "Matches",
+            "text": "In-game restore messages and the restore command now use the round the restore starts on, matching the match page."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "The Events page moves events from Up next to Live to Past on their own schedule, without a reload."
+          },
+          {
+            "area": "Utility",
+            "text": "The practice panel offers regions that only host practice, with latency readings, and \"Any region\" starts your server on the LAN you are on first."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The ELO popup says when the player left the match."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "A full ELO recompute skips imported matches, so it finishes sooner."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Imported matches of every type now name the team the full lineup plays for, in match headers and team records."
+          },
+          {
+            "area": "Notifications",
+            "text": "The bell and the app icon badge count all notices about one match once, instead of once per notice."
+          },
+          {
+            "area": "Moderation",
+            "text": "The Admin tab counts open reports, and Reports opens on the first tab with something waiting. Tabs with waiting reports show a count."
+          },
+          {
+            "area": "Game servers",
+            "text": "The node switch is now called \"Accepting new servers.\" Turning it off stops new matches and practice servers while running ones keep going, and the Managing Nodes guide is updated to match."
+          },
+          {
+            "area": "Game servers",
+            "text": "Remove CS2 explains it needs Accepting new servers off, or both Matchmaking and Practice servers off."
+          },
+          {
+            "area": "Game servers",
+            "text": "Node reboot and driver warnings now use the \"Accepting new servers\" name, so an acknowledged warning shows once more after the node updates."
+          },
+          {
+            "area": "Game servers",
+            "text": "In-game ready tags, vote results, refusals, knife picks and command replies now reach each player in their own language on every server. Team names read correctly in Polish, Russian and Ukrainian."
+          },
+          {
+            "area": "Game servers",
+            "text": "The server form checks a node-hosted server's connect and RCON passwords before saving and explains what characters they can use."
+          },
+          {
+            "area": "General",
+            "text": "The Discord settings page lets the bot give itself access to a channel it can't post in, or shows the steps to fix it in Discord."
+          },
+          {
+            "area": "General",
+            "text": "Badge counts across the site stop at 99+."
+          },
+          {
+            "area": "General",
+            "text": "Opening and closing the left menu is smoother."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "Opening a draft room whose match has already started now goes straight to the match page instead of holding you in the room."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A team-only draft room now reads \"Team only\" on its card, row, settings and edit form instead of showing placeholder text."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Once a draft's match is made, a side that plays as one team shows that team's name and logo in the room and on its veto board."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "On a full room's side card, Join now sits above the roster, so a short window can't hide it. The roster is listed in two columns."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "The \"Checking in\" label in the draft header is no longer cut off at medium window widths."
+          },
+          {
+            "area": "Matches",
+            "text": "A pause now only ends for the reason it was made, and a technical pause holds until both teams resume. A lost camera pauses the next round in play."
+          },
+          {
+            "area": "Matches",
+            "text": "The round-start pause counts only lineup players, so a coach or caster no longer hides a missing player."
+          },
+          {
+            "area": "Matches",
+            "text": "A surrender can only be called while the map is being played, and only by the surrendering lineup's players, who are also the only ones who vote."
+          },
+          {
+            "area": "Matches",
+            "text": "A leaver who times out after halftime now surrenders for their own side. An answered surrender vote no longer comes back, and a failed vote keeps other leavers' timers running."
+          },
+          {
+            "area": "Matches",
+            "text": "A yes or no answer now counts for one vote only. When several votes are open, players are asked to name the one they mean."
+          },
+          {
+            "area": "Matches",
+            "text": "Ready, knife and pause timers and votes end when the map moves to its next phase, so stale prompts no longer carry over."
+          },
+          {
+            "area": "Matches",
+            "text": "A server restarted while a map waits for the TV delay now finishes the map instead of leaving the match live for hours."
+          },
+          {
+            "area": "Matches",
+            "text": "Restoring to the start of round 1 works on online matches on every server. Restores count each lineup's own players, so a 5v4 can restore and a coach or caster never fills a seat."
+          },
+          {
+            "area": "Matches",
+            "text": "The add-player search on a match lineup now finds stand-ins who are not on the team."
+          },
+          {
+            "area": "Matches",
+            "text": "In the map veto, Confirm sits in the middle of the chosen map on phones, and \"Usually bans\" labels stay inside their box on narrow maps."
+          },
+          {
+            "area": "Matches",
+            "text": "The map pool popup shows the pool loading, or says it failed, instead of claiming it has no maps."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Correcting or replaying a tournament match keeps its end time and rebuilds the ratings that came after it. A correction no longer strands the bracket or cancels the tournament, and a corrected final finishes the tournament again with a fresh podium."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Grand Final series scores now include the upper bracket's map head start on match pages, brackets, standings, Watch and share cards."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Focus rings in the award composer and prize sheet are no longer cut off."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "An event never shows in two sections at once, and its badges change at its exact start and end."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "An event page reloads its matches when a tournament, team or player is attached or removed."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Imported matches are no longer linked to events, so they stay off an event's matches, leaderboard, stats and highlights."
+          },
+          {
+            "area": "Utility",
+            "text": "LAN detection for practice is more reliable. It runs once you sign in, picks up LANs that appear mid-session, and starts fresh when another player signs in."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "The stream HUD puts teams on the right sides of workshop maps, including on TV and Playcast streams."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Swap sides now holds through halftime and overtime, and a second press undoes the first."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "FACEIT demos no longer crash a few seconds into playback when used for streams and highlight clips."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "A match live across a season's end now counts toward the season it ends in."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Editing a season's dates now asks for a rebuild when the change touches live or imported matches."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Stat rebuilds, cancels, deletes and demo imports over the same players no longer fail when they happen at the same time."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "A very active player's Performance tab no longer leaves out recent matches."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The Team Hub's team pane fits its column, so Leave, End Call and Queue are no longer clipped."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The player picker no longer keeps retrying a search that fails."
+          },
+          {
+            "area": "Career",
+            "text": "Profile banners and backgrounds hold still on phones, and worn page backgrounds are not drawn there, which stops blank areas and flickering. Locker previews still show each background."
+          },
+          {
+            "area": "Notifications",
+            "text": "The prompt to join team voice now goes away when its match ends or is deleted."
+          },
+          {
+            "area": "Notifications",
+            "text": "The chat sound stays silent while you are playing or coaching a live match."
+          },
+          {
+            "area": "Game servers",
+            "text": "A node coming back online now clears its offline alerts. A node that sends an unreadable disk reading is still marked offline when it drops."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-12",
       "summary": "Today adds a Team app with team calls and party seats, a redesigned Coach playbook with Rokkan briefs, and a long list of tournament fixes.",
       "sections": {
