@@ -2,6 +2,103 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Saturday, November 14, 2026
+
+A big day for draft rooms, with new ways to find, join, pause and hand off rooms, plus clearer LAN match rules, profile badges, a Spend stat and a new Highlights app.
+
+### Matchmaking
+- **New:** The Draft Rooms page puts a gold Join button on every room and adds a Quick Join card for the open room closest to starting. A welcome dialog explains how joining works and can be reopened from How It Works beside Filters.
+- **New:** A draft room's host can hand the room to another seated player from the Hosted by chip. The new host is told in the bell, by push and with a toast on whatever page they are on.
+- **New:** The host, organizers and both captains can pause a draft room's clock while players are picked and during the map veto. Resuming counts down 3, 2, 1, and a pause nobody resumes ends after 5 minutes.
+- **New:** Match organizers can draw two new captains, or swap one, while a captains draft is picking, which restarts the draft at pick 1. Hosts can no longer change captains once picking has begun.
+- **New:** Who Can Join now has a Team option with a team picker, so a draft room can be opened only to a team's roster. Match organizers can pick any team.
+- **New:** Any draft room host can now pick the room's game mode. If the mode stops being available before the draft ends, the match plays standard and unranked.
+- **New:** Match organizers get an In progress tab on the Draft Rooms page that lists every started room, so a stuck room can be found and opened.
+- **New:** A draft room on a custom map pool shows its maps in the lobby header.
+- **Improved:** The full Host a Room form opens on the draft settings you last used on this device, and new rooms pick two random captains by default. The Draft Lobbies guide is updated to match.
+- **Improved:** During the veto, a turn bar names the captain on the clock and shows the time left. Both teams are listed beside the chat, and the room builds each step in smoothly instead of folding shut.
+- **Improved:** A draft room's settings show as labelled cells, with the game mode in its own cell. On phones, Leave becomes an icon so Start Draft is no longer cut off.
+- **Improved:** A room's opened details end with a View Room link, so you can look into a room without joining. Player faces on the rooms list are larger.
+- **Improved:** Every player now sees Open Slot tiles for free seats in Available Players, and the tiles fill their rows evenly.
+- **Fixed:** The Draft Rooms page no longer flashes the "no rooms" banner before the rooms load.
+- **Fixed:** Teammates now see who is in a draft room limited to their team, instead of 0 players.
+- **Fixed:** Changing or deleting a draft room's custom maps no longer changes or removes the maps of another room, match or tournament on the same pool. Everyone in the room now sees the host's map changes right away.
+- **Fixed:** A draft room whose players all come from one team shows that team's A and B sides from the start. A team drafting against itself is placed on both lineups, and players show their roster photos once the match is made.
+
+### Matches
+- **New:** On a paused match, anyone can type .check in chat to see who the match is waiting for. During a disconnect pause, a player in the match can use it to resume once everyone is back.
+- **Improved:** LAN and offline matches have the surrender vote again. LAN tournament matches have no vote; instead, their organizers are alerted when a player has been gone for 3 minutes, including during warmup, knife or between maps.
+- **Improved:** LAN matches follow the same check-in, ready and no-show rules as online matches. A full lobby that never readies up is canceled, while a LAN tournament match waits and alerts its organizers. A LAN match that stalls mid-map now alerts organizers instead of being canceled.
+- **Improved:** The match guides explain what a LAN changes for deadlines, disconnects and surrender, and how .check works.
+- **Improved:** The check-in box rolls in, rolls its amber away when you check in, and fades to red over the last ten seconds.
+- **Improved:** Round history tooltips open as soon as you hover, and clicking a round keeps the tooltip open.
+- **Improved:** The buy type chart shows one split bar per matchup, so neither team's bar goes missing.
+- **Fixed:** A map ended by a surrender, forfeit or result set by hand now goes to the match's winner, and rounds the server plays afterward no longer change the score. When this changes a map's winner, the match is rated again.
+- **Fixed:** A match resumed right after it was canceled picks up its server again instead of waiting on a vote nobody can answer.
+- **Fixed:** A player who leaves during warmup, knife or between maps now gets their 3-minute timer when the map starts. A leaver whose seat is filled by a substitute is no longer reported.
+- **Fixed:** A missed check-in or a stalled veto no longer records every player as a no-show when a server was assigned ahead of time.
+- **Fixed:** Check-in no longer says the match will cancel when Match Cancellation is turned off.
+- **Fixed:** Adding time to the veto clock now updates the countdown for both teams right away.
+- **Fixed:** Scoreboard rows line up whether or not they have a player menu.
+
+### Tournaments
+- **New:** Tournament and league standings show each team's win rate. On phones, the win rate sits under the W–L record, so the tables no longer scroll sideways.
+- **Fixed:** Leaver alerts now reach a tournament's owner and co-organizers and link the match. Support requests about a tournament match no longer post twice.
+
+### Leagues & Events
+- **Improved:** The Wins tab of an event leaderboard shows Losses and Win Rate, and ties do not count as losses.
+- **Improved:** A player's expanded row on an event leaderboard shows their stats only; the long Matches list is gone.
+
+### Coach
+- **Improved:** Rokkan's reviews no longer appear in the notification bell or as pushes; they live on the Coach page with its own count. Reviewed players still get a Match Stats Ready notice.
+- **Improved:** A Coach review's replay opens with the scoreboard and play-by-play closed, and both can still be opened from the replay.
+- **Improved:** Switching to the other team's review of the same map keeps the replay and page in place instead of reloading.
+- **Fixed:** An admin who is not in a match sees one review band per map instead of one per team.
+
+### Demos & Replays
+- **New:** Admins can reparse only the demos of matches played on 5Stack, without also reparsing imported matches.
+- **Improved:** Grenades thrown at the same moment on the replay's seek bar fold into one icon and a +N, which opens into a tray of every throw.
+- **Fixed:** Maps of a match that ended mid-map, by surrender, forfeit or a result set by hand, now get their demo.
+
+### Streams & Highlights
+- **New:** Clips of you have their own Highlights app in the right hub, with a count of unseen clips, a New tag and Mark All Seen. They no longer appear in the bell.
+- **Improved:** A match's highlight reel shows your own highlights first.
+- **Improved:** A highlight waiting in a paused render batch now reads Paused instead of Next in line.
+- **Fixed:** The stream HUD shows a player's own roster photo even when the lineup has no team.
+- **Fixed:** Live streams no longer get stuck on CS2's workshop download prompt.
+
+### Stats & Leaderboards
+- **New:** Clicking Win Rate, ADR, K/D, KPR or DPR on a player's Performance tab expands it into a graph and list of the matches behind it, with links to the best and worst match.
+- **Fixed:** Night maps now count toward their day map's card on a player's Maps tab.
+
+### Players & Teams
+- **New:** Player pages show leveled badges for 21 achievements, such as aces, clutches and utility kills. You can pin three as plaques, and the rest show as patches with an All badges list showing progress to each next level.
+- **Fixed:** Kills made while airborne are now recorded, so the aerial-kills badge counts them and the Gravity Optional title can be earned.
+- **Fixed:** Signed-out visitors no longer see an error on player pages.
+
+### Career
+- **New:** Spend is a new profile stat in the Locker that shows the in-game money you spent and earned. Hover or tap it for a breakdown. It counts only matches played on 5Stack, and older matches fill in when their demos are reparsed.
+- **Improved:** The stat on your Career card is now picked from a menu on the card's number or on a look's label, replacing the row of stats.
+- **Fixed:** On phones, the pinned profile stat and title share one line on the player card.
+
+### Moderation
+- **New:** The Messages queue groups a player's flagged chat into bursts by category, showing Rokkan's read, who reported it and the transcript. Dismiss, Resolve and Sanction close every report in a burst at once.
+
+### Game servers
+- **Fixed:** CS:GO dedicated servers no longer crash a few seconds after a map loads, and they no longer receive CS2 plugins.
+- **Fixed:** A CS2 update no longer restarts CS:GO servers. CS:GO servers now get the player slots they are set to; turn an existing server off and on to apply this.
+- **Fixed:** CS:GO servers no longer log a harmless 64-bit Metamod load error on every boot.
+
+### General
+- **New:** Administrators can pick a Discord voice channel that players are moved to when a match ends, instead of dropping out of voice.
+- **Improved:** The top bar's draft and match chips are now one scorebug that shows picks, check-in, the veto and the live score, and whose move it is. The lobby, match, draft and Stacks pieces appear together and slide smoothly as they change.
+- **Improved:** Open account setup steps show as orange dots that lead to Linked Accounts, where each step has its own card. Linking your match history is now a guided two-step process.
+- **Improved:** The right hub's Team tile shows teammates online in a pill under its logo, so the corner badge is only for team chat.
+- **Fixed:** Signing in from a draft room, an invite link or any page that needs a sign-in now returns you to where you started.
+- **Fixed:** The right hub scrolls when its apps outgrow a short screen and no longer sits under the scoreboard's pinned column.
+- **Fixed:** Focus rings on text fields are no longer cut off.
+- **Fixed:** Opening Support tickets from the Admin list keeps the left nav on Admin.
+
 ## Friday, November 13, 2026
 
 Today brings fairer handling of dropped players, pauses and surrenders, Wingman and Duel season podiums, limits on repeat-opponent ELO, and many fixes across draft rooms, events and stats.
@@ -848,64 +945,5 @@ Career levels and the Locker arrive, stats count team kills and suicides the sam
 
 ### General
 - **Improved:** Several pages put less load on the site while open and stay faster under heavy traffic: match page highlight clips, player profiles, the Play page and public server lists, and the Scrim Finder board.
-
-## Saturday, October 31, 2026
-
-Today brings Career levels and cosmetics, team reviews and a redesigned review screen for Rokkan, a reorganized notification bell, self-hosting controls for updates and backups, and speed-ups across the site.
-
-### Matchmaking
-- **Improved:** Turning matchmaking or a mode off now also removes everyone already queued for it. Ready checks already under way continue.
-- **Fixed:** The Connect button in the Play page's schedule updates right away when a region is switched to or from LAN.
-
-### Coach
-- **New:** Teammates can see each other's Rokkan reviews from matches they played as a team, but only for current roster members. The team page has a Coach tab with a card for each player (top fix, strength and latest review), team habits and reviewed team matches, and the Coach page has a matching team view where See All opens every team habit.
-- **New:** A Rokkan review opens in a full-width replay, paused at your first issue. Clocks in the text jump the replay, and a view-as menu shows the team summary or any teammate's review.
-- **New:** On wide screens, a list of every moment sits beside the review's replay. Space or K plays and pauses from anywhere on the page, and P and N step through moments.
-- **New:** The match page shows a Rokkan Review band while a review is queued and in progress, then previews its summary once it is ready.
-- **New:** The Coach page lists each review as its match, with Rokkan's top fix and summary underneath. Reviews you haven't opened are marked New and have their own filter, and the left menu counts them.
-- **Improved:** Scouting has a map picker, a T/CT toggle, and its calls in a column beside the replay. Habits appear only after 3 reviewed matches.
-- **Improved:** Administrators can open any team's reviews on the Coach page, where those teams carry an Admin tag, and can read every part of any review.
-- **Fixed:** The Coach inbox lists only your own reviews, including for administrators, and no longer counts teammates' findings as yours.
-
-### Players & Teams
-- **Fixed:** Team cards on the teams page show a space before "vs" in their Next and Last rows.
-
-### Career
-- **New:** Every rated match now earns Career XP, with more for a win and more at higher ratings. Every 1,000 XP is a level worth 100 Stacks, and existing players are levelled from their match history.
-- **New:** A catalog of over 450 banners, frames, nameplates and titles for your player card, including animated ones. You unlock items on the Career Track up to Level 1000, buy them with Stacks, earn them through awards, or receive them from administrators.
-
-### Notifications
-- **New:** The bell is sorted into Needs You, Live Now, New for You and Earlier. When something ongoing ends, its notification shows the outcome, such as Map Resumed or Server Back Online, and moves to Earlier.
-- **New:** The bell has a reel of your unseen clips from the last 30 days.
-- **New:** Notifications about reviews, clips, awards, invites, tournaments and similar news show as cards with a cover and a main action, and the rest as one-line rows. Several Rokkan reviews stack into one card.
-- **New:** Administrators have a gallery that shows a sample of every notification type and state.
-- **Improved:** On a notification row, hover the dot and click to mark it read or double-click to delete it. The time opens a menu that includes Delete.
-- **Improved:** Rokkan sends review messages over Steam only for matches played outside 5Stack, and reviews of 5Stack matches arrive in the app.
-- **Improved:** An imported match gets one short Steam message with its link, sent after Rokkan's review where there is one. The link no longer shows a large map preview.
-- **Fixed:** An invite's notification clears once the invite is accepted, declined, revoked or expires, wherever you answer it.
-- **Fixed:** Staff bells update live when a staff notification arrives or is cleared, and they no longer show other organizers' personal copies. Clearing them is also much faster.
-- **Fixed:** The app badge counts a team's tournament registration invite for its roster Admins, matching the bell.
-- **Fixed:** Steam messages that Steam rate-limits are retried instead of lost, and are never sent twice. Rokkan's notices name maps the same way the site does.
-
-### Moderation
-- **Improved:** Your profile updates as soon as your gag or mute ends.
-
-### Game servers
-- **Fixed:** Disabled nodes that are online now receive node files, k3s updates and node changes. Their status dot shows a dimmed amber when something is waiting.
-- **Fixed:** Dedicated servers keep loading a plugin after their node updates it.
-- **Fixed:** Server owners can add themselves to a restricted server's player list.
-
-### Self-hosting
-- **New:** Panels installed with the 5Stack service can choose when to update: manually, on a schedule or when idle. Updates show a preflight check and live progress, and they pause new matches until live ones finish.
-- **New:** Panels installed with the 5Stack service can add game server nodes with a code and approve them. They also get nightly backups with a recovery key, a Back Up Now button, and a diagnostics page.
-- **Improved:** The "Node changes are waiting" and "Kubernetes update available" alerts clear themselves once a maintenance run or Kubernetes update finishes. Alerts that already exist need to be dismissed once.
-- **Fixed:** System Logs now includes Rokkan's logs and shows their warnings and errors correctly.
-
-### General
-- **New:** A Support 5Stack card in the bell asks you to join the 5stack.gg Steam group and wear its clan tag in CS2, and a step-by-step guide is in the FAQ. Once an imported match shows you wearing the tag, the card thanks you.
-- **Improved:** Pages many people watch at once now share one live feed between viewers and stay fast under load. This covers the utility map, the teams page, event pages, the welcome page's live matches, tournament bracket previews and league seasons.
-- **Improved:** Match pages, match clips, the friends list, team reputation, your profile and match stats after each round also update with less work.
-- **Improved:** Other players' names, avatars, ranks and bans update right away in your lobby, active matches, invites and drafts.
-- **Fixed:** When your role changes, the site, including the notification bell, uses the new role right away without a reload.
 
 Older days are in [entries](entries).
