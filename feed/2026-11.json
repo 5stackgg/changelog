@@ -2,6 +2,58 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-15",
+      "summary": "Titles are now earned through challenges, Rokkan's reports move to the coach hub, the moderation Done tab groups each close into one row, and several settings saves are more reliable.",
+      "sections": {
+        "new": [
+          {
+            "area": "Career",
+            "text": "Titles in the Locker are now earned through challenges in rated 5Stack Competitive matches with ten rated players, and each title shows the challenge that earns it where its price used to be. Stacks already spent on titles are refunded, titles you have already earned through past matches are granted, and level titles and Champion are unchanged."
+          },
+          {
+            "area": "Moderation",
+            "text": "The Done tab lists each close as one row, so a spammer cleared in one click shows as a single entry. Each row shows the player, category, room, outcome, moderator and note, and Show Messages opens the close's lines with repeats folded together."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Coach",
+            "text": "Scouting reports and weekly progress reports now live in the coach hub instead of the notification bell. The Coach badge counts unopened scouting reports and updates live, and the New tab lists them."
+          },
+          {
+            "area": "Notifications",
+            "text": "The \"Match Stats Ready\" notification is retired, and existing ones are removed from the bell."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matches",
+            "text": "The match settings form no longer says \"Match Updated\" when nothing was saved, such as after you stop being an organizer. It now shows \"You don't have permission to do this.\" and keeps your unsaved changes, and a refused save shows one error message instead of two."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Adding a stage with its own match settings, or creating a league season, now saves in one step. An interrupted save no longer leaves a half-finished setup or creates a duplicate stage or season."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Saving a stage's settings now tells you when nothing was saved and shows a single error when a save is refused. A scheduled stage match also keeps its settings when the stage is switched back to the tournament's settings at the same moment."
+          },
+          {
+            "area": "Utility",
+            "text": "A practice session that fails to start no longer leaves a stuck match behind."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Demos now upload for matches that went quiet for a while and were then forfeited or given a winner by hand."
+          },
+          {
+            "area": "General",
+            "text": "At the end of a match, the fading scorebug in the header is no longer covered by the party pill as its Play button appears."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-14",
       "summary": "A big day for draft rooms, with new ways to find, join, pause and hand off rooms, plus clearer LAN match rules, profile badges, a Spend stat and a new Highlights app.",
       "sections": {

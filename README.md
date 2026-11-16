@@ -2,6 +2,38 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Sunday, November 15, 2026
+
+Titles are now earned through challenges, Rokkan's reports move to the coach hub, the moderation Done tab groups each close into one row, and several settings saves are more reliable.
+
+### Matches
+- **Fixed:** The match settings form no longer says "Match Updated" when nothing was saved, such as after you stop being an organizer. It now shows "You don't have permission to do this." and keeps your unsaved changes, and a refused save shows one error message instead of two.
+
+### Tournaments
+- **Fixed:** Adding a stage with its own match settings, or creating a league season, now saves in one step. An interrupted save no longer leaves a half-finished setup or creates a duplicate stage or season.
+- **Fixed:** Saving a stage's settings now tells you when nothing was saved and shows a single error when a save is refused. A scheduled stage match also keeps its settings when the stage is switched back to the tournament's settings at the same moment.
+
+### Utility
+- **Fixed:** A practice session that fails to start no longer leaves a stuck match behind.
+
+### Coach
+- **Improved:** Scouting reports and weekly progress reports now live in the coach hub instead of the notification bell. The Coach badge counts unopened scouting reports and updates live, and the New tab lists them.
+
+### Demos & Replays
+- **Fixed:** Demos now upload for matches that went quiet for a while and were then forfeited or given a winner by hand.
+
+### Career
+- **New:** Titles in the Locker are now earned through challenges in rated 5Stack Competitive matches with ten rated players, and each title shows the challenge that earns it where its price used to be. Stacks already spent on titles are refunded, titles you have already earned through past matches are granted, and level titles and Champion are unchanged.
+
+### Notifications
+- **Improved:** The "Match Stats Ready" notification is retired, and existing ones are removed from the bell.
+
+### Moderation
+- **New:** The Done tab lists each close as one row, so a spammer cleared in one click shows as a single entry. Each row shows the player, category, room, outcome, moderator and note, and Show Messages opens the close's lines with repeats folded together.
+
+### General
+- **Fixed:** At the end of a match, the fading scorebug in the header is no longer covered by the party pill as its Play button appears.
+
 ## Saturday, November 14, 2026
 
 A big day for draft rooms, with new ways to find, join, pause and hand off rooms, plus clearer LAN match rules, profile badges, a Spend stat and a new Highlights app.
@@ -900,50 +932,5 @@ Today brings community leaderboards with far more stats, profile backgrounds in 
 - **Improved:** The welcome page's "Watch live" button now reads "Open app".
 - **Fixed:** Pages in Safari load again on refresh.
 - **Fixed:** Match logs, system logs and RCON command suggestions show player names and plugin text as plain text.
-
-## Sunday, November 1, 2026
-
-Career levels and the Locker arrive, stats count team kills and suicides the same way everywhere, and self-hosted panels get clearer update controls and easier node removal.
-
-### Coach
-- **Improved:** Coach reviews, scouting reports and habits now have their own page addresses, and older review and scouting links still open the right page.
-- **Fixed:** Opening a review, scouting report or habits on the coach page now adds a browser history step, so Back returns to the list. The list's tab, map and player filters survive a reload.
-
-### Stats & Leaderboards
-- **Fixed:** Team kills and suicides no longer count as kills, and assists on a teammate's death no longer count as assists, and stored lifetime and season totals have been corrected. Tournament and event stats tabs now match the tournament leaderboard, and ELO and stage tiebreakers use the same rule from the next match on.
-
-### Players & Teams
-- **Improved:** Player search shows Played with recently above Friends, and you can fold the section shut. It stays folded in that browser.
-- **Fixed:** Played with recently in player search now lists the players you recently played with instead of staying empty.
-
-### Career
-- **New:** Career levels arrive, with frames, level badges and nameplates on player rows and profile cards, a Career page with your track, the Locker and Stacks, match rewards and a one-time welcome banner. Applying a look in the Locker buys and wears it on your account, and banners and frames come with a pattern you can reroll for Stacks.
-
-### Notifications
-- **Improved:** Pending team, tournament and draft invites in the bell now show as cards with Deny and Accept under the headline, and a plain team invite names who invited you and to which team.
-- **Fixed:** In slim notification rows, wrapped lines now start at the row's edge, and a paused match row is the same height as other rows.
-- **Fixed:** The award notification now leads with the award's name and shows its badge on the right, so the badge no longer covers the title.
-
-### Game servers
-- **New:** On agent-managed panels, removing a node can also uninstall 5Stack from its server, and this option is on by default. The dialog keeps showing progress after a reload and offers Remove Anyway if the uninstall fails.
-- **Improved:** Adding a node with a join code looks the code up as soon as the sixth digit is entered, so there is no Find button to press.
-- **Improved:** The slow CPU governor warning gives the command to fix it, with a copy button, and links to the CPU Governance docs. Nodes whose governor can't be read no longer show the warning.
-- **Fixed:** A node added with a join code now starts enabled and takes matches right away.
-- **Fixed:** A node removed from its own server with the 5Stack command line now also disappears from the panel.
-- **Fixed:** On panels installed by the 5Stack service, game server nodes are no longer shown as unsupported when node networking is already set up.
-
-### Self-hosting
-- **New:** Managed panels have a Settings > Panel updates page for choosing when updates install. The header now shows the panel only when an update is waiting on you.
-- **New:** Managed panels that keep secrets in an external secret store now warn in the header when secrets can't sync, with a settings page that lists each failing secret, why it fails and how to fix it. Check Now asks for a resync, and an update that is missing secrets lists them before it starts.
-- **New:** When a panel update rolls back, admins get a notification with the reason and the header shows it in amber. Automatic and scheduled updates skip a release that failed on your panel, and you can still install it with Update Now.
-- **New:** Existing panels installed from a git checkout can move onto the 5Stack service and keep their configuration and secrets.
-- **Improved:** The header's panel row now reads as one line, such as "Panel 2026.11.1.2 is ready".
-- **Improved:** New matches are held during a panel update only when the update needs it, and matches already running carry on. Your own node on/off settings are no longer changed, and held matches start once the update finishes.
-- **Improved:** The nightly database backup checks that the storage bucket belongs to your S3 account before uploading, and the backup job shows as failed if it doesn't.
-- **Fixed:** Panels with played matches can update again, and the leaderboard no longer fails after an update.
-- **Fixed:** The setup scripts' node prompt only accepts a number from its list and asks again otherwise.
-
-### General
-- **Improved:** Several pages put less load on the site while open and stay faster under heavy traffic: match page highlight clips, player profiles, the Play page and public server lists, and the Scrim Finder board.
 
 Older days are in [entries](entries).
