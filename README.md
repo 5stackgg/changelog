@@ -2,6 +2,36 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Monday, November 16, 2026
+
+Events get a full-screen media viewer and clearer tabs, highlights can be filtered to knife kills, and Rokkan now reads the weapon a player actually had out.
+
+### Leagues & Events
+- **New:** Event photos and videos open in a full-screen viewer with a strip of all the event's media, which you can step through with arrow keys, the edge buttons or a swipe on phones. A details drawer lets you rename media and tag players, and lets the uploader and organizers delete it.
+- **New:** The Matches, Highlights and Media tabs show how many items they hold, and the Players tab is now called Leaderboard. Old links still open it, and before an event has stats it lists the event's teams and signed-up players.
+- **New:** The event header shows team crests that open the team list, with each team linking to its page.
+- **Improved:** The event overview is laid out more clearly, with your line above the top three and results listed under Matches. Stats use the scoreboard's labels and lead with HLTV rating, and the leaderboard fits on phones without scrolling sideways.
+- **Improved:** Event galleries lay out photos and videos faster because each item's shape is already known instead of being measured in your browser.
+
+### Coach
+- **Improved:** Rokkan judges each death by the weapon the player actually had in hand, not the grenades they were carrying. When an admin runs Review with Rokkan on an older demo, the demo is read again to pick this up.
+- **Fixed:** Earlier findings based on grenades carried rather than held are removed from habits, team tendencies, scouting, progress reports and briefs. Review text players have already read is unchanged.
+
+### Streams & Highlights
+- **New:** Highlights can be filtered to clips with a knife kill from the Kills menu, alone or together with a kill count. The filter works on the highlights page and an event's Highlights tab, and it includes older clips.
+- **Improved:** Each side of the Match Clips / Singular Clips toggle shows its count, so you can see how many results a filter found even when they fit on one page.
+
+### Game servers
+- **Fixed:** Idle practice servers no longer fill the server console with warnings while no session is running.
+
+### Self-hosting
+- **Fixed:** cert-manager now runs on the panel node instead of possibly landing on a game node, so certificate renewals keep working when a game node goes down. Updating moves it on existing installs.
+- **Fixed:** Node updates and live system logs in the panel no longer stop arriving after a quiet period.
+
+### General
+- **Fixed:** A panel's own logo on the welcome page now shows in full instead of being cropped by rounded corners.
+- **Fixed:** Link share cards no longer show the default title for several minutes after the panel's settings briefly fail to load.
+
 ## Sunday, November 15, 2026
 
 Titles are now earned through challenges, Rokkan's reports move to the coach hub, the moderation Done tab groups each close into one row, and several settings saves are more reliable.
@@ -853,84 +883,5 @@ A large day: community polls, a reworked coach review and Utility map, Stacks re
 - **Fixed:** Signing in, signing out or switching accounts in one tab now updates your other open tabs, chat included.
 - **Fixed:** When your role changes, the open page adjusts to it without a reload.
 - **Fixed:** Country flags show properly on Windows in all text styles.
-
-## Monday, November 2, 2026
-
-Today brings community leaderboards with far more stats, profile backgrounds in the Locker, a reworked Utility tab and many fixes across practice, tournaments and notifications.
-
-### Matchmaking
-- **Improved:** The Play page's waiting count and queue updates stay quick as queues fill, and reconnecting no longer reloads every queued lobby.
-- **Fixed:** When a matchmaking queue is turned off, lobbies can no longer end up back in it waiting for a match that never comes. Affected players get a message saying why.
-
-### Matches
-- **Improved:** The 2K to 5K tiles in the lineup overview's multi-kills popover are underlined when they open a round breakdown.
-- **Fixed:** Add New Map shows its Name field again, Workshop maps save without pressing Refresh, an existing map is not added twice, and a failed Steam lookup shows an error.
-- **Fixed:** Stats from the round in progress when a restore starts no longer count twice. That round's late score also no longer removes rounds a restore can still return to.
-- **Fixed:** Deleted maps no longer appear in the practice and utility map pickers, and matches played on them still show the map.
-- **Fixed:** Setting a match winner, taking back veto picks, changing a match's maps and deleting a match now always go through the panel's own checks.
-
-### Tournaments
-- **Fixed:** Tournament cards, Quick Look and the next-up strip no longer offer Register on invite-only tournaments or to people already in, and show a joined chip instead.
-- **Fixed:** Free-agent-only tournaments offer "Join as a free agent" instead of "Register a team" on their cards.
-- **Fixed:** Revoke no longer shows on calculated tournament awards, and season grants keep it.
-- **Fixed:** Removing a category from a tournament works again.
-
-### Utility
-- **New:** A match's Utility tab draws every throw on a radar against the meta lineups that three or more players throw. Throws on the spot are solid, and missed throws are dashed with a ring at the meta spot. Each player shows their meta throws on the spot, and Watch opens the 2D replay at the throw.
-- **Fixed:** On a map split across two demos, Save and Watch on the Utility tab use the demo the throw came from.
-- **Fixed:** A practice save thrown on a different map from the session's is refused instead of being filed under the wrong map. Practice servers on the wrong map are moved to the booked map.
-- **Fixed:** A practice save or result that is sent again no longer creates a duplicate lineup or counts twice towards streaks and mastery. A save or score sent at a busy moment is retried instead of lost.
-- **Fixed:** The practice HUD comes back after a player reconnects.
-
-### Coach
-- **New:** Rokkan knows when each team could hear an enemy running or shooting, so reviews stop treating every enemy position as something players knew.
-- **New:** Rokkan's reviews compare utility against meta lineups and count the same throws the Utility tab shows. A utility moment is marked "Round N · utility", and the replay rings where the meta throw lands.
-- **Fixed:** Player paths no longer show someone moving between callouts while they stood near a callout boundary. An admin's review of an older match re-reads its demo to pick this up.
-
-### Streams & Highlights
-- **New:** Clip actions are the same icons everywhere, with Share opening Copy link and Download. A clip's owner and staff get Public and Delete buttons, and a deleted clip leaves every list and playlist without a reload.
-
-### Stats & Leaderboards
-- **New:** The Public Servers page shows one leaderboard across every public server you can open. Game mode chips narrow the weekly board.
-- **New:** Community leaderboards rank by many more stats, including K/D, HS %, assists, MVPs, points, accuracy, best streak, trades, utility, kill types and objectives. They also add weapon boards and community seasons. Click a column header to rank by it, and values below a column's minimum are dimmed.
-- **New:** A profile's Community tab gets a game mode filter, K/D, HS %, assists and MVP tiles, and Modes and Maps tables. Servers running the updated plugin also show points, accuracy, best streak, utility, hitgroups, kill types, objectives and a per weapon table.
-- **Improved:** Community stats remember which map and game mode each session was played on, and keep a daily history after older sessions are cleared.
-- **Improved:** Leaderboards show fades and buttons on edges with more columns to scroll to.
-
-### Career
-- **New:** Profile backgrounds: 100 scenes to wear behind your whole profile, with cards turning to frosted glass. The Locker has a Backgrounds tab, and Grant Reward can give them.
-- **New:** The Locker shows the background you are trying or wearing across the whole Career page, and each worn item can be taken off for free.
-- **Improved:** Hovering a Career tile or background no longer changes your card or the page; a click previews it.
-- **Improved:** Moving backgrounds stay smooth on profiles and in the Locker, and the heaviest animated scenes draw much faster.
-- **Improved:** The one-time "Career levels are here" banner is gone.
-- **Fixed:** Apply Look really buys, charges for and equips your changes, and the profile shows the picked colorway and roll.
-- **Fixed:** The Match Rewards panel appears on finished matches again.
-- **Fixed:** Cosmetics show to everyone, including signed-out visitors, while the Career setting still controls Stacks and the Career page.
-- **Fixed:** Founder, Legend and other items no longer show twice, and the Grant Reward picker only lists available items.
-- **Fixed:** Admins can give themselves rewards with Grant Reward.
-- **Fixed:** Match rows and Locker panels sit on frosted glass over a background, long names fit the profile card, and a nameplate lines up with the rank under it.
-
-### Notifications
-- **New:** Read notifications stay in place and dim instead of moving, and the bulk actions become one button in the panel heading: Dismiss All, then Delete Dismissed.
-- **New:** One click on an unread notification's dot marks it read, and one click on a read notification's dot deletes it, with an animated dot.
-- **New:** Supporters get a thank-you notification the first time a demo shows them wearing the 5stack.gg tag, and the Support 5Stack card steps aside once the tag is seen.
-- **Fixed:** A stack marked read keeps its green check for a moment after it moves, so the next click no longer deletes it by accident.
-
-### Game servers
-- **New:** The node inspector fixes the CPU governor and legacy lowlatency kernel warnings in one click and can turn low latency on or off. It asks before any change that needs a reboot, and never reboots the node itself.
-- **New:** A game node that cannot reach its panel shows why in the update center and the node inspector. Removing a node tells you when its Tailscale device was left behind.
-- **Improved:** On community servers, the CS2 server plugin reports assists, headshots, damage, rounds, MVPs, detailed counters and per weapon totals, plus each map's final counts. Nothing played in warmup counts.
-
-### Self-hosting
-- **New:** With the update policy on Manual, the 5Stack service no longer updates itself. The update center shows it as ready, and it installs only when an admin presses Update Now.
-- **New:** The update center points out a graphics card on a game node that is not being used and links to the GPU node guide.
-- **Improved:** Approving a node join checks the fingerprint the node printed on its screen.
-- **Fixed:** The update center shows settings changes and script runs as what they are, and a setup run from the terminal never shows as a failed panel update.
-- **Fixed:** An invalid AMD GPU memory setting for streams now stops the panel at startup and shows the rejected values, instead of failing when a stream or render starts.
-
-### General
-- **Improved:** The welcome page's "Watch live" button now reads "Open app".
-- **Fixed:** Pages in Safari load again on refresh.
-- **Fixed:** Match logs, system logs and RCON command suggestions show player names and plugin text as plain text.
 
 Older days are in [entries](entries).
