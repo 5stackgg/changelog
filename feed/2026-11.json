@@ -2,6 +2,166 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-17",
+      "summary": "Today brings player recaps, a trophy case on player pages, a tabbed coach hub and a new layout for event media, along with many fixes.",
+      "sections": {
+        "new": [
+          {
+            "area": "Leagues & Events",
+            "text": "An event's Media tab and Overview Moments use a mosaic layout, with each photo and video shown in its own shape. Moments loads more as you scroll when it is the last section, and See all only appears when some media is hidden."
+          },
+          {
+            "area": "Coach",
+            "text": "The coach hub brief is split into Plan, Habits and Utility tabs under a bar that stays in place as you scroll. The Utility tab shows your lineup score with its trend and per-match bars, and weekly reports open in full in the side pane, comparing this week with last week."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Player recaps for quarters, years and seasons appear on the Recap tab of your own profile. They include a timeline, chapters on when you played, your style, clutch moments, utility, the people you played with and your best nights, and \"Top X% here\" rankings. Rokkan's notes are added after the period ends, and you get a notification when they are ready. Recaps can be downloaded as images or shared as a link that can be turned off."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Finished events you played get their own recap with your rank, record, K/D, awards, and the clips and photos you appear in. Every recap gains a Best moments chapter with your aces, 4Ks, knife kills and clutches. The event page shows a Your Recap tile linking to it."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Admins choose how often recaps come out: yearly, every 6 months, every quarter, or seasons only, with an option to finish the year with a yearly recap. They also pick which roles get recaps and generate recaps from the Recaps settings."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Public servers always have a points season, and panels without one start a global Season 1."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The player page has a trophy case that shows awards and badges together. Owners can pick what each plaque shows, or drag items into any order from the trophy case, the All Trophies sheet or the profile header."
+          },
+          {
+            "area": "General",
+            "text": "The site is available in Croatian, and it now picks the first language in your browser's list that it supports."
+          },
+          {
+            "area": "General",
+            "text": "On panels that use Google Tag Manager, visitors in European time zones are asked for consent before it loads. They can change their choice at any time from the privacy page."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matchmaking",
+            "text": "Matchmaking skips regions whose servers are all offline, and won't start a queue when every chosen region is offline."
+          },
+          {
+            "area": "Matches",
+            "text": "Scheduling notes on match time proposals are now visible only to the two captains, league admins and the tournament's organizers."
+          },
+          {
+            "area": "Coach",
+            "text": "Review findings show their rounds on a strip of the whole match. Hover a round to see its time, or click it to play it, and long findings no longer squeeze their titles on the Overview."
+          },
+          {
+            "area": "Coach",
+            "text": "On a review, findings open one at a time when clicked, and lines carried over from your last reviews now sit at the top of To Fix. The Utility tab lists each grenade, which opens to its throws, each marked Missed or On the spot."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Streamers can edit or remove only the stream links they added or links on matches they organize, while moderators can manage any. When a change is refused, a message explains it and the list goes back to how it was."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The Seasons page lists live, upcoming and past seasons, and each season's dates, awards and actions open in a side drawer."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Tournament matches always count on the player page and the leaderboard, so the Exclude tournaments filter has been removed."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Community seasons are now called public server seasons throughout the site."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "On another player's profile, organizers can change only the name, country, role and verification, and only for players at or below their own rank."
+          },
+          {
+            "area": "Moderation",
+            "text": "Only moderators can see who issued a sanction."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Panel update, panel move and game server update banners show in each viewer's language, with update times in their own format. The panel update banner can no longer be dismissed, and the game server update banner can only be dismissed until the update starts."
+          },
+          {
+            "area": "General",
+            "text": "Layouts work better on phones, tablets and 1024px laptops, including match lists, the map veto, team lineups, dialogs on short screens and larger tap targets."
+          },
+          {
+            "area": "General",
+            "text": "Signed-in sessions are better protected."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "A matchmade match still waiting for a server after 30 minutes is now canceled without counting anyone as a no-show."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Changes to a scrim's time are now saved correctly whatever the player's time zone."
+          },
+          {
+            "area": "Matches",
+            "text": "Join TV and the \"TV is delayed\" notice only show when the match server runs GOTV, so they no longer appear on practice servers or servers without TV."
+          },
+          {
+            "area": "Tournaments",
+            "text": "A tournament's creator, co-organizers and organizers can all start it, and a cancelled tournament can no longer go live."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Team invites are checked again when accepted, and accepting one now works for someone who is already on the team."
+          },
+          {
+            "area": "Tournaments",
+            "text": "When registering, names that differ only by letter case or look-alike characters now count as the same name."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The Awards board now shows event, league and season awards when a game mode is picked, including on the default Competitive view."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Tied players on the leaderboard now share a rank on the rows, the podium and the player panel."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The verified badge keeps updating instead of stopping after it first loads."
+          },
+          {
+            "area": "Notifications",
+            "text": "Players in a match's lineup are now notified when check-in opens and when the match goes live."
+          },
+          {
+            "area": "Notifications",
+            "text": "Tournament invites and tournament team invites now link to the tournament."
+          },
+          {
+            "area": "Game servers",
+            "text": "The plugin list now shows a retry option when it can't load, instead of loading forever."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Recovery notices now reach Discord channels set to Warning or Critical whenever the alert they end was posted there."
+          },
+          {
+            "area": "General",
+            "text": "Breadcrumbs and the page language now follow the language you've chosen."
+          },
+          {
+            "area": "General",
+            "text": "Tournament, match, team and player pages that don't exist now show a clear not-found message, and team and player pages can retry a failed load."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-16",
       "summary": "Events get a full-screen media viewer and clearer tabs, highlights can be filtered to knife kills, and Rokkan now reads the weapon a player actually had out.",
       "sections": {
