@@ -2,6 +2,238 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-18",
+      "summary": "Today brings a single Performance tab on player profiles, more reliable drafts, map changes after the veto, and Cobblestone.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matchmaking",
+            "text": "A draft's backup can now leave after the draft has started, from a strip under the scorebug that shows their place. Leave is locked only for the moment the match is being made."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Opening a scrim notice about an expired, declined or cancelled request shows that request at the top of the team's Requests, with why it closed, Request again and Dismiss."
+          },
+          {
+            "area": "Matches",
+            "text": "Admins and match organizers can change a map that hasn't started yet, from the map card's menu or from Fix a Problem. Maps already in the series aren't offered."
+          },
+          {
+            "area": "Matches",
+            "text": "Cobblestone is available for Competitive (outside Active Duty), Wingman and Duel, with new artwork, including in a game server node's offline match form. Wingman and Duel pools pick it up on panels with automatic map pool updates on."
+          },
+          {
+            "area": "Matches",
+            "text": "Matches you played now show your result. You get a coloured bar under your score in the match header, a result line in match lists and on Watch page cards, and a ring on your team's crest."
+          },
+          {
+            "area": "Coach",
+            "text": "Settings › Recaps shows every recap waiting to be written, with an estimated cost. You can write them all, pick which ones to write, or have Rokkan write recaps automatically when a period, season or event ends, pausing after failures before trying again."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The Breakdown, ELO, Maps, Arsenal and Combat tabs are now one Performance tab of cards. Each card opens into a full view, and old links open Performance."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Comparing with another player or a season marks Performance cards and tables with the gap to them."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Chips in the ELO view switch the chart between 5Stack ELO, Premier, Competitive, Wingman and FACEIT histories."
+          },
+          {
+            "area": "Career",
+            "text": "Installing the 5Stack Match Importer browser extension pays a one-time Stacks reward. Linked Accounts now has a Match Importer card, and new accounts get a setup step for it."
+          },
+          {
+            "area": "Game servers",
+            "text": "The panel's link to a node's offline tool now signs administrators in, with no password to copy. A used or expired link falls back to the password sign-in."
+          },
+          {
+            "area": "General",
+            "text": "Administrators see the best matching docs section at the top of ⌘K search."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matchmaking",
+            "text": "A page reload or short disconnect now keeps you in your lobby and queue for 3 minutes instead of 60 seconds."
+          },
+          {
+            "area": "Coach",
+            "text": "AI Spend on the admin overview groups spending into Coaching, Moderation and Recaps, with each feature listed under its group."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The ELO change popup explains each change in plain words, from the odds to the final number. The ELO graph marks gains and losses with coloured arrows."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "KAST and HS% now show as rank bars from Poor to Elite. The recent results radar fills its card and shows the W–L record."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Performance views use the space better, open as a sheet on phones, and have their graphs ready before you scroll to them. The role radar box lines up with the cards beside it."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The recap share card is one design for the link preview, downloads and the share dialog, and now shows your rating and flag."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Recap stats show your place, such as \"1st of 15\", instead of a percentage. The recap timeline shows full event names and has scroll arrows."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The player profile header has a new layout, with a one-line name and rank and a compact ID strip on phones. The badge row now fits on one line on phones and the trophy tray on two rows on desktop, and the level badge no longer runs into the ID strip."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Staff below administrator can only give roles below their own, and the role picker offers only those. The roles guide is updated to match."
+          },
+          {
+            "area": "Career",
+            "text": "The match page's rewards card leads with your rating change and opens the full breakdown on hover. It also shows what the match added to your level bar and lists the Stacks it paid."
+          },
+          {
+            "area": "Notifications",
+            "text": "The bell stays still while it's open, and new notifications wait on a \"New\" pill until you open them."
+          },
+          {
+            "area": "Notifications",
+            "text": "Notifications take you to the page and part of the page they're about, and the bell closes when you open one."
+          },
+          {
+            "area": "Notifications",
+            "text": "Update notices are grouped by kind, and build, plugin and update failures are listed under Critical. Steam Bot Offline and Rokkan Reviews Failing are now warnings."
+          },
+          {
+            "area": "Notifications",
+            "text": "Awards from the same event stack together."
+          },
+          {
+            "area": "Game servers",
+            "text": "The offline tool's sign-in page, the node's Offline section and the offline support guide explain how to get in when the event has no internet."
+          },
+          {
+            "area": "Game servers",
+            "text": "Game server nodes now accept only short-lived signed requests from the panel. A node whose clock is off says so."
+          },
+          {
+            "area": "Game servers",
+            "text": "The offline tool keeps its sign-in more secure when opened over HTTPS."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Map asset and gamedata notices are now listed with the staff notifications on the Discord page and post to the staff alerts channel by default, instead of the public CS2 updates channel."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Tag Manager now runs only after the operator's name, address and contact email are filled in, and the Privacy page names who runs the site."
+          },
+          {
+            "area": "General",
+            "text": "Map images now load at the size they're shown, so the coach list no longer goes blank on a fast scroll. The same applies to event match rows, the Play page map pool, tournament cards, draft settings, quick connect, server map rotations and the team veto simulator."
+          },
+          {
+            "area": "General",
+            "text": "Charts across the site share one tooltip style, and line charts show a guide line at the hovered point."
+          },
+          {
+            "area": "General",
+            "text": "Monospaced text looks the same on Windows and Android as on Mac."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "A draft now follows a match an organizer changed by hand, and a banned team member no longer cancels it. A draft can no longer create two matches, and a player can't be approved into a draft while another draft holds them."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A draft that gets stuck making its match is retried. It is called off after three failed tries so its players are freed."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A backup who leaves while the match is being made is no longer seated, and check-in no longer counts them. A no-show swap now happens completely or not at all, and a busy draft asks you to try again."
+          },
+          {
+            "area": "Matches",
+            "text": "Schedule Match buttons now show only to match organizers and above, the people who can use them."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Captains now see the opposing captain's scheduling note in the season calendar's fixture dialog."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "Replay, radar and lineup map data builds again for maps compiled by the latest CS2 build, including some workshop maps that failed before."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "The recent W–L now counts surrendered and forfeited matches and scores each match by who won it."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Recaps keep every chapter that has something in it, and event recaps list awards won in the event's tournaments. Any event's recap can now be shared by link."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Going back to a recap keeps your place, and picking a year on a phone no longer pushes the profile off the left edge."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Closing an open stat card no longer leaves the row empty before the other cards pop back."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Leaving or deleting a team now shows why it failed, and a double tap sends only one request."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Award hovers and the Trophy Case show what each award is for."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Team search results show the result count again."
+          },
+          {
+            "area": "Career",
+            "text": "The Win line on a won match's rewards card shows its XP again."
+          },
+          {
+            "area": "Career",
+            "text": "XP is recounted right away when staff remove an abandon or a match is voided or restored."
+          },
+          {
+            "area": "Notifications",
+            "text": "Older award notices without a badge now stack, and season award reward notices open that season's awards board."
+          },
+          {
+            "area": "Moderation",
+            "text": "After Dismiss or Resolve, the message counts only the reports you actually closed, not ones another moderator closed first."
+          },
+          {
+            "area": "General",
+            "text": "Several refused actions now say why instead of showing a generic error."
+          },
+          {
+            "area": "General",
+            "text": "Back and forward restore your scroll position more reliably."
+          },
+          {
+            "area": "General",
+            "text": "1Password no longer offers a sign-in prompt while you scroll the Discord settings page."
+          },
+          {
+            "area": "General",
+            "text": "CS2 news posts in Discord no longer show raw formatting tags and lead with the post's first picture."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-17",
       "summary": "Today brings player recaps, a trophy case on player pages, a tabbed coach hub and a new layout for event media, along with many fixes.",
       "sections": {

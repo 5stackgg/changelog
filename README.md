@@ -2,6 +2,91 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Wednesday, November 18, 2026
+
+Today brings a single Performance tab on player profiles, more reliable drafts, map changes after the veto, and Cobblestone.
+
+### Matchmaking
+- **New:** A draft's backup can now leave after the draft has started, from a strip under the scorebug that shows their place. Leave is locked only for the moment the match is being made.
+- **New:** Opening a scrim notice about an expired, declined or cancelled request shows that request at the top of the team's Requests, with why it closed, Request again and Dismiss.
+- **Improved:** A page reload or short disconnect now keeps you in your lobby and queue for 3 minutes instead of 60 seconds.
+- **Fixed:** A draft now follows a match an organizer changed by hand, and a banned team member no longer cancels it. A draft can no longer create two matches, and a player can't be approved into a draft while another draft holds them.
+- **Fixed:** A draft that gets stuck making its match is retried. It is called off after three failed tries so its players are freed.
+- **Fixed:** A backup who leaves while the match is being made is no longer seated, and check-in no longer counts them. A no-show swap now happens completely or not at all, and a busy draft asks you to try again.
+
+### Matches
+- **New:** Admins and match organizers can change a map that hasn't started yet, from the map card's menu or from Fix a Problem. Maps already in the series aren't offered.
+- **New:** Cobblestone is available for Competitive (outside Active Duty), Wingman and Duel, with new artwork, including in a game server node's offline match form. Wingman and Duel pools pick it up on panels with automatic map pool updates on.
+- **New:** Matches you played now show your result. You get a coloured bar under your score in the match header, a result line in match lists and on Watch page cards, and a ring on your team's crest.
+- **Fixed:** Schedule Match buttons now show only to match organizers and above, the people who can use them.
+
+### Leagues & Events
+- **Fixed:** Captains now see the opposing captain's scheduling note in the season calendar's fixture dialog.
+
+### Coach
+- **New:** Settings › Recaps shows every recap waiting to be written, with an estimated cost. You can write them all, pick which ones to write, or have Rokkan write recaps automatically when a period, season or event ends, pausing after failures before trying again.
+- **Improved:** AI Spend on the admin overview groups spending into Coaching, Moderation and Recaps, with each feature listed under its group.
+
+### Demos & Replays
+- **Fixed:** Replay, radar and lineup map data builds again for maps compiled by the latest CS2 build, including some workshop maps that failed before.
+
+### Stats & Leaderboards
+- **New:** The Breakdown, ELO, Maps, Arsenal and Combat tabs are now one Performance tab of cards. Each card opens into a full view, and old links open Performance.
+- **New:** Comparing with another player or a season marks Performance cards and tables with the gap to them.
+- **New:** Chips in the ELO view switch the chart between 5Stack ELO, Premier, Competitive, Wingman and FACEIT histories.
+- **Improved:** The ELO change popup explains each change in plain words, from the odds to the final number. The ELO graph marks gains and losses with coloured arrows.
+- **Improved:** KAST and HS% now show as rank bars from Poor to Elite. The recent results radar fills its card and shows the W–L record.
+- **Improved:** Performance views use the space better, open as a sheet on phones, and have their graphs ready before you scroll to them. The role radar box lines up with the cards beside it.
+- **Improved:** The recap share card is one design for the link preview, downloads and the share dialog, and now shows your rating and flag.
+- **Improved:** Recap stats show your place, such as "1st of 15", instead of a percentage. The recap timeline shows full event names and has scroll arrows.
+- **Fixed:** The recent W–L now counts surrendered and forfeited matches and scores each match by who won it.
+- **Fixed:** Recaps keep every chapter that has something in it, and event recaps list awards won in the event's tournaments. Any event's recap can now be shared by link.
+- **Fixed:** Going back to a recap keeps your place, and picking a year on a phone no longer pushes the profile off the left edge.
+- **Fixed:** Closing an open stat card no longer leaves the row empty before the other cards pop back.
+
+### Players & Teams
+- **Improved:** The player profile header has a new layout, with a one-line name and rank and a compact ID strip on phones. The badge row now fits on one line on phones and the trophy tray on two rows on desktop, and the level badge no longer runs into the ID strip.
+- **Improved:** Staff below administrator can only give roles below their own, and the role picker offers only those. The roles guide is updated to match.
+- **Fixed:** Leaving or deleting a team now shows why it failed, and a double tap sends only one request.
+- **Fixed:** Award hovers and the Trophy Case show what each award is for.
+- **Fixed:** Team search results show the result count again.
+
+### Career
+- **New:** Installing the 5Stack Match Importer browser extension pays a one-time Stacks reward. Linked Accounts now has a Match Importer card, and new accounts get a setup step for it.
+- **Improved:** The match page's rewards card leads with your rating change and opens the full breakdown on hover. It also shows what the match added to your level bar and lists the Stacks it paid.
+- **Fixed:** The Win line on a won match's rewards card shows its XP again.
+- **Fixed:** XP is recounted right away when staff remove an abandon or a match is voided or restored.
+
+### Notifications
+- **Improved:** The bell stays still while it's open, and new notifications wait on a "New" pill until you open them.
+- **Improved:** Notifications take you to the page and part of the page they're about, and the bell closes when you open one.
+- **Improved:** Update notices are grouped by kind, and build, plugin and update failures are listed under Critical. Steam Bot Offline and Rokkan Reviews Failing are now warnings.
+- **Improved:** Awards from the same event stack together.
+- **Fixed:** Older award notices without a badge now stack, and season award reward notices open that season's awards board.
+
+### Moderation
+- **Fixed:** After Dismiss or Resolve, the message counts only the reports you actually closed, not ones another moderator closed first.
+
+### Game servers
+- **New:** The panel's link to a node's offline tool now signs administrators in, with no password to copy. A used or expired link falls back to the password sign-in.
+- **Improved:** The offline tool's sign-in page, the node's Offline section and the offline support guide explain how to get in when the event has no internet.
+- **Improved:** Game server nodes now accept only short-lived signed requests from the panel. A node whose clock is off says so.
+- **Improved:** The offline tool keeps its sign-in more secure when opened over HTTPS.
+
+### Self-hosting
+- **Improved:** Map asset and gamedata notices are now listed with the staff notifications on the Discord page and post to the staff alerts channel by default, instead of the public CS2 updates channel.
+- **Improved:** Tag Manager now runs only after the operator's name, address and contact email are filled in, and the Privacy page names who runs the site.
+
+### General
+- **New:** Administrators see the best matching docs section at the top of ⌘K search.
+- **Improved:** Map images now load at the size they're shown, so the coach list no longer goes blank on a fast scroll. The same applies to event match rows, the Play page map pool, tournament cards, draft settings, quick connect, server map rotations and the team veto simulator.
+- **Improved:** Charts across the site share one tooltip style, and line charts show a guide line at the hovered point.
+- **Improved:** Monospaced text looks the same on Windows and Android as on Mac.
+- **Fixed:** Several refused actions now say why instead of showing a generic error.
+- **Fixed:** Back and forward restore your scroll position more reliably.
+- **Fixed:** 1Password no longer offers a sign-in prompt while you scroll the Discord settings page.
+- **Fixed:** CS2 news posts in Discord no longer show raw formatting tags and lead with the post's first picture.
+
 ## Tuesday, November 17, 2026
 
 Today brings player recaps, a trophy case on player pages, a tabbed coach hub and a new layout for event media, along with many fixes.
@@ -751,78 +836,5 @@ Today brings a reorganized left navigation, unrated tournaments, a redesigned of
 - **Improved:** The FAQ and the browser tab title use the "Find your five" tagline.
 - **Fixed:** An unpinned hub closes again once the pointer leaves it.
 - **Fixed:** The 5Stack wordmark, the new tab icon and other recently added images load again for browsers that had kept a broken copy.
-
-## Wednesday, November 4, 2026
-
-5Stack gets a new look, seasons gain their own awards, tournaments can seed teams by ELO, and the Steam presence bot is easier to add and keep online.
-
-### Matches
-- **New:** Typing .stop in game starts a vote to replay the round being played, including the first round, with no round number needed.
-
-### Tournaments
-- **New:** Organizers choose By ELO or Random seeding, and By ELO is the default for new tournaments. Before registration closes, the Teams tab shows each team's seeding ELO, its projected seed and its round-one opponent.
-- **New:** A team's seed stays visible for the whole tournament, in the bracket, the Swiss and round-robin standings, and on the match page. Hovering a seed in the bracket traces that team's route.
-- **New:** Awards can give Locker items and Stacks. Organizers set these on the tournament Prize Board. Players see what they can win before play, on the finished podium, in the award popup, in a Locker Awards tab and in Stacks History.
-- **New:** The Prize Board can pay Stacks and items to 1st through 3rd even with a tournament's awards turned off, and placing players get a notice when they win.
-
-### Utility
-- **Improved:** Lineups you save on your practice server land in a This Server group at the top of Mine, numbered on the map in the order you saved them. The Public tab shows only public lineups again.
-
-### Coach
-- **Fixed:** The Coach page no longer scrolls sideways on phones. Match rows there and on player pages show a shorter date.
-
-### Demos & Replays
-- **Improved:** The 3D replay keeps crates, cars and lamps that were missing and colours props as props. It also removes stray backdrop buildings and rooftop antennas and smooths the shadows under props.
-- **Fixed:** A demo playback no longer stops when the viewer's connection drops or reconnects.
-- **Fixed:** The reparse-all-demos warning now says demos are reparsed two at a time.
-
-### Streams & Highlights
-- **Improved:** The outro at the end of every highlight clip is rebuilt around the new 5Stack mark and ends on "Find your five".
-- **Fixed:** Streams from AMD nodes no longer drop large keyframes, so they stop skipping frames.
-- **Fixed:** 1440p streams are no longer cropped to part of the picture, and demo streams lag less. Demo streams now go out at 1440p when rendered at 1440p.
-
-### Stats & Leaderboards
-- **New:** Seasons have their own awards. Admins set awards and Stacks for 1st, 2nd, 3rd and MVP on a podium, add stat awards, and choose what carries over to the next season. The leaderboard shows the current leaders and prizes.
-- **New:** Every panel gets nine built-in stat awards and default Stacks prizes for its first season, so seasons hand out awards without any setup.
-- **Fixed:** A season whose end date simply passes now hands out its awards.
-- **Fixed:** Admins can move a season's end date past the start of the next scheduled season, and that season now moves with it. Make ongoing, End now and editing the next scheduled season also work as expected.
-
-### Players & Teams
-- **New:** A Player Backgrounds switch in My Account hides the backgrounds other players wear on their profiles.
-- **Improved:** My Account accepts an avatar URL again, next to the upload option.
-
-### Career
-- **New:** Players' looks appear on one shared player card on Play seats, the leaderboard top 3 and events. Frames and nameplates also show in the friends list, party seats, voice tiles and notifications.
-- **Improved:** Career is on by default and open to every player, and admins can still turn it off or raise the minimum role. On panels that had it off, players receive everything they unlocked with their next match.
-
-### Notifications
-- **New:** Admins get a bell alert when the Steam presence bot goes offline or needs a Steam Guard code, and can enter the code right from the notification. Players see a notice on their card while the bot is offline.
-- **Improved:** Adding the Steam presence bot now uses a one-use Steam invite link, so players become friends at once without friend-request errors or waiting.
-- **Improved:** Reading and deleting notifications takes effect immediately, and deletes can be undone for 5 seconds. Tap targets are larger on touch devices.
-- **Improved:** Notification cards open from anywhere you click, and new-article notifications show the cover beside the title.
-- **Fixed:** The Steam presence bot recovers on its own from failed logins and accepts friend requests sent while it was offline. It also frees a player's connection when they unfriend it.
-
-### Game servers
-- **New:** Administrators can keep a dedicated Ranked server to ranked or tournament matches, so it loads the right plugins for them. The match server picker greys out servers kept to another kind of match.
-- **Improved:** The CS2 build card shows Gamedata and Map assets as separate tiles, each opening its own panel, and fits better on phones.
-- **Fixed:** Matches with a custom game mode now play only on on-demand servers, so the mode's plugins load. The server picker explains why dedicated servers are unavailable for these matches.
-
-### Self-hosting
-- **New:** Two new check scripts verify a GPU node or a Proxmox LXC container. They come with a guide for setting up a dedicated machine, a VM or a Proxmox LXC container for NVIDIA or AMD.
-- **New:** The docs add a Managing Nodes guide and cover the admin settings for GPU workloads and video encoding.
-- **Fixed:** Fresh installs on k3s 1.37 no longer fail while k3s is still setting up the Gateway API.
-- **Fixed:** On panels not behind Cloudflare, rate limits count each visitor separately instead of sharing one limit across everyone.
-
-### General
-- **New:** 5Stack has a new look. The welcome page leads with "Find your five.", and the site, icons, in-game messages and Discord posts use the new mark and wordmark. Sites with a custom logo or name keep theirs.
-- **New:** News articles post to their own Discord channel when first published. Admins set the webhook and optional role mentions in Settings → News.
-- **New:** The docs add guides for Career and the Locker, Rokkan, Inventory and Sticker Crafts, Getting Around, and moderation.
-- **Improved:** Past times an hour or more old show the exact time across the site, including notifications.
-- **Improved:** The changelog's new-entries dot follows your account, so reading it on one device clears it everywhere.
-- **Improved:** Signing in from the welcome page takes you to your player page.
-- **Improved:** Webhook URLs, API keys and passwords in settings are hidden by default, with an eye button to reveal them.
-- **Fixed:** The 5Stack logo no longer shows as a broken image for people who loaded the site during an update.
-- **Fixed:** The welcome page no longer shows an error while scrolling.
-- **Fixed:** The default language picker shows a space between the flag and the language name.
 
 Older days are in [entries](entries).
