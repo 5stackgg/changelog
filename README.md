@@ -2,6 +2,69 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Thursday, November 19, 2026
+
+Today adds a match MVP, new highlight settings, a Rifler role and many draft room fixes.
+
+### Matchmaking
+- **Improved:** A pending invite on the draft board now shows as a faded, dashed "Invited" card. Cancel Invite on the board cancels it at once, without the Kick dialog.
+- **Improved:** Players brought into a Teams draft from a team's roster now get an invite to accept instead of being seated directly, and the usual ban, cooldown and ELO checks apply.
+- **Fixed:** A Teams draft can't start until every seated starter has accepted, and the header shows how many invites are still open. A pending request on a side now gets its own message.
+- **Fixed:** A player can no longer be seated on a full Teams side. New invites and direct adds to a full side go to its bench, and a benched invite shows with that side's backups.
+- **Fixed:** Draft rooms no longer get stuck on the last pick when backups or pending invites are in the room. Rooms left stuck for 30 minutes are cleaned up.
+- **Fixed:** The Play page and the friends list now count a draft's seats correctly, so pending requests and benched invites don't make a room look full.
+
+### Matches
+- **New:** Once a match ends, its MVP shows under the score in the match header. The MVP still shows when a map was canceled and updates after a demo is parsed.
+- **Improved:** On desktop, a finished veto now shows as a centred row of map chips with each team's logo.
+- **Improved:** The check-in box has a light running round its edge, so it reads as a button with any brand colour. The light turns red and speeds up in the last 10 seconds.
+- **Improved:** A forfeit before any map was played now shows a dash for each side, with your result bar under your side.
+- **Fixed:** A match opened from Recent games in the side panel now shows its Quick Overview in one readable column.
+
+### Tournaments
+- **Fixed:** Bracket previews and embedded brackets now show the Grand Final's and each round's real best-of.
+
+### Utility
+- **Improved:** The Utility tab follows the map picked at the top of the match page, and picking a map keeps you on Utility. Callout names now show by default.
+
+### Streams & Highlights
+- **New:** Settings › Highlights has a slider for which roles get an auto highlight every match, once a week, or none. With nothing saved, every signed-in player gets one every match, and panels that already saved settings keep them.
+- **Fixed:** Switch Stream To This Match now appears for a live broadcast, and a delayed broadcast keeps its GOTV delay when it switches.
+- **Fixed:** After a stream switch or map change, the stream HUD now updates returning players' team, name and photo.
+
+### Stats & Leaderboards
+- **New:** Profiles and ELO hover cards show how much ELO you need for the next tier.
+- **New:** A side where no position stands out and the player mostly used a rifle now reads Rifler instead of Flex. Rifler is also a side role on the leaderboard and can be given by Rokkan.
+
+### Players & Teams
+- **New:** Administrators can remove another player's uploaded avatar from the profile. Removing an avatar now asks first everywhere.
+- **Improved:** The Teams directory now opens sorted by Rating, strongest teams first.
+- **Improved:** The team page loads its roster history once for Overview and Activity.
+- **Fixed:** The roster photo viewer stays on the same player when someone joins or leaves, and it closes when no one is left.
+- **Fixed:** On phones, See all and View ELO on a profile now scroll to the tabs, and the tab strip sticks to the top as you scroll.
+- **Fixed:** The profile's Filters menu now scrolls within short screens, so the Range calendar and Clear can be reached.
+- **Fixed:** Recent matches rows on a profile keep the map and ELO in view beside the ELO card, and a Cancelled badge is no longer clipped.
+- **Fixed:** The profile's Share and Message buttons are square again.
+
+### Career
+- **New:** When a match takes you up a level, the rewards card lists what you unlocked and any Stacks earned, each with its own Equip button.
+- **Fixed:** Career XP is no longer paid for a match nobody played.
+
+### Notifications
+- **Fixed:** Opened notifications now wrap as one tidy paragraph with every line on the same left edge.
+
+### Game servers
+- **Improved:** The CS2 and CS:GO update check now asks Steam directly and runs every 5 minutes. A third-party mirror is used only as a fallback and can't roll a build back.
+- **Fixed:** Game server nodes no longer stay offline after a panel reboot, because they reconnect on their own.
+
+### Self-hosting
+- **Fixed:** Game nodes added with the install script now get their network routes approved automatically. The guide for using your own OAuth client now asks for Policy File read access and points to the exact lines your panel's setup page shows.
+
+### General
+- **New:** Uploaded photos and videos, including avatars and chat attachments, no longer keep where they were taken or which camera took them.
+- **New:** The Terms on 5stack.gg now explain how to send a copyright notice.
+- **Fixed:** The draft room, lobby lists and veto board now use the same monospace font as the rest of the site.
+
 ## Wednesday, November 18, 2026
 
 Today brings a single Performance tab on player profiles, more reliable drafts, map changes after the veto, and Cobblestone.
@@ -762,79 +825,5 @@ Today brings panel update and Cloudflare worker improvements for self-hosters, a
 ### General
 - **Improved:** The site and the panel's API send stronger browser security headers. Brackets can still be embedded in OBS and on other sites.
 - **Improved:** The welcome and run-your-own pages read more plainly.
-
-## Thursday, November 5, 2026
-
-Today brings a reorganized left navigation, unrated tournaments, a redesigned offline match tool, opening a panel's console from 5stack.gg, and many fixes.
-
-### Matches
-- **New:** The FAQ's Playing Here section lists every in-game chat command players can use, from ready and pause to surrender and votes, with who can use each one. Searches like "unpause" or "ready up" find it.
-
-### Tournaments
-- **New:** Organizers can make a tournament unrated with an Enable ELO switch on Create and in Manage › Match Settings, until its first match starts. Unrated tournaments show an Unrated chip in the header, and their matches still count for brackets, Career XP, leaderboards, season stats and the tournament MVP.
-- **Improved:** The tournament header has an "Organized by" line, with linked organizer teams first, then the organizers.
-- **Fixed:** A Rush tournament's brackets, stage tabs and stage settings show Bo1 even when a stage was set up as Bo3 before the switch to Rush.
-
-### Streams & Highlights
-- **Fixed:** The render queue shows when a highlight finished and how long the rendered clip is.
-- **Fixed:** Only a clip's owner can change its title.
-
-### Players & Teams
-- **New:** The player page's tab row ends in a one-click 5Stack/External toggle and a Filters menu with the other match filters on every tab. A smaller version sits beside the Matches list.
-- **Improved:** The player page's Community tab opens on one summary card with points and server ranks, time played and last seen. Stats a server hasn't reported are no longer shown as zero.
-- **Fixed:** The player header no longer leaves a gap above Career after the ELO chart grows.
-
-### Career
-- **New:** Players and admins can see a player's Stacks balance and history in a side panel, and admins can give or take Stacks. Career settings now chart XP and Stacks over time, and the 5stack.gg tag payout can be configured.
-- **Improved:** Career XP is now the same for everyone in a match: 160 XP per match plus 80 for a win, with 1,000 XP and 2,500 Stacks per level. XP by rating is gone, and existing progress is recounted.
-- **Fixed:** Draft lobbies, lineups, party seats and the friends list show the colorway a player picked for their frame and nameplate.
-
-### Notifications
-- **Improved:** Operator alerts now push to administrators by default, while job results stay off unless turned on. Administrators who had turned infrastructure pushes off keep them off.
-- **Fixed:** Changing an award's rewards no longer tells players who received the award right afterward that it now unlocks rewards they already have.
-
-### Moderation
-- **New:** Report Player asks which map a report is about when more than one map was played, and only offers rounds that were played on that map. Moderators see the map and round on the case.
-
-### Game servers
-- **New:** The offline match tool is redesigned to match 5stack.gg. Matches sit in a sidebar with a docked RCON console, and the create form is laid out like the Create Match page, with map tiles and a starting side per map. Options are readable, the tool uses its own confirm dialogs, and it no longer loads anything from the internet.
-- **New:** Offline match pages have a status bar with Force Ready, Skip Knife, Pause or Resume. A Fix a Problem menu can rewind a round, restart the map, kick a player or restart an unresponsive game server.
-- **New:** Offline matches keep their progress through a game server restart, restore rounds locally, and end the map and series on a surrender. Editing a match keeps the series unless its maps or teams change.
-- **New:** The offline match tool has its own sign-in page with a random password per node. Admins copy it from the node inspector's Offline section or read it on the node, and the guides explain both.
-- **New:** The node inspector shows whether a node is ready for offline matches. Nodes keep the panel's game server image downloaded and refresh it hourly while online, and the offline tool can pull an image when one is missing.
-- **New:** Administrators can set a logo for a public server, shown beside its name on the Public Servers cards.
-- **New:** A node with a graphics card 5Stack isn't using shows an "Unused graphics card" hardware warning that admins can acknowledge for everyone. The node warnings guide lists it.
-- **Improved:** Adding a game server node asks for the whole code the node prints, one box per character, and a paste fills them all. The approve step can also set the CPU governor to performance and turn on full kernel preemption before the node joins, using switch rows like the settings page.
-- **Improved:** An offline match's server password is now called the Admin password, since only admins and casters need it to join as spectators. It is random for each new match and shown on the match page with a Copy button, and editing a match no longer changes it.
-- **Improved:** The offline match tool, its RCON console and each node's file and plugin access are better protected, and each offline match has its own RCON password.
-- **Fixed:** A player who isn't allowed on a server is turned away once instead of retrying forever and taking up a slot.
-- **Fixed:** An offline public server no longer makes a region with healthy nodes show as Partial.
-- **Fixed:** Nodes pinned to a game server image from a registry with a port pull the right image again.
-- **Fixed:** Offline matches are more reliable:
-- **Fixed:** In the node inspector, the LAN IP link opens the offline match tool, and an acknowledged warning shows who acknowledged it on one line. A node's clock going backward no longer extends an offline tool sign-in lockout.
-
-### Self-hosting
-- **New:** Setup can manage your panel's Cloudflare zone with one scoped API token, setting up DNS records, the proxy and HTTPS for you. Records you made yourself are only replaced after you agree, and this works for new installs and existing panels.
-- **New:** You can open your panel's console from My Settings → Panels on 5stack.gg, where pressing Open Console approves it and opens it in its own window. The Browser Console guide and a new Console People guide cover this, along with the Admin and Read only roles and downloading recovery backups.
-- **New:** Administrators get a notification when their Cloudflare storage worker is out of date, and another once it's updated. It is checked shortly after the panel starts and every 15 minutes. The demo settings also flag an outdated worker and say to update the panel, then run the Cloudflare setup again.
-- **New:** Shortly after the panel starts, it sends a small test demo through storage and notifies administrators if demo uploads are failing, and again once they work.
-- **Improved:** The Cloudflare storage worker and media uploads are hardened, and unfinished uploads are cleared from storage after a day. To get the new worker, update the panel, then run the Cloudflare setup again.
-- **Improved:** The System Update list names services in plain words, such as API, Web app, Demo parser, Rokkan and Game node connector.
-- **Improved:** The install guides follow today's setup page, including managed Cloudflare and the reverse proxy step. They are shorter and focus on what to run, click and decide, and the architecture diagram has its own How It Fits Together page.
-- **Improved:** The Run your own page plays the install video, with speed controls, theater mode and full screen, and the install guide uses the same player. A new diagram shows how game server nodes join.
-- **Fixed:** Demo uploads work again on panels whose storage address points at their own built-in storage.
-- **Fixed:** A demo, clip or video requested before its upload finished no longer stays missing in the browser for a month.
-- **Fixed:** Open Console no longer asks players already signed in to 5stack.gg to sign in with Steam again.
-
-### General
-- **New:** The left navigation is reorganized:
-- **New:** A Steam group button sits next to every Discord button and opens the FAQ's clan-tag guide.
-- **Improved:** News, comments, moderation lists, awards, the cosmetic picker, the utility book and other lists load more as you scroll instead of needing a Show more button.
-- **Improved:** On phones, menus open as bottom sheets, tabs lay out in even rows, the hub opens without a stutter, and tap targets are bigger. Highlights also show one clip per screen.
-- **Improved:** Apps such as Inventory show their own page names in the breadcrumbs instead of their web address.
-- **Improved:** Signing in with Steam is better protected, and a sign-in must be finished within five minutes.
-- **Improved:** The FAQ and the browser tab title use the "Find your five" tagline.
-- **Fixed:** An unpinned hub closes again once the pointer leaves it.
-- **Fixed:** The 5Stack wordmark, the new tab icon and other recently added images load again for browsers that had kept a broken copy.
 
 Older days are in [entries](entries).

@@ -2,6 +2,158 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-19",
+      "summary": "Today adds a match MVP, new highlight settings, a Rifler role and many draft room fixes.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matches",
+            "text": "Once a match ends, its MVP shows under the score in the match header. The MVP still shows when a map was canceled and updates after a demo is parsed."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Settings › Highlights has a slider for which roles get an auto highlight every match, once a week, or none. With nothing saved, every signed-in player gets one every match, and panels that already saved settings keep them."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Profiles and ELO hover cards show how much ELO you need for the next tier."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "A side where no position stands out and the player mostly used a rifle now reads Rifler instead of Flex. Rifler is also a side role on the leaderboard and can be given by Rokkan."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Administrators can remove another player's uploaded avatar from the profile. Removing an avatar now asks first everywhere."
+          },
+          {
+            "area": "Career",
+            "text": "When a match takes you up a level, the rewards card lists what you unlocked and any Stacks earned, each with its own Equip button."
+          },
+          {
+            "area": "General",
+            "text": "Uploaded photos and videos, including avatars and chat attachments, no longer keep where they were taken or which camera took them."
+          },
+          {
+            "area": "General",
+            "text": "The Terms on 5stack.gg now explain how to send a copyright notice."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matchmaking",
+            "text": "A pending invite on the draft board now shows as a faded, dashed \"Invited\" card. Cancel Invite on the board cancels it at once, without the Kick dialog."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Players brought into a Teams draft from a team's roster now get an invite to accept instead of being seated directly, and the usual ban, cooldown and ELO checks apply."
+          },
+          {
+            "area": "Matches",
+            "text": "On desktop, a finished veto now shows as a centred row of map chips with each team's logo."
+          },
+          {
+            "area": "Matches",
+            "text": "The check-in box has a light running round its edge, so it reads as a button with any brand colour. The light turns red and speeds up in the last 10 seconds."
+          },
+          {
+            "area": "Matches",
+            "text": "A forfeit before any map was played now shows a dash for each side, with your result bar under your side."
+          },
+          {
+            "area": "Utility",
+            "text": "The Utility tab follows the map picked at the top of the match page, and picking a map keeps you on Utility. Callout names now show by default."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The Teams directory now opens sorted by Rating, strongest teams first."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The team page loads its roster history once for Overview and Activity."
+          },
+          {
+            "area": "Game servers",
+            "text": "The CS2 and CS:GO update check now asks Steam directly and runs every 5 minutes. A third-party mirror is used only as a fallback and can't roll a build back."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "A Teams draft can't start until every seated starter has accepted, and the header shows how many invites are still open. A pending request on a side now gets its own message."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A player can no longer be seated on a full Teams side. New invites and direct adds to a full side go to its bench, and a benched invite shows with that side's backups."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Draft rooms no longer get stuck on the last pick when backups or pending invites are in the room. Rooms left stuck for 30 minutes are cleaned up."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "The Play page and the friends list now count a draft's seats correctly, so pending requests and benched invites don't make a room look full."
+          },
+          {
+            "area": "Matches",
+            "text": "A match opened from Recent games in the side panel now shows its Quick Overview in one readable column."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Bracket previews and embedded brackets now show the Grand Final's and each round's real best-of."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Switch Stream To This Match now appears for a live broadcast, and a delayed broadcast keeps its GOTV delay when it switches."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "After a stream switch or map change, the stream HUD now updates returning players' team, name and photo."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The roster photo viewer stays on the same player when someone joins or leaves, and it closes when no one is left."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "On phones, See all and View ELO on a profile now scroll to the tabs, and the tab strip sticks to the top as you scroll."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The profile's Filters menu now scrolls within short screens, so the Range calendar and Clear can be reached."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Recent matches rows on a profile keep the map and ELO in view beside the ELO card, and a Cancelled badge is no longer clipped."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "The profile's Share and Message buttons are square again."
+          },
+          {
+            "area": "Career",
+            "text": "Career XP is no longer paid for a match nobody played."
+          },
+          {
+            "area": "Notifications",
+            "text": "Opened notifications now wrap as one tidy paragraph with every line on the same left edge."
+          },
+          {
+            "area": "Game servers",
+            "text": "Game server nodes no longer stay offline after a panel reboot, because they reconnect on their own."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "Game nodes added with the install script now get their network routes approved automatically. The guide for using your own OAuth client now asks for Policy File read access and points to the exact lines your panel's setup page shows."
+          },
+          {
+            "area": "General",
+            "text": "The draft room, lobby lists and veto board now use the same monospace font as the rest of the site."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-18",
       "summary": "Today brings a single Performance tab on player profiles, more reliable drafts, map changes after the veto, and Cobblestone.",
       "sections": {
