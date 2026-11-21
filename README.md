@@ -2,6 +2,40 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Friday, November 20, 2026
+
+Today adds Twitch broadcasting, a smarter auto director, staff-only lineup changes once a match's server is up, and more control over which highlights are kept.
+
+### Matches
+- **New:** Staff can swap a seated player while a match waits for its server or is live. The new player keeps the seat and is checked the same way as any other seated player.
+- **Improved:** Once a match's server is up, only the match's organizers, tournament organizers and admins can seat, remove, move or swap players. Lineups lock when the match ends, so a finished scoreboard stays as played.
+- **Improved:** The scoreboard and every stat panel list the players who actually played. Empty slots and seat controls appear only for people who can seat a player.
+- **Fixed:** Moving a player to another lineup now follows the same roster, lineup size and ban rules as seating them.
+- **Fixed:** A live match whose map was already in warmup now shows its warmup countdown on the match page and ends on time when players don't show.
+
+### Tournaments
+- **New:** Tournaments have a Subs During A Match switch under Allow Substitutes. It is on by default and lets the tournament's organizers change lineups once a match's server is up. When it is off, only admins can.
+
+### Demos & Replays
+- **Fixed:** The automatic demo cleanup no longer deletes a demo while someone is watching it or a highlight is rendering from it. It pauses while all demos are being re-parsed and spreads a large backlog over several runs.
+
+### Streams & Highlights
+- **New:** Admins can connect a Twitch channel in Settings › Streaming and send live broadcasts to it from an NVIDIA streaming node. A Test button checks that the channel is ready.
+- **New:** Broadcasts sent to Twitch play in Twitch's player on the match page, the Watch page, the popout and the floating player. Each shows the channel, its viewer count and a delay notice.
+- **New:** Settings › Highlights has a "Keep highlights with" choice, set to 3K by default. Auto highlights below it expire once they pass retention, while higher-kill and hand-made highlights stay until storage runs out.
+- **New:** Settings › Encoding has a live stream latency field, so admins can add buffering when broadcasts stutter on a weak connection.
+- **Improved:** The auto director follows bomb plants, defuses and clutch players. It also moves on from a quiet player instead of staying on them.
+- **Improved:** Highlight retention defaults to 30 days.
+- **Fixed:** Switching a delayed TV broadcast to another match keeps its delay.
+
+### Career
+- **New:** Admins can turn on a recheck of earned titles after a full ELO rebuild. A title earned only by a voided, abandoned or deleted match is then removed, or moved to another match that still earns it.
+
+### General
+- **Improved:** Draft system alerts are hidden from everyone except administrators. Who created or last edited an alert, season, award, region or dedicated server is now shown only to staff.
+- **Improved:** The privacy policy names the AI provider behind Rokkan and says that uploads have their location and camera details removed.
+- **Improved:** The 5Stack wordmark is refreshed with evenly spaced lettering across the site, the docs and highlight outros.
+
 ## Thursday, November 19, 2026
 
 Today adds a match MVP, new highlight settings, a Rifler role and many draft room fixes.
@@ -795,35 +829,5 @@ Today brings a tidier site menu, a tournament organizer fix and more reliable se
 
 ### General
 - **Improved:** Signed-in players now find Help & FAQ, the stats guide, the changelog, Terms, Privacy and Licenses in the corner menu under My Settings. Teams moves into Compete, Highlights leaves the left menu since Watch already leads there, and staff get a folding Admin › Moderation section.
-
-## Friday, November 6, 2026
-
-Today brings panel update and Cloudflare worker improvements for self-hosters, a gentler match-found alert, and keep-your-files node removal.
-
-### Matchmaking
-- **Fixed:** The match-found sound for a ready check, check-in or veto turn now plays once across all your open tabs, instead of again in each new tab.
-
-### Tournaments
-- **Fixed:** The tournament page no longer jitters while loading. The header doesn't slide in twice, and the check-in panel no longer pushes the content down.
-
-### Demos & Replays
-- **New:** Demo upload alerts appear as "Demo uploads" under Operator alerts in Settings › Notifications, with a sample in the alert gallery. Failing uploads show in red under Live now.
-- **Improved:** While demo uploads are failing, they are checked again every hour until they work. The alert then resolves on its own.
-
-### Game servers
-- **New:** Removing a game node lists the 5Stack folders it holds on the server, with their sizes. All are kept unless you untick them, so a reinstall keeps the CS2 install, and the node uninstall guide describes the choice. Nodes running an older version show no list and have all their 5Stack files deleted as before.
-
-### Self-hosting
-- **New:** Settings › System › Panel updates has a Check Now button and shows when the 5Stack service last checked for updates. A waiting release shows with its Update Now.
-- **New:** The header's Updates list shows an out-of-date Cloudflare worker until it is redeployed. Panels run by the 5Stack service get an Open Console button that opens the console on Integrations, and other panels are told what to run.
-- **Improved:** Panels run by the 5Stack service restart the site, the API, the demo parser, the AI coach and the game node connectors automatically after a release installs. New releases show in the header within seconds.
-- **Improved:** The Cloudflare worker's version is checked right after each Re-deploy and after the panel restarts. Its row in the header shows "Re-deployed. Checking the worker…" in the meantime.
-- **Improved:** On panels run by the 5Stack service, the Cloudflare worker warning on the Demos settings page and the "Cloudflare Worker Needs Update" alert now point to Re-deploy in the 5Stack Console.
-- **Improved:** When a panel script, settings change, database restore or panel move fails, the header's Updates list says why and offers Show Details for the log.
-- **Fixed:** Re-deploying the Cloudflare worker no longer stops on a panel server without Node. The worker scripts download a verified copy of Node 22 when needed.
-
-### General
-- **Improved:** The site and the panel's API send stronger browser security headers. Brackets can still be embedded in OBS and on other sites.
-- **Improved:** The welcome and run-your-own pages read more plainly.
 
 Older days are in [entries](entries).

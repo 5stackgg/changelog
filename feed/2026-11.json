@@ -2,6 +2,90 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-20",
+      "summary": "Today adds Twitch broadcasting, a smarter auto director, staff-only lineup changes once a match's server is up, and more control over which highlights are kept.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matches",
+            "text": "Staff can swap a seated player while a match waits for its server or is live. The new player keeps the seat and is checked the same way as any other seated player."
+          },
+          {
+            "area": "Tournaments",
+            "text": "Tournaments have a Subs During A Match switch under Allow Substitutes. It is on by default and lets the tournament's organizers change lineups once a match's server is up. When it is off, only admins can."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Admins can connect a Twitch channel in Settings › Streaming and send live broadcasts to it from an NVIDIA streaming node. A Test button checks that the channel is ready."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Broadcasts sent to Twitch play in Twitch's player on the match page, the Watch page, the popout and the floating player. Each shows the channel, its viewer count and a delay notice."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Settings › Highlights has a \"Keep highlights with\" choice, set to 3K by default. Auto highlights below it expire once they pass retention, while higher-kill and hand-made highlights stay until storage runs out."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Settings › Encoding has a live stream latency field, so admins can add buffering when broadcasts stutter on a weak connection."
+          },
+          {
+            "area": "Career",
+            "text": "Admins can turn on a recheck of earned titles after a full ELO rebuild. A title earned only by a voided, abandoned or deleted match is then removed, or moved to another match that still earns it."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matches",
+            "text": "Once a match's server is up, only the match's organizers, tournament organizers and admins can seat, remove, move or swap players. Lineups lock when the match ends, so a finished scoreboard stays as played."
+          },
+          {
+            "area": "Matches",
+            "text": "The scoreboard and every stat panel list the players who actually played. Empty slots and seat controls appear only for people who can seat a player."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "The auto director follows bomb plants, defuses and clutch players. It also moves on from a quiet player instead of staying on them."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Highlight retention defaults to 30 days."
+          },
+          {
+            "area": "General",
+            "text": "Draft system alerts are hidden from everyone except administrators. Who created or last edited an alert, season, award, region or dedicated server is now shown only to staff."
+          },
+          {
+            "area": "General",
+            "text": "The privacy policy names the AI provider behind Rokkan and says that uploads have their location and camera details removed."
+          },
+          {
+            "area": "General",
+            "text": "The 5Stack wordmark is refreshed with evenly spaced lettering across the site, the docs and highlight outros."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matches",
+            "text": "Moving a player to another lineup now follows the same roster, lineup size and ban rules as seating them."
+          },
+          {
+            "area": "Matches",
+            "text": "A live match whose map was already in warmup now shows its warmup countdown on the match page and ends on time when players don't show."
+          },
+          {
+            "area": "Demos & Replays",
+            "text": "The automatic demo cleanup no longer deletes a demo while someone is watching it or a highlight is rendering from it. It pauses while all demos are being re-parsed and spreads a large backlog over several runs."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Switching a delayed TV broadcast to another match keeps its delay."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-19",
       "summary": "Today adds a match MVP, new highlight settings, a Rifler role and many draft room fixes.",
       "sections": {
