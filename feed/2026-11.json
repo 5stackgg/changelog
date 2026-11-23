@@ -2,6 +2,42 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-22",
+      "summary": "Today brings Twitch broadcasts to any of several connected channels, a cancel-deadline countdown for live matches, and faster CS2 updates on game servers.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matches",
+            "text": "Players, coaches and organizers of a live match see its cancel deadline as a countdown strip under the server bar. It covers the warmup no-show window and then the map's time limit, and says what happens when time runs out; spectators no longer see a cancel countdown."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "You can connect any number of Twitch channels in Settings › Streaming, each with its own status, Test and Disconnect. Streamers and above pick each broadcast's destination when starting it: Direct or TV, then the 5Stack player or a Twitch channel that isn't already on another match."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Streams & Highlights",
+            "text": "Start Live Stream is always offered on the match page, and any broadcast running on another match can be moved to this one, keeping its channel and mode. Twitch broadcasts can now use Direct as well as TV."
+          },
+          {
+            "area": "Game servers",
+            "text": "CS2 updates and version pins now patch the existing install in place, so only changed files download instead of the whole game. Pinning a CS2 build no longer needs a Steam account, and the version pinning guide is updated to match."
+          },
+          {
+            "area": "Game servers",
+            "text": "A CS2 update that fails for lack of disk space now says so and shows how much space is free."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "General",
+            "text": "Adding 5stack.gg to the home screen on iOS shows the 5Stack logo instead of a plain \"5\". If you already added it, remove it from your home screen and add it again."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-20",
       "summary": "Today adds Twitch broadcasting, a smarter auto director, staff-only lineup changes once a match's server is up, and more control over which highlights are kept.",
       "sections": {

@@ -2,6 +2,24 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Sunday, November 22, 2026
+
+Today brings Twitch broadcasts to any of several connected channels, a cancel-deadline countdown for live matches, and faster CS2 updates on game servers.
+
+### Matches
+- **New:** Players, coaches and organizers of a live match see its cancel deadline as a countdown strip under the server bar. It covers the warmup no-show window and then the map's time limit, and says what happens when time runs out; spectators no longer see a cancel countdown.
+
+### Streams & Highlights
+- **New:** You can connect any number of Twitch channels in Settings › Streaming, each with its own status, Test and Disconnect. Streamers and above pick each broadcast's destination when starting it: Direct or TV, then the 5Stack player or a Twitch channel that isn't already on another match.
+- **Improved:** Start Live Stream is always offered on the match page, and any broadcast running on another match can be moved to this one, keeping its channel and mode. Twitch broadcasts can now use Direct as well as TV.
+
+### Game servers
+- **Improved:** CS2 updates and version pins now patch the existing install in place, so only changed files download instead of the whole game. Pinning a CS2 build no longer needs a Steam account, and the version pinning guide is updated to match.
+- **Improved:** A CS2 update that fails for lack of disk space now says so and shows how much space is free.
+
+### General
+- **Fixed:** Adding 5stack.gg to the home screen on iOS shows the 5Stack logo instead of a plain "5". If you already added it, remove it from your home screen and add it again.
+
 ## Friday, November 20, 2026
 
 Today adds Twitch broadcasting, a smarter auto director, staff-only lineup changes once a match's server is up, and more control over which highlights are kept.
@@ -815,19 +833,5 @@ Finished Rokkan reviews can now be read and shared by anyone, the Locker gets a 
 - **New:** A newly created API key is hidden until you press the eye button to reveal it. Copy still copies the full key.
 - **Improved:** The player navigation is a simpler list with full-width rows and a marker that follows the current page. The Updates count now matches unread news notices.
 - **Fixed:** The newest post's card and the post page header show the cover at full height beside the text, without blurred bars.
-
-## Saturday, November 7, 2026
-
-Today brings a tidier site menu, a tournament organizer fix and more reliable self-hosted panels.
-
-### Tournaments
-- **Fixed:** Linking a team as a tournament organizer no longer lists the tournament's admin twice in the organizer row, and existing duplicates are removed.
-
-### Self-hosting
-- **Improved:** You can now set extra allowed sign-in origins, such as a dev tunnel or a sibling domain, through the panel's config command without forcing it. The value also stays in place after updates.
-- **Fixed:** The demo parser and nightly backups now always run on the panel node and never on game nodes, so a broken game node can no longer stall demo reparsing or backups. Updating an existing install sets this up automatically.
-
-### General
-- **Improved:** Signed-in players now find Help & FAQ, the stats guide, the changelog, Terms, Privacy and Licenses in the corner menu under My Settings. Teams moves into Compete, Highlights leaves the left menu since Watch already leads there, and staff get a folding Admin › Moderation section.
 
 Older days are in [entries](entries).
