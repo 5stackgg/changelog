@@ -2,6 +2,38 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Monday, November 23, 2026
+
+Today adds badges from panel plugins, shared databases for game server plugins, easier GPU node setup and several fixes for CS2 updates on nodes.
+
+### Streams & Highlights
+- **Fixed:** Streams and highlight clips now start on NVIDIA GPU nodes whose host keeps the graphics driver in a non-standard location.
+
+### Players & Teams
+- **New:** Panel plugins can put a badge on players. It shows in the role icon spot on every player display, with "+N" when there are more, and beside the VAC shield on profiles. Hovering lists every badge, and the plugin development guide has a new Player Badges page.
+
+### Game servers
+- **New:** Administrators can create databases for game server plugins under Settings › Databases and tick which dedicated servers may use each one. Plugins can then share data such as ranks and stats across servers, and the same page restarts the servers that need it and restores a database from a nightly or Cloud backup.
+- **New:** Game plugins can now say they need Metamod:Source, and only servers that load such a plugin start it. The Game Plugins guides explain how to mark and install these plugins.
+- **New:** A plugin's settings can include the ID of the match the server is playing, so a plugin can tag what it reports with that match. On servers that host no match it is left empty.
+- **New:** A node's CS2 menu has a Verify files action that checks every CS2 file against Steam and fixes any that differ.
+- **New:** A node's CS2 section warns when the disk CS2 is installed on has less than 20 GB free and shows a Free space meter. An update that runs out of room now says "Not enough disk space" and shows how much is free.
+- **Fixed:** CS2 updates from an older build no longer fail when Steam stops offering that build. The update now checks the files on disk and downloads only what differs.
+- **Fixed:** When Steam stops offering a node's pinned build, the pin is removed and administrators get a notice naming the build and the node. Before, the next update quietly installed the latest build while the pin still showed.
+- **Fixed:** Retry update after a failed Verify files now verifies the files again instead of running a plain update.
+- **Fixed:** A long restore of one plugin database no longer makes creating, deleting or repairing the others fail.
+
+### Self-hosting
+- **New:** Panel › GPU Nodes lists the NVIDIA and AMD graphics cards found on your nodes, each with a Use for Streaming and Clips button, and a GPU node's menu has Stop Using This GPU. Progress and failures show on the page with Try Again, and panels without the 5Stack service show the setup command to copy instead.
+- **New:** Each plugin database is backed up nightly as its own file. Database › Backups lists these with a filter per database, and Settings › Backup and the notification bell warn when a plugin database is missing a backup.
+- **Improved:** The panel's database now keeps some of its connections for the panel itself, so plugin databases can never crowd it out. The database restarts once when this update rolls out.
+- **Improved:** The self-hosting guides now write the 5Stack service's commands with the short script name, without ".sh". The old form still works.
+- **Fixed:** When the 5Stack service briefly stops reporting, the GPU Nodes page now says it lost touch and waits. It no longer offers the setup command meant for panels without the service or marks a change as Ready too early.
+- **Fixed:** Removing the last GPU node no longer refuses when its card brand is unknown. A failed GPU change now stays flagged until a later run sets the panel up again.
+
+### General
+- **Fixed:** API keys from Settings › API Keys work with the API again. A key can no longer create further API keys, and a deleted key stops working.
+
 ## Sunday, November 22, 2026
 
 Today brings Twitch broadcasts to any of several connected channels, a cancel-deadline countdown for live matches, and faster CS2 updates on game servers.
@@ -807,31 +839,5 @@ Today brings an Internet exposure page and simpler updates for self-hosted panel
 - **Improved:** The Locker, the friends list and the header's Stacks balance load with much less work. A friend's new frame or nameplate now shows within 10 minutes or on your next page load.
 - **Improved:** The 5Stack browser extension has the new 5Stack brand icons.
 - **Fixed:** The player card in the navigation corner no longer changes size when your frame loads, so the links above it stay put.
-
-## Sunday, November 8, 2026
-
-Finished Rokkan reviews can now be read and shared by anyone, the Locker gets a loadout view and a phone layout, and notifications are less noisy.
-
-### Leagues & Events
-- **Improved:** Event media and banners now have one 100MB limit for every file type (PNG, JPEG, WebP, GIF, MP4 and MP3), replacing the separate limits per type. The upload hints and the events guide reflect the new limit.
-
-### Coach
-- **New:** Anyone can read a finished match's Rokkan review, signed in or not. The match page shows "Rokkan reviewed this match" with Read Review and a copy-link button (the share sheet on phones), and the review page lets you switch between each team's and map's review.
-- **New:** A tournament match's Rokkan review stays private to its team until the tournament ends, so the next opponent can't read it first. Its share link appears once the tournament is over.
-
-### Career
-- **New:** The Locker's outfit list is now a loadout of six slot tiles that show what you're wearing, what you're trying on and its price. You can put items back or take them off, and picking a slot switches the grid.
-- **Improved:** On phones, the Locker replaces its left column with a bottom dock of slot icons and Apply Look, and shows the battle pass as one row of milestones with arrows.
-
-### Notifications
-- **New:** Wearing the 5stack.gg clan tag now keeps one notification with your running Stacks total, which updates quietly after each paid match. If a match shows you without the tag, the notification returns as an unread reminder to wear it again.
-- **Improved:** New-article notifications now lead with the article's title and show its full teaser underneath. Other pushes are shortened at a whole word instead of mid-word.
-- **Improved:** The bell and the push badge count a played match once, even when it leaves stats, a Rokkan review, an import notice, tag thanks and unwatched highlights. Live and urgent match alerts still count on their own.
-- **Improved:** Opening your section of a coach review marks that review's notification as read in the bell.
-
-### General
-- **New:** A newly created API key is hidden until you press the eye button to reveal it. Copy still copies the full key.
-- **Improved:** The player navigation is a simpler list with full-width rows and a marker that follows the current page. The Updates count now matches unread news notices.
-- **Fixed:** The newest post's card and the post page header show the cover at full height beside the text, without blurred bars.
 
 Older days are in [entries](entries).
