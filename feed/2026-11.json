@@ -2,6 +2,198 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-24",
+      "summary": "Today adds region logos and room pings to the region veto, organizer voice, and Metamod switches for servers, plus many fixes across drafts, matchmaking, leagues and self-hosted panels.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matches",
+            "text": "The region veto shows each region's logo and the room's average ping, coloured by quality. Before the veto, players' pings to each region are measured in the background. Administrators can upload or remove a region's logo from the region's page."
+          },
+          {
+            "area": "Matches",
+            "text": "Match organizers who are not playing can join either team's voice from the match header or the draft room's team panels. In the call they are tagged as Organizer."
+          },
+          {
+            "area": "Matches",
+            "text": "Matches that do not count toward ratings now carry an Unrated badge. It appears on the match page, in match lists and in player match history."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Players, captains included, can leave a league team roster from their own row on the season page, even after the roster lock."
+          },
+          {
+            "area": "Utility",
+            "text": "Administrators can choose who can start utility practice and browse lineups, separately from who can create matches. By default it follows the match creation setting."
+          },
+          {
+            "area": "Game servers",
+            "text": "Administrators can turn on Load Metamod for any dedicated server on a node, except CS:GO servers. This lets a Metamod plugin placed in the server's own files run. The guides cover both switches."
+          },
+          {
+            "area": "Game servers",
+            "text": "When adding a game plugin, a Needs Metamod switch marks plugins that need Metamod. Marked plugins show a Metamod chip."
+          },
+          {
+            "area": "General",
+            "text": "Unknown addresses now show a translated not-found page."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Matchmaking",
+            "text": "Every queue refusal now shows a translated reason, including party size, cooldown and ping details. A ban or cooldown is shown only to the player it applies to, and the rest of the party sees a general notice."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "The max ping slider now defaults to your panel's own limit. The ready check shows the match type and region, and a missed ready check now tells the party what happened."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Draft room settings lock once the room leaves Open. The invite code changes when a room becomes invite only, and party joins skip players the host has blocked."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A draft host must wait three minutes after check-in opens before dropping a no-show, and the draft room explains why when it is too early."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Captains can only add their own team members to a league roster, and other players join the team by invite first. The season page explains when a removal would leave a team below the tournament's minimum lineup."
+          },
+          {
+            "area": "Utility",
+            "text": "On-the-spot rows in a match's Utility tab now have Save, and Open Lineup once saved. A throw that matches a lineup you can see links straight to it. Grenade rows also get larger touch buttons and a labelled Save."
+          },
+          {
+            "area": "Players & Teams",
+            "text": "Player search's Steam lookups are now limited per player and per visitor, with a shared cap for signed-out visitors."
+          },
+          {
+            "area": "Game servers",
+            "text": "Saving a server's map rotation, plugins and plugin configs together checks everything first. If only part of the save goes through, the server restarts on what was saved and tells you."
+          },
+          {
+            "area": "Game servers",
+            "text": "The public servers list has a proper Join link, shows Full on a full server, offers Try again when it fails to load, and translates server types."
+          },
+          {
+            "area": "Game servers",
+            "text": "A plugin database's password is changed once no server uses it anymore, without cutting off servers mid match. The Databases page now points to each row's restore button."
+          },
+          {
+            "area": "Game servers",
+            "text": "Signed-out visitors see open, unranked servers even while they are offline. Players can see their own stats from restricted and password servers."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "You can now add a GPU node from the GPU Nodes page with Use for Streaming and Clips. The guides and setup script hints cover this, along with new terminal commands."
+          },
+          {
+            "area": "General",
+            "text": "Croatian is corrected and fully translated, Polish and German wording is fixed, and match status badges are translated."
+          },
+          {
+            "area": "General",
+            "text": "Lobby invite buttons can be used from the keyboard, and pages have a skip-to-content link. The name form explains why a name was refused."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "Your ping is now measured when you join a party and again before the captain queues, so party ping limits use up-to-date readings."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "An inviter can only take back an invite that is still pending. Removing a member who had already accepted no longer pulls the lobby out of the queue."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A host who joins their own draft room's backups keeps running the room and can still start it when it is full."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A captains draft no longer makes a host without a seat into a captain, so picks can always be made. Captains are always seated players."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "A draft whose match has already started stops retrying after three failed attempts, so its players are free to join other lobbies."
+          },
+          {
+            "area": "Matchmaking",
+            "text": "Signed-out visitors no longer see who is sitting in an open lobby."
+          },
+          {
+            "area": "Matches",
+            "text": "Once a map has been played, only staff and tournament organizers can cancel a match, move it to another server or region, or reboot its server. A playing host can no longer do this."
+          },
+          {
+            "area": "Matches",
+            "text": "Sides can no longer be switched in team, tournament or draft matches. Organizers who play in a match can no longer rewind the veto or extend its clock."
+          },
+          {
+            "area": "Matches",
+            "text": "The header's check-in clock in a draft match follows the draft's one-minute window, and clocks over an hour now show hours."
+          },
+          {
+            "area": "Leagues & Events",
+            "text": "Rosters of a finished or canceled league season can no longer be changed except by league admins."
+          },
+          {
+            "area": "Utility",
+            "text": "Practice servers, including temporary ones started when none is free, now load their plugins' settings, so plugins such as skin plugins work there."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "Viewer counts now show for every live stream, not just the first hundred."
+          },
+          {
+            "area": "Streams & Highlights",
+            "text": "A stream's error details are shown only to signed-in viewers."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Editing a running season no longer allows setting its end date to today or earlier. Ending a season right away stays on End Season, with its confirmation."
+          },
+          {
+            "area": "Notifications",
+            "text": "Signing out now stops push notifications reaching that device."
+          },
+          {
+            "area": "Moderation",
+            "text": "A banned player who tries to rejoin a server is now turned away at connect instead of taking a slot. If the ban is lifted, they can join again."
+          },
+          {
+            "area": "Game servers",
+            "text": "A restricted server's minimum role now requires players to be signed in."
+          },
+          {
+            "area": "Game servers",
+            "text": "Node disk alerts can be switched off by setting the threshold to 0, and a full game files disk now triggers an alert too."
+          },
+          {
+            "area": "Game servers",
+            "text": "The file manager refuses to open files over 5 MB instead of loading them whole."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "A panel on the 5Stack service is never offered a git checkout's update commands, even while the service is briefly not reporting. It shows a \"hasn't reported for a few minutes\" notice instead. The plugin page shows the right command for panels on the service."
+          },
+          {
+            "area": "Self-hosting",
+            "text": "The panel's database no longer restarts itself when a backup or restore is cut off partway. The update that brings this fix restarts the database once."
+          },
+          {
+            "area": "General",
+            "text": "Signing out when your session has already ended no longer shows an error and takes you to the home page."
+          },
+          {
+            "area": "General",
+            "text": "Sign-in errors now show a clear, translated reason."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-23",
       "summary": "Today adds badges from panel plugins, shared databases for game server plugins, easier GPU node setup and several fixes for CS2 updates on nodes.",
       "sections": {

@@ -2,6 +2,79 @@
 
 What changed in 5Stack each day: new features, improvements and fixes across the web app, game servers and self-hosted panels, grouped by the section of 5Stack they touch. Each entry is written automatically from that day's merged changes (UTC).
 
+## Tuesday, November 24, 2026
+
+Today adds region logos and room pings to the region veto, organizer voice, and Metamod switches for servers, plus many fixes across drafts, matchmaking, leagues and self-hosted panels.
+
+### Matchmaking
+- **Improved:** Every queue refusal now shows a translated reason, including party size, cooldown and ping details. A ban or cooldown is shown only to the player it applies to, and the rest of the party sees a general notice.
+- **Improved:** The max ping slider now defaults to your panel's own limit. The ready check shows the match type and region, and a missed ready check now tells the party what happened.
+- **Improved:** Draft room settings lock once the room leaves Open. The invite code changes when a room becomes invite only, and party joins skip players the host has blocked.
+- **Improved:** A draft host must wait three minutes after check-in opens before dropping a no-show, and the draft room explains why when it is too early.
+- **Fixed:** Your ping is now measured when you join a party and again before the captain queues, so party ping limits use up-to-date readings.
+- **Fixed:** An inviter can only take back an invite that is still pending. Removing a member who had already accepted no longer pulls the lobby out of the queue.
+- **Fixed:** A host who joins their own draft room's backups keeps running the room and can still start it when it is full.
+- **Fixed:** A captains draft no longer makes a host without a seat into a captain, so picks can always be made. Captains are always seated players.
+- **Fixed:** A draft whose match has already started stops retrying after three failed attempts, so its players are free to join other lobbies.
+- **Fixed:** Signed-out visitors no longer see who is sitting in an open lobby.
+
+### Matches
+- **New:** The region veto shows each region's logo and the room's average ping, coloured by quality. Before the veto, players' pings to each region are measured in the background. Administrators can upload or remove a region's logo from the region's page.
+- **New:** Match organizers who are not playing can join either team's voice from the match header or the draft room's team panels. In the call they are tagged as Organizer.
+- **New:** Matches that do not count toward ratings now carry an Unrated badge. It appears on the match page, in match lists and in player match history.
+- **Fixed:** Once a map has been played, only staff and tournament organizers can cancel a match, move it to another server or region, or reboot its server. A playing host can no longer do this.
+- **Fixed:** Sides can no longer be switched in team, tournament or draft matches. Organizers who play in a match can no longer rewind the veto or extend its clock.
+- **Fixed:** The header's check-in clock in a draft match follows the draft's one-minute window, and clocks over an hour now show hours.
+
+### Leagues & Events
+- **New:** Players, captains included, can leave a league team roster from their own row on the season page, even after the roster lock.
+- **Improved:** Captains can only add their own team members to a league roster, and other players join the team by invite first. The season page explains when a removal would leave a team below the tournament's minimum lineup.
+- **Fixed:** Rosters of a finished or canceled league season can no longer be changed except by league admins.
+
+### Utility
+- **New:** Administrators can choose who can start utility practice and browse lineups, separately from who can create matches. By default it follows the match creation setting.
+- **Improved:** On-the-spot rows in a match's Utility tab now have Save, and Open Lineup once saved. A throw that matches a lineup you can see links straight to it. Grenade rows also get larger touch buttons and a labelled Save.
+- **Fixed:** Practice servers, including temporary ones started when none is free, now load their plugins' settings, so plugins such as skin plugins work there.
+
+### Streams & Highlights
+- **Fixed:** Viewer counts now show for every live stream, not just the first hundred.
+- **Fixed:** A stream's error details are shown only to signed-in viewers.
+
+### Stats & Leaderboards
+- **Fixed:** Editing a running season no longer allows setting its end date to today or earlier. Ending a season right away stays on End Season, with its confirmation.
+
+### Players & Teams
+- **Improved:** Player search's Steam lookups are now limited per player and per visitor, with a shared cap for signed-out visitors.
+
+### Notifications
+- **Fixed:** Signing out now stops push notifications reaching that device.
+
+### Moderation
+- **Fixed:** A banned player who tries to rejoin a server is now turned away at connect instead of taking a slot. If the ban is lifted, they can join again.
+
+### Game servers
+- **New:** Administrators can turn on Load Metamod for any dedicated server on a node, except CS:GO servers. This lets a Metamod plugin placed in the server's own files run. The guides cover both switches.
+- **New:** When adding a game plugin, a Needs Metamod switch marks plugins that need Metamod. Marked plugins show a Metamod chip.
+- **Improved:** Saving a server's map rotation, plugins and plugin configs together checks everything first. If only part of the save goes through, the server restarts on what was saved and tells you.
+- **Improved:** The public servers list has a proper Join link, shows Full on a full server, offers Try again when it fails to load, and translates server types.
+- **Improved:** A plugin database's password is changed once no server uses it anymore, without cutting off servers mid match. The Databases page now points to each row's restore button.
+- **Improved:** Signed-out visitors see open, unranked servers even while they are offline. Players can see their own stats from restricted and password servers.
+- **Fixed:** A restricted server's minimum role now requires players to be signed in.
+- **Fixed:** Node disk alerts can be switched off by setting the threshold to 0, and a full game files disk now triggers an alert too.
+- **Fixed:** The file manager refuses to open files over 5 MB instead of loading them whole.
+
+### Self-hosting
+- **Improved:** You can now add a GPU node from the GPU Nodes page with Use for Streaming and Clips. The guides and setup script hints cover this, along with new terminal commands.
+- **Fixed:** A panel on the 5Stack service is never offered a git checkout's update commands, even while the service is briefly not reporting. It shows a "hasn't reported for a few minutes" notice instead. The plugin page shows the right command for panels on the service.
+- **Fixed:** The panel's database no longer restarts itself when a backup or restore is cut off partway. The update that brings this fix restarts the database once.
+
+### General
+- **New:** Unknown addresses now show a translated not-found page.
+- **Improved:** Croatian is corrected and fully translated, Polish and German wording is fixed, and match status badges are translated.
+- **Improved:** Lobby invite buttons can be used from the keyboard, and pages have a skip-to-content link. The name form explains why a name was refused.
+- **Fixed:** Signing out when your session has already ended no longer shows an error and takes you to the home page.
+- **Fixed:** Sign-in errors now show a clear, translated reason.
+
 ## Monday, November 23, 2026
 
 Today adds badges from panel plugins, shared databases for game server plugins, easier GPU node setup and several fixes for CS2 updates on nodes.
@@ -781,63 +854,5 @@ Rokkan now sends weekly progress reports, answers questions about your matches a
 - **Improved:** The welcome page now calls the Inventory app by its new name, Loadout.
 - **Fixed:** An alert you dismissed shows again when it is put back up later.
 - **Fixed:** Uploaded logos show whole on the landing page header, footer and nav banner, and the landing page name fits cleanly on phones.
-
-## Monday, November 9, 2026
-
-Today brings an Internet exposure page and simpler updates for self-hosted panels, a new player profile, off-season leaderboards, more accurate stats, and a smoother event Media tab and highlights on phones.
-
-### Matches
-- **Improved:** When the map column has nothing but the map cards, it folds away during the veto so the veto board gets the full width.
-- **Fixed:** The match server picker no longer offers switched-off servers to anyone but admins, and two matches can no longer reserve the same free server.
-
-### Leagues & Events
-- **New:** Event media now accepts WebM, MOV and .m4v videos as well as MP4.
-- **Improved:** The event Media tab now puts the media first, and uploaders get an Add Media button that opens the file picker and link field (a bottom sheet on phones). You can drop files anywhere on the tab, and a link pasted anywhere fills the link field and waits for you to press Add.
-- **Fixed:** Media tagging now offers everyone attached to the event, including team and tournament rosters and organizers, even before any matches are played. Team chips in Membership show the team's avatar.
-- **Fixed:** A large MP4 saved with a .mov name, or the other way round, is now kept instead of refused after uploading.
-
-### Utility
-- **Fixed:** A practice server without a label now shows as "Practice server" in the picker.
-
-### Coach
-- **New:** Rokkan's match reviews now look at each death, every grenade thrown and the round's money, so it can explain how a round was lost.
-- **New:** Review pages have a copy-link button beside Open Match, following the same rules as on the match page.
-- **Fixed:** Newer kinds of Rokkan findings show proper translated labels instead of raw tag names.
-
-### Streams & Highlights
-- **New:** After you watch a clip's outro once, later clips stop where the action ends, including older clips. Downloads still include the outro.
-- **New:** A Mark Seen button on the bell's Clips of you strip marks every unseen clip from the last 30 days as seen.
-- **Improved:** Highlights work better on phones. Clips fill the screen when the phone is sideways, with an Up next panel that slides out, and one tap opens a clip tile. Opening a clip grows it out of its tile, and unmuting carries over to the next clip.
-- **Fixed:** Demos that were cut short when a server stopped while recording now load and play.
-
-### Stats & Leaderboards
-- **New:** Matches between competitive seasons keep your ELO from your latest rating and appear on off-season boards. Between seasons, the boards open on the last season's final standings.
-- **New:** Organizers can edit a community season's description, start day and end day, and the description of a running or ended competitive season.
-- **Improved:** Stat descriptions now explain what each stat measures, and the FAQ says which stats come from demos. These are in English for now.
-- **Fixed:** KAST, rounds played, clutches, multi-kills, opening-duel trades, accuracy and head-to-head damage now count only what actually happened, such as leaving out team kills and rounds a player wasn't in.
-- **Fixed:** Counter-strafing, crosshair placement, reaction time, first bullet, trades, spot conversion and utility on death are measured more accurately.
-- **Fixed:** The Sniper role and per-weapon stats now come from the guns each player actually carried and fired, not only from their kills.
-
-### Players & Teams
-- **New:** Player profiles open on a full-width banner, with ELO and the last 8 matches side by side beneath it. The full match list moves to a new Matches tab.
-- **Improved:** Syncing Steam friends is limited to once every five minutes per player.
-- **Improved:** Refreshing a FACEIT rank now requires being signed in and works only for players on 5Stack.
-
-### Career
-- **Improved:** The header's Career button now says Career and shows your level and Stacks, with an XP bar along its bottom edge and XP to go in its tooltip.
-
-### Self-hosting
-- **New:** Settings › Security › Internet exposure lists each server's ports and what the internet can reach on them. You can check all nodes again or copy the ports to block for your provider's firewall, and the header warns when ports are open.
-- **New:** Panel updates lists services still running an older build than the installed release, and its Update Now restarts them, even while a newer release is offered.
-- **Improved:** The update popover now shows only Update available, Updating or Update failed. One Update Now updates plugins along with the panel.
-- **Improved:** Demo streams rendered on AMD GPUs now go out at 1440p, as on NVIDIA, when the GPU's encoder supports it.
-- **Improved:** The requirements and FAQ now list only the ports that need to be open to the internet (80, 443, UDP 8189, the game server ports, and TURN when it's on) and say port 8585 stays on your LAN or between 5Stack servers. The panel no longer needs or serves the search and file storage console subdomains.
-- **Fixed:** Running a panel script or changing settings is no longer announced as a finished panel update, and a failed one is titled for what it was.
-- **Fixed:** A 1440p render sent out at 1080p is now scaled down instead of cropped to its top-left corner, which affected AMD GPUs using the CPU encoder.
-
-### General
-- **Improved:** The Locker, the friends list and the header's Stacks balance load with much less work. A friend's new frame or nameplate now shows within 10 minutes or on your next page load.
-- **Improved:** The 5Stack browser extension has the new 5Stack brand icons.
-- **Fixed:** The player card in the navigation corner no longer changes size when your frame loads, so the links above it stay put.
 
 Older days are in [entries](entries).
