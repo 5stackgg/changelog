@@ -2,6 +2,24 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-26",
+      "summary": "Today's update changes which matches count toward ELO.",
+      "sections": {
+        "new": [
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Whether a match affects ELO is now decided by rules for each kind of match, set separately for online and LAN play. By default, matches where one party fills the whole match, draft lobbies, scrims, player-created matches and tournaments no longer change ratings, and admins can edit these rules."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Match organizers can switch a match between rated and unrated until its map veto begins. Tournament organizers can do the same for a whole tournament or stage until any of its matches reaches the veto."
+          }
+        ],
+        "improved": [],
+        "fixed": []
+      }
+    },
+    {
       "date": "2026-11-25",
       "summary": "Support tickets now support images, and nightly backups cope better with brief storage outages.",
       "sections": {
