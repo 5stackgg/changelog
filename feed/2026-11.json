@@ -2,6 +2,38 @@
   "month": "2026-11",
   "days": [
     {
+      "date": "2026-11-27",
+      "summary": "Today's update lets admins decide which kinds of match count toward ELO, and shows why a match is unrated.",
+      "sections": {
+        "new": [
+          {
+            "area": "Matches",
+            "text": "Match organizers can turn ELO on or off for a custom or scrim match from the match page's Settings tab. It locks once the map veto starts, and everyone can see in the match options whether the match is rated."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Admins choose which kinds of match are rated from Settings › Application › ELO. The choice is made separately for online and LAN play and covers matchmaking, full parties, drafts, scrims, custom matches and tournaments."
+          },
+          {
+            "area": "Stats & Leaderboards",
+            "text": "Unrated matches show an amber icon that explains why. It appears on match lists, profile match history, the match header, draft lobbies and the full-party matchmaking line."
+          }
+        ],
+        "improved": [
+          {
+            "area": "Tournaments",
+            "text": "ELO is now one of the tournament's options, and organizers can turn it off in the creation wizard. It locks once a tournament match reaches the map veto, and a tournament created by a player starts unrated until a tournament organizer turns ELO on."
+          }
+        ],
+        "fixed": [
+          {
+            "area": "Matchmaking",
+            "text": "Large parties no longer push the seat row past the edge of the mode tiles on the Play page. Beyond two extra seats, the tile now shows a count."
+          }
+        ]
+      }
+    },
+    {
       "date": "2026-11-26",
       "summary": "Today's update changes which matches count toward ELO.",
       "sections": {
